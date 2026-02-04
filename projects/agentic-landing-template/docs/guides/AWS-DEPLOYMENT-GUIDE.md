@@ -195,25 +195,33 @@ https://YOUR-ACCOUNT-ALIAS.signin.aws.amazon.com/console
 
 ---
 
-## 3. Create Deployment IAM User (Manual)
+## 3. Create Deployment IAM User
 
 Now create a user specifically for deployments with limited permissions.
 
-### Steps
+### Natural Language (Recommended)
 
-1. **Sign in to AWS Console** as your **Admin user** (not root)
-2. **Go to IAM → Users → Create user**
+Tell your AI agent:
+```
+"Create an IAM user named 'landing-page-deployer' with these policies:
+AmazonEC2ContainerRegistryFullAccess, AWSAppRunnerFullAccess, and
+CloudWatchLogsFullAccess. Then create CLI access keys for this user.
+Do not enable console access."
+```
 
-### Deployment User Configuration
+The agent will use the AWS CLI to create the user, attach policies, and generate access keys. **Save the credentials it outputs** — you will not be able to retrieve the secret key again.
 
-| Setting | Value |
-|---------|-------|
-| User name | `landing-page-deployer` |
-| Provide user access to Console | ❌ Uncheck (CLI-only user) |
+### CLI Reference
 
-3. **Click "Next"**
-4. **Select "Attach policies directly"**
-5. **Search and select these policies**:
+| Natural Language | CLI Command | What's Happening |
+|-----------------|-------------|------------------|
+| "Create the deployment user" | `aws iam create-user --user-name landing-page-deployer` | Creates a CLI-only IAM user |
+| "Attach ECR permissions" | `aws iam attach-user-policy --user-name landing-page-deployer --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess` | Grants ECR access |
+| "Attach App Runner permissions" | `aws iam attach-user-policy --user-name landing-page-deployer --policy-arn arn:aws:iam::aws:policy/AWSAppRunnerFullAccess` | Grants App Runner access |
+| "Attach CloudWatch permissions" | `aws iam attach-user-policy --user-name landing-page-deployer --policy-arn arn:aws:iam::aws:policy/CloudWatchLogsFullAccess` | Grants log access |
+| "Create access keys" | `aws iam create-access-key --user-name landing-page-deployer` | Generates Access Key ID and Secret Access Key |
+
+### Required Policies
 
 | Policy | Purpose |
 |--------|---------|
@@ -221,27 +229,31 @@ Now create a user specifically for deployments with limited permissions.
 | `AWSAppRunnerFullAccess` | Create and manage App Runner services |
 | `CloudWatchLogsFullAccess` | View application logs for debugging |
 
+### Credential Output
+
+**CRITICAL: Save the access key output immediately — the secret key is shown only once!**
+
+Note these values from the output:
+- Access Key ID: `AKIA...` (20 characters)
+- Secret Access Key: `...` (40 characters)
+
+### Console Alternative (Visual Reference)
+
+<details>
+<summary>Click to expand UI walkthrough (if you prefer the AWS Console)</summary>
+
+1. **Sign in to AWS Console** as your **Admin user** (not root)
+2. **Go to IAM → Users → Create user**
+3. **User name**: `landing-page-deployer`, **Console access**: ❌ Uncheck
+4. **Click "Next"** → **Select "Attach policies directly"**
+5. **Search and select** the three policies listed above
 6. **Click "Next" → "Create user"**
+7. **Click on the new user** → **"Security credentials" tab**
+8. **Scroll to "Access keys"** → **"Create access key"**
+9. **Select "Command Line Interface (CLI)"** → **Check confirmation** → **"Create access key"**
+10. **Click "Download .csv"** to save credentials securely
 
-### Create Access Keys for CLI
-
-7. **Click on the new user** (`landing-page-deployer`)
-8. **Go to "Security credentials" tab**
-9. **Scroll to "Access keys"**
-10. **Click "Create access key"**
-11. **Select "Command Line Interface (CLI)"**
-12. **Check the confirmation checkbox**
-13. **Click "Next" → "Create access key"**
-
-### Download Credentials
-
-**CRITICAL: This is your only chance to see the secret key!**
-
-14. **Click "Download .csv"** to save credentials
-15. **Store the file securely** (password manager or encrypted storage)
-16. **Note these values**:
-    - Access Key ID: `AKIA...` (20 characters)
-    - Secret Access Key: `...` (40 characters)
+</details>
 
 ### Security Best Practices
 
@@ -597,8 +609,8 @@ Or check the AWS Console: https://console.aws.amazon.com/cost-management/
 
 ## Related Documentation
 
-- [AWS Glossary](./AWS-GLOSSARY.md) - Learn what each AWS service does
-- [AWS Pricing Guide](./AWS-PRICING-GUIDE.md) - Understand costs and set up billing alerts
+- [AWS Glossary](../reference/AWS-GLOSSARY.md) - Learn what each AWS service does
+- [AWS Pricing Guide](../reference/AWS-PRICING-GUIDE.md) - Understand costs and set up billing alerts
 - [Deployment Roadmap](./DEPLOYMENT-ROADMAP.md) - Phase-by-phase walkthrough
 
 ---

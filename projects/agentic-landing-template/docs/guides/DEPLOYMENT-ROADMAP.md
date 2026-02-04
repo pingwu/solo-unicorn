@@ -1,3 +1,4 @@
+
 # AWS Deployment Roadmap
 
 ## From Local Development to Production
@@ -18,50 +19,55 @@ This guide walks you through deploying your landing page from local development 
 Before starting deployment:
 
 - [ ] **AWS Account** - [Sign up here](https://aws.amazon.com/)
-- [ ] **AWS CLI** - [Installation guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- [ ] **AWS CLI** - Installed inside the dev container (pre-configured)
 - [ ] **Docker Desktop** - [Download](https://www.docker.com/products/docker-desktop/)
-- [ ] **Project builds locally** - `npm run build` succeeds
-- [ ] **Docker image works** - `docker-compose up --build` shows healthy container
+- [ ] **Dev container runs** - `npm run docker:dev` starts successfully
+- [ ] **Docker production image works** - `npm run docker:prod` shows healthy container
 
 ---
 
 ## Phase 1: Local Development (Day 1)
 
 ### Goal
-Get the landing page running locally and customize content.
+Get the landing page running locally inside a Docker container and customize content.
+
+> **Container-first**: All development happens inside Docker from day one — the same environment used in production. Never install npm packages or run builds on the host.
 
 ### Steps
 
-#### 1.1 Clone and Install
+#### 1.1 Clone and Start Dev Container
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Clone my forked repository and start the dev container"
+```
+
+**CLI Reference**:
 ```bash
 git clone https://github.com/YOUR-USERNAME/agentic-landing-template.git
 cd agentic-landing-template
-npm install
-```
-
-**Agentic**:
-```
-"Clone my forked repository and install dependencies"
-```
-
-#### 1.2 Start Development Server
-
-**Traditional CLI**:
-```bash
-npm run dev
+npm run docker:dev
 # Open http://localhost:3000
 ```
 
-**Agentic**:
+> Do NOT run `npm install` on the host. The dev container installs dependencies automatically.
+
+#### 1.2 Verify Dev Server
+
+**Natural Language (Recommended)**:
 ```
-"Start the Next.js development server"
+"Check if the dev container is running and the page loads"
+```
+
+**CLI Reference**:
+```bash
+npm run docker:status
+# Open http://localhost:3000
 ```
 
 #### 1.3 Customize Content
 
-**Agentic Examples**:
+**Natural Language Examples**:
 ```
 "Update the hero with my name 'Alex Rivera' and title 'Product Designer'"
 "Change the services to: Brand Design $2000, UX Audit $1500, Design System $5000"
@@ -70,20 +76,21 @@ npm run dev
 
 #### 1.4 Verify Build
 
-**Traditional CLI**:
-```bash
-npm run build
+**Natural Language (Recommended)**:
+```
+"Build the project inside the container and report any errors"
 ```
 
-**Agentic**:
-```
-"Build the project for production and report any errors"
+**CLI Reference**:
+```bash
+docker compose run --rm --no-deps dev sh -c "npm run build"
 ```
 
 ### Success Criteria
+- [ ] Dev container starts with `npm run docker:dev`
 - [ ] Page loads at localhost:3000
 - [ ] Content shows your customizations
-- [ ] Build completes without errors
+- [ ] Build completes without errors inside the container
 
 ---
 
@@ -96,53 +103,58 @@ Package the application in a Docker container that works identically to producti
 
 #### 2.1 Build Docker Image
 
-**Traditional CLI**:
-```bash
-docker build -t my-landing:v1 .
-```
-
-**Agentic**:
+**Natural Language (Recommended)**:
 ```
 "Build a Docker image tagged my-landing:v1"
 ```
 
+**CLI Reference**:
+```bash
+docker build -t my-landing:v1 .
+```
+
+> **Apple Silicon (M1/M2/M3)**: Cloud services require `linux/amd64`. Add `--platform linux/amd64` when building for deployment:
+> ```bash
+> docker build --platform linux/amd64 -t my-landing:v1 .
+> ```
+
 #### 2.2 Run Container Locally
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Run my-landing:v1 container on port 3001"
+```
+
+**CLI Reference**:
 ```bash
 docker run -p 3001:3000 my-landing:v1
 # Open http://localhost:3001
 ```
 
-**Agentic**:
-```
-"Run my-landing:v1 container on port 3001"
-```
-
 #### 2.3 Verify Container Health
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Check if my Docker container is running and healthy"
+```
+
+**CLI Reference**:
 ```bash
 docker ps
 # Should show "healthy" status after ~40 seconds
 ```
 
-**Agentic**:
-```
-"Check if my Docker container is running and healthy"
-```
-
 #### 2.4 Test with Docker Compose
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Start the application using Docker Compose"
+```
+
+**CLI Reference**:
 ```bash
 docker-compose up --build
 # Open http://localhost:3001
-```
-
-**Agentic**:
-```
-"Start the application using Docker Compose"
 ```
 
 ### Success Criteria
@@ -162,7 +174,12 @@ Configure AWS credentials and create necessary resources.
 
 #### 3.1 Configure AWS CLI
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Help me configure AWS CLI with my credentials"
+```
+
+**CLI Reference**:
 ```bash
 aws configure
 # Enter:
@@ -172,28 +189,28 @@ aws configure
 # - Default output format: json
 ```
 
-**Agentic**:
-```
-"Help me configure AWS CLI with my credentials"
-```
-
 #### 3.2 Create ECR Repository
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Create an ECR repository named my-landing in us-west-2"
+```
+
+**CLI Reference**:
 ```bash
 aws ecr create-repository \
   --repository-name my-landing \
   --region us-west-2
 ```
 
-**Agentic**:
-```
-"Create an ECR repository named my-landing in us-west-2"
-```
-
 #### 3.3 Create IAM Role for App Runner
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Create an IAM role named AppRunnerECRAccessRole that allows App Runner to access ECR"
+```
+
+**CLI Reference**:
 ```bash
 # Create trust policy file
 cat > trust-policy.json << 'EOF'
@@ -222,11 +239,6 @@ aws iam attach-role-policy \
   --policy-arn arn:aws:iam::aws:policy/service-role/AWSAppRunnerServicePolicyForECRAccess
 ```
 
-**Agentic**:
-```
-"Create an IAM role named AppRunnerECRAccessRole that allows App Runner to access ECR"
-```
-
 ### Success Criteria
 - [ ] `aws sts get-caller-identity` returns your account info
 - [ ] ECR repository exists
@@ -243,56 +255,56 @@ Upload your Docker image to AWS container registry.
 
 #### 4.1 Authenticate Docker with ECR
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Authenticate Docker with my ECR registry in us-west-2"
+```
+
+**CLI Reference**:
 ```bash
 aws ecr get-login-password --region us-west-2 | \
   docker login --username AWS --password-stdin \
   <ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com
 ```
 
-**Agentic**:
-```
-"Authenticate Docker with my ECR registry in us-west-2"
-```
-
 #### 4.2 Tag Image for ECR
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Tag my-landing:v1 for my ECR repository"
+```
+
+**CLI Reference**:
 ```bash
 docker tag my-landing:v1 \
   <ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/my-landing:latest
 ```
 
-**Agentic**:
-```
-"Tag my-landing:v1 for my ECR repository"
-```
-
 #### 4.3 Push Image to ECR
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Push my tagged image to ECR"
+```
+
+**CLI Reference**:
 ```bash
 docker push \
   <ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/my-landing:latest
 ```
 
-**Agentic**:
-```
-"Push my tagged image to ECR"
-```
-
 #### 4.4 Verify Image in ECR
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"List images in my ECR repository"
+```
+
+**CLI Reference**:
 ```bash
 aws ecr describe-images \
   --repository-name my-landing \
   --region us-west-2
-```
-
-**Agentic**:
-```
-"List images in my ECR repository"
 ```
 
 ### Success Criteria
@@ -311,7 +323,12 @@ Create and deploy App Runner service with your container.
 
 #### 5.1 Create App Runner Service
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Deploy my ECR image to App Runner with 1 vCPU and 2GB memory"
+```
+
+**CLI Reference**:
 ```bash
 aws apprunner create-service \
   --service-name my-landing-page \
@@ -334,24 +351,19 @@ aws apprunner create-service \
   --region us-west-2
 ```
 
-**Agentic**:
-```
-"Deploy my ECR image to App Runner with 1 vCPU and 2GB memory"
-```
-
 #### 5.2 Monitor Deployment Status
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Check the status of my App Runner deployment"
+```
+
+**CLI Reference**:
 ```bash
 aws apprunner describe-service \
   --service-arn <SERVICE_ARN> \
   --region us-west-2 \
   --query 'Service.Status'
-```
-
-**Agentic**:
-```
-"Check the status of my App Runner deployment"
 ```
 
 Status progression:
@@ -360,18 +372,18 @@ Status progression:
 
 #### 5.3 Get Public URL
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Get the public URL of my App Runner service"
+```
+
+**CLI Reference**:
 ```bash
 aws apprunner describe-service \
   --service-arn <SERVICE_ARN> \
   --region us-west-2 \
   --query 'Service.ServiceUrl' \
   --output text
-```
-
-**Agentic**:
-```
-"Get the public URL of my App Runner service"
 ```
 
 #### 5.4 Test Live Site
@@ -393,7 +405,12 @@ Keep your site running smoothly and update as needed.
 
 ### View CloudWatch Logs
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Show me recent logs from my App Runner service"
+```
+
+**CLI Reference**:
 ```bash
 # Find log group
 aws logs describe-log-groups \
@@ -405,24 +422,19 @@ aws logs get-log-events \
   --log-stream-name <stream-name>
 ```
 
-**Agentic**:
-```
-"Show me recent logs from my App Runner service"
-```
-
 ### Update Deployment
 
-When you make changes:
+**Natural Language (Recommended)**:
+```
+"Rebuild my Docker image, push to ECR, and update my App Runner deployment"
+```
+
+**CLI Reference** (when you make changes):
 
 1. Rebuild Docker image: `docker build -t my-landing:v2 .`
 2. Tag for ECR: `docker tag my-landing:v2 <ecr-uri>:latest`
 3. Push to ECR: `docker push <ecr-uri>:latest`
 4. App Runner auto-deploys (if auto-deploy enabled) or trigger manually
-
-**Agentic**:
-```
-"Rebuild my Docker image, push to ECR, and update my App Runner deployment"
-```
 
 ### Check Costs
 
@@ -448,31 +460,31 @@ Delete resources to avoid ongoing charges.
 
 ### Delete App Runner Service
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Delete my App Runner service to stop billing"
+```
+
+**CLI Reference**:
 ```bash
 aws apprunner delete-service \
   --service-arn <SERVICE_ARN> \
   --region us-west-2
 ```
 
-**Agentic**:
-```
-"Delete my App Runner service to stop billing"
-```
-
 ### Delete ECR Repository
 
-**Traditional CLI**:
+**Natural Language (Recommended)**:
+```
+"Delete my ECR repository and all images"
+```
+
+**CLI Reference**:
 ```bash
 aws ecr delete-repository \
   --repository-name my-landing \
   --force \
   --region us-west-2
-```
-
-**Agentic**:
-```
-"Delete my ECR repository and all images"
 ```
 
 ### Delete IAM Role (Optional)
@@ -491,7 +503,19 @@ aws iam delete-role \
 
 ## Quick Reference
 
-### Complete Deployment (All Commands)
+### Natural Language Deployment (Recommended)
+
+```
+1. "Build a Docker image tagged my-landing:v1"
+2. "Run the container on port 3001 and verify it's healthy"
+3. "Configure AWS CLI with my credentials"
+4. "Create an ECR repository named my-landing"
+5. "Authenticate Docker with ECR and push my image"
+6. "Deploy to App Runner with 1 vCPU and 2GB memory"
+7. "Get my public URL"
+```
+
+### CLI Reference (All Commands)
 
 ```bash
 # Phase 2: Docker
@@ -511,18 +535,6 @@ docker push <ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/my-landing:latest
 aws apprunner create-service --service-name my-landing-page --source-configuration '...' --instance-configuration '...' --region us-west-2
 ```
 
-### Agentic Deployment (Natural Language)
-
-```
-1. "Build a Docker image tagged my-landing:v1"
-2. "Run the container on port 3001 and verify it's healthy"
-3. "Configure AWS CLI with my credentials"
-4. "Create an ECR repository named my-landing"
-5. "Authenticate Docker with ECR and push my image"
-6. "Deploy to App Runner with 1 vCPU and 2GB memory"
-7. "Get my public URL"
-```
-
 ---
 
 ## Troubleshooting
@@ -539,6 +551,15 @@ aws apprunner create-service --service-name my-landing-page --source-configurati
 
 ### Debug Commands
 
+**Natural Language (Recommended)**:
+```
+"Check if my Docker containers are running and show their logs"
+"List the images in my ECR repository"
+"Show me the status and recent events for my App Runner service"
+"Show me the CloudWatch logs for my App Runner service"
+```
+
+**CLI Reference**:
 ```bash
 # Check Docker
 docker ps -a

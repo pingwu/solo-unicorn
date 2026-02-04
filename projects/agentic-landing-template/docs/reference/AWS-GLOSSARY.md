@@ -432,6 +432,6 @@ This glossary explains core AWS services you'll encounter when deploying applica
 
 ## Next Steps
 
-- [AWS Deployment Guide](./AWS-DEPLOYMENT-GUIDE.md) - Deploy your landing page
+- [AWS Deployment Guide](../guides/AWS-DEPLOYMENT-GUIDE.md) - Deploy your landing page
 - [AWS Pricing Guide](./AWS-PRICING-GUIDE.md) - Understand costs
 - [AWS Official Documentation](https://docs.aws.amazon.com/) - Deep dive into any service

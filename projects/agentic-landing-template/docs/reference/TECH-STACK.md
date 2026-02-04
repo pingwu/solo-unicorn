@@ -89,10 +89,9 @@ FROM node:20-alpine AS runner
 
 ### Gemini CLI
 
-**Installation**:
-```bash
-npm install -g @anthropic-ai/gemini-cli
-```
+**Installation**: Follow the [official Gemini CLI installation guide](https://github.com/google-gemini/gemini-cli#installation).
+
+> AI coding agents are the one permitted host-level install — they orchestrate the containerized dev environment.
 
 **Configuration**: Uses `GEMINI.md` in project root
 
@@ -103,10 +102,9 @@ npm install -g @anthropic-ai/gemini-cli
 
 ### Claude Code
 
-**Installation**:
-```bash
-npm install -g @anthropic-ai/claude-code
-```
+**Installation**: Follow the [official Claude Code installation guide](https://docs.anthropic.com/en/docs/claude-code/getting-started).
+
+> AI coding agents are the one permitted host-level install — they orchestrate the containerized dev environment.
 
 **Configuration**: Uses `CLAUDE.md` in project root
 

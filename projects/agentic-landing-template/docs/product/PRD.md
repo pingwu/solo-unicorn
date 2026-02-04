@@ -210,12 +210,13 @@ The README must include categorized prompts:
 │  │   VS Code   │ ←→ │ Claude Code │ ←→ │   Docker    │     │
 │  │  /Cursor    │    │ /Gemini CLI │    │   Desktop   │     │
 │  └─────────────┘    └─────────────┘    └─────────────┘     │
-│         ↓                                     ↓             │
-│  ┌─────────────┐                      ┌─────────────┐      │
-│  │  Next.js    │                      │   Docker    │      │
-│  │  Dev Server │                      │  Container  │      │
-│  │ :3000       │                      │  :3001      │      │
-│  └─────────────┘                      └─────────────┘      │
+│                                               ↓             │
+│                                  ┌────────────────────┐     │
+│                                  │  Dev Container     │     │
+│                                  │  (Next.js :3000)   │     │
+│                                  │  Prod Container    │     │
+│                                  │  (Preview :3001)   │     │
+│                                  └────────────────────┘     │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ↓ Push
@@ -250,14 +251,14 @@ The README must include categorized prompts:
 
 ### US-1: First-Time Setup
 **As a** student
-**I want to** clone and run the template locally
+**I want to** clone and run the template inside a dev container
 **So that** I can see the default landing page working
 
 **Acceptance Criteria**:
 - [ ] Can clone repository in <1 minute
-- [ ] Can install dependencies with single command
-- [ ] Can start dev server with single command
+- [ ] Can start dev container with `npm run docker:dev` (installs dependencies automatically)
 - [ ] Can view page at localhost:3000
+- [ ] No host-level `npm install` required
 
 ### US-2: Content Customization
 **As a** consultant

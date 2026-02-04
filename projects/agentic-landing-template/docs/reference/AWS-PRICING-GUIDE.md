@@ -148,12 +148,23 @@ Short-term free trials for specific services:
 
 ### Cost Explorer
 
-**What it is**: Visual dashboard showing your AWS spending.
+**What it is**: Dashboard showing your AWS spending — accessible via natural language, CLI, or web console.
 
-**How to access**:
-1. Go to AWS Console
-2. Search "Cost Explorer" or "Billing"
-3. Click "Cost Explorer" in left sidebar
+**Natural Language (Recommended)**:
+```
+"Show me my AWS costs for this month"
+"Which AWS service is costing me the most?"
+"How much will I spend this month? Show the forecast."
+```
+
+**CLI Reference**:
+```bash
+aws ce get-cost-and-usage \
+  --time-period Start=2026-01-01,End=2026-01-31 \
+  --granularity MONTHLY \
+  --metrics BlendedCost \
+  --group-by Type=DIMENSION,Key=SERVICE
+```
 
 **Key Features**:
 
@@ -165,13 +176,7 @@ Short-term free trials for specific services:
 | **Forecasts** | Predicted costs for the month |
 | **Savings Recommendations** | Ways to reduce spending |
 
-**Natural Language Commands**:
-
-| Natural Language | What To Do |
-|-----------------|------------|
-| "Show me my AWS costs for this month" | Open Cost Explorer → select current month |
-| "Which service is costing me the most?" | Cost Explorer → Group by Service |
-| "How much will I spend this month?" | Cost Explorer → View Forecast |
+**Console fallback**: AWS Console → search "Cost Explorer" → click in left sidebar.
 
 ---
 
@@ -185,11 +190,17 @@ Short-term free trials for specific services:
 - Custom analytics and reporting
 - Integration with third-party tools
 
-**Setup**:
-1. Go to Billing Console
-2. Click "Cost & Usage Reports"
-3. Create a report with S3 delivery
-4. Query with Athena or download CSV
+**Natural Language (Recommended)**:
+```
+"Set up a Cost and Usage Report that delivers to an S3 bucket"
+```
+
+**CLI Reference**:
+```bash
+aws cur put-report-definition --report-definition '{...}'
+```
+
+**Console fallback** (one-time setup): Billing Console → "Cost & Usage Reports" → Create report with S3 delivery → Query with Athena.
 
 **For beginners**: Cost Explorer is sufficient. CUR is for advanced analysis.
 
@@ -199,11 +210,19 @@ Short-term free trials for specific services:
 
 **What it is**: Set spending limits and get alerts before you exceed them.
 
-**How to create a budget**:
+**Natural Language (Recommended)**:
+```
+"Create a $20 monthly AWS budget with email alerts at 80% and 100% thresholds"
+```
 
-| Natural Language | Steps |
-|-----------------|-------|
-| "Set up a $20/month AWS budget alert" | Billing → Budgets → Create Budget → Cost Budget → $20 → Add email alert |
+**CLI Reference**:
+```bash
+aws budgets create-budget --account-id <ACCOUNT_ID> \
+  --budget '{"BudgetName":"MonthlyLimit","BudgetLimit":{"Amount":"20","Unit":"USD"},"TimeUnit":"MONTHLY","BudgetType":"COST"}' \
+  --notifications-with-subscribers '[{"Notification":{"NotificationType":"FORECASTED","ComparisonOperator":"GREATER_THAN","Threshold":80},"Subscribers":[{"SubscriptionType":"EMAIL","Address":"you@email.com"}]}]'
+```
+
+**Console fallback**: Billing → Budgets → Create Budget → Cost Budget → $20 → Add email alert.
 
 **Recommended Alerts**:
 | Alert Type | Threshold | Purpose |
@@ -378,17 +397,35 @@ App Runner can pause when there's no traffic, reducing costs to near zero.
 
 ## Setting Up Billing Alerts
 
-### Using AWS Budgets
+### Using AWS Budgets (Recommended)
 
-| Natural Language | Steps in Console |
-|-----------------|------------------|
-| "Create a $20 monthly budget with email alerts" | 1. Go to Billing → Budgets<br>2. Create Budget<br>3. Select "Cost budget"<br>4. Set $20 monthly<br>5. Add alert at 80% and 100%<br>6. Enter email address |
+**Natural Language**:
+```
+"Create a $20 monthly AWS budget with email alerts at 80% and 100% thresholds"
+```
+
+Your AI agent will use the `aws budgets create-budget` CLI to set this up. See the [AWS Budgets](#aws-budgets) section above for the CLI reference.
 
 ### Using CloudWatch Billing Alarms
 
-| Natural Language | CLI Command |
-|-----------------|-------------|
-| "Create a billing alarm for $15" | `aws cloudwatch put-metric-alarm --alarm-name BillingAlert --metric-name EstimatedCharges --namespace AWS/Billing --statistic Maximum --period 21600 --threshold 15 --comparison-operator GreaterThanThreshold --evaluation-periods 1 --alarm-actions <sns-topic-arn>` |
+**Natural Language**:
+```
+"Create a CloudWatch billing alarm that notifies me when estimated charges exceed $15"
+```
+
+**CLI Reference**:
+```bash
+aws cloudwatch put-metric-alarm \
+  --alarm-name BillingAlert \
+  --metric-name EstimatedCharges \
+  --namespace AWS/Billing \
+  --statistic Maximum \
+  --period 21600 \
+  --threshold 15 \
+  --comparison-operator GreaterThanThreshold \
+  --evaluation-periods 1 \
+  --alarm-actions <sns-topic-arn>
+```
 
 ---
 
@@ -483,5 +520,5 @@ Watch for these in Cost Explorer:
 ---
 
 **Next Steps**:
-- [AWS Deployment Guide](./AWS-DEPLOYMENT-GUIDE.md) - Deploy your landing page
+- [AWS Deployment Guide](../guides/AWS-DEPLOYMENT-GUIDE.md) - Deploy your landing page
 - [AWS Glossary](./AWS-GLOSSARY.md) - Learn AWS services
