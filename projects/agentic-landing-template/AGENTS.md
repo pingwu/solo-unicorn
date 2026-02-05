@@ -86,8 +86,3 @@ docker compose exec dev <command>
 - Test changes before committing.
 - Use `skills/` (not `.skills/`) when referencing agent skills.
 
-## Files That Delegate Here
-
-- `CLAUDE.md` — For Claude Code
-- `GEMINI.md` — For Gemini CLI
-- `AGENT.md` — For other AI coding assistants
