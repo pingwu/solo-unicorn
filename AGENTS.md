@@ -171,3 +171,26 @@ This constraint ensures every developer, from day one, works in the same environ
 - Do not run containers in foreground mode; always use `-d`.
 - Do not skip tests. Run `npx vitest run` (inside the container) before committing changes.
 - Do not create files outside the project structure without explicit instruction.
+
+## 11. Security Rules
+
+### Secrets and Credentials
+- **Never** hardcode API keys, passwords, or tokens in source files.
+- Use environment variables for all sensitive configuration.
+- Ensure `.env` files are listed in `.gitignore` — never commit them.
+- Never log secrets or include them in error messages.
+
+### Command Execution
+- Shell command arguments (e.g., `<package>` in `npm install -D <package>`) must use exact, validated values — never interpolate unsanitized user input.
+- Use the predefined npm scripts (e.g., `npm run docker:dev`) rather than constructing shell commands dynamically.
+- Before running any command that modifies files or installs packages, verify the source is trusted.
+
+### Input Validation
+- Natural language to CLI mappings must use exact, predefined commands only.
+- Do not dynamically construct shell commands from user-provided strings.
+- Validate package names against npm registry before installation.
+
+### File Access
+- Agents should only modify files within the project directory they're assigned to.
+- Verify symlink targets exist and contain expected content before following them.
+- Do not access files outside the repository root without explicit user instruction.

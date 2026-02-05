@@ -17,19 +17,35 @@ This project is a Next.js landing page template. Maintain accessibility, test co
 | Vitest | 4 | Unit and component testing |
 | Docker | — | Dev container with all tools |
 
-## Container Commands
+## Command Execution (Critical)
 
-All development happens inside the container. See [../../AGENTS.md §4.2](../../AGENTS.md) for setup.
+**All commands MUST run inside the container, never on the host.**
+
+When asked to run any command (npm, npx, node, tests, builds), use this pattern:
+
+```bash
+docker compose exec dev <command>
+```
+
+| User says | You execute |
+|-----------|-------------|
+| "run the tests" | `docker compose exec dev npm run test:run` |
+| "install lodash" | `docker compose exec dev npm install lodash` |
+| "build the project" | `docker compose exec dev npm run build` |
+| "lint the code" | `docker compose exec dev npm run lint` |
+| "check types" | `docker compose exec dev npm run typecheck` |
+
+**Never run directly:** `npm install`, `npm test`, `npx`, `node` — these would execute on the host.
+
+## Container Lifecycle
 
 | Natural Language | CLI Command | Purpose |
 |-----------------|-------------|---------|
-| "Start the dev container" | `npm run docker:dev` | Dev server (port 3000) |
-| "Open a shell in the container" | `npm run docker:shell` | Shell into running container |
+| "Start the dev container" | `npm run docker:dev` | Start container + dev server (port 3000) |
 | "Stop the containers" | `npm run docker:down` | Stop containers |
-| "Run the tests" | `npm run test:run` | Vitest single run |
-| "Lint the code" | `npm run lint` | ESLint |
-| "Type-check the project" | `npm run typecheck` | TypeScript check |
-| "Start a production preview" | `npm run docker:prod` | Production preview (port 3001) |
+| "Show container status" | `npm run docker:status` | Check if running |
+| "View container logs" | `npm run docker:logs` | Stream logs |
+| "Start production preview" | `npm run docker:prod` | Production build (port 3001) |
 
 ## Code Conventions
 
