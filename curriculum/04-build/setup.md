@@ -8,9 +8,15 @@ Docker creates an isolated environment with Node.js and all dependencies. Your c
 
 ## Prerequisites
 
-- Docker Desktop installed and running
-- A terminal (Terminal on macOS, PowerShell on Windows)
-- A code editor (VS Code, Cursor, or similar)
+Install these on your machine (the ONLY things you'll install):
+
+| Tool | Purpose | Install |
+|------|---------|---------|
+| Docker Desktop | Runs containers | [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop/) |
+| Git | Version control | [git-scm.com](https://git-scm.com/) |
+| AI Coding Agent | Your development partner | [Claude Code](https://docs.anthropic.com/en/docs/claude-code) or [Gemini CLI](https://github.com/google-gemini/gemini-cli) |
+
+**Do NOT install:** Node.js, npm, Python, or any other development tools. Everything else runs inside the Docker container.
 
 ## Start the Dev Server
 
@@ -62,11 +68,36 @@ docker compose run --rm --no-deps dev sh -c "npm run lint"
 docker compose run --rm --no-deps dev sh -c "npx tsc --noEmit"
 ```
 
+## Configure Your AI Agent (Optional but Recommended)
+
+For Claude Code, allow Docker commands so it can execute inside containers:
+
+**Tell Claude Code:**
+```
+"Allow docker and docker-compose commands permanently"
+```
+
+Or manually add to `~/.claude/settings.json`:
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker *)",
+      "Bash(docker-compose *)",
+      "Bash(npm run docker:*)"
+    ]
+  }
+}
+```
+
+This tells Claude Code to automatically approve Docker-related commands, which is safe since all execution happens inside the isolated container.
+
 ## Verification Checklist
 
+- [ ] Docker Desktop is running
 - [ ] The landing page loads at [http://localhost:3000](http://localhost:3000)
-- [ ] You can open a shell inside the container
-- [ ] All tests pass inside the container
+- [ ] You can open a shell inside the container (`npm run docker:shell`)
+- [ ] Your AI agent can run commands like "run the tests"
 
 ## Checkpoint
 

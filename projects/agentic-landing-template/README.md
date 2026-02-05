@@ -6,7 +6,9 @@ A production-ready landing page template that teaches AI-assisted cloud developm
 
 ## Quick Start
 
-**Prerequisites:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) and an AI coding assistant ([Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Gemini CLI](https://github.com/google-gemini/gemini-cli), or [Codex CLI](https://github.com/openai/codex)).
+**Prerequisites:** [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Git](https://git-scm.com/), and an AI coding assistant ([Claude Code](https://docs.anthropic.com/en/docs/claude-code) or [Gemini CLI](https://github.com/google-gemini/gemini-cli)).
+
+> **Zero host installation:** You do NOT need Node.js, npm, or any other dev tools on your machine. Everything runs inside the Docker container.
 
 **Tell your AI agent:**
 ```
