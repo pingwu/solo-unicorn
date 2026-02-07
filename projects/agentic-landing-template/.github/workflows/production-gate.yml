@@ -1,0 +1,32 @@
+name: Production Graduation Gate
+
+on:
+  push:
+    branches: [ main, production-mode ]
+  pull_request:
+    branches: [ main, production-mode ]
+
+jobs:
+  production-gate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and test in production container
+        run: |
+          cd projects/agentic-landing-template
+          docker compose build
+          docker compose run --rm dev npm run test:run
+          docker compose run --rm dev npm run build
+
+      - name: Verify health endpoint exists
+        run: |
+          if ! grep -R "health" app >/dev/null 2>&1; then
+            echo "Health endpoint not found"
+            exit 1
+          fi
