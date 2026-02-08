@@ -1,5 +1,10 @@
 # AGENTS.md — Unicorn Project Agent Constitution
 
+## Our Mission
+
+Refer to [MISSION.md](MISSION.md) for the overarching mission statement for Unicorn Project Agents.
+
+
 Agent behavioral rules for the Unicorn Project. This file is for AI coding agents only.
 
 ## 1. Head/Hand Architecture
@@ -94,6 +99,23 @@ npm run docker:shell
 docker compose run --rm --no-deps dev sh -c "<command>"
 ```
 
+### 4.3. Initialize Personal Knowledge
+
+Upon first cloning the project, it is recommended to initialize your `personal_knowledge/` vault.
+
+**Natural Language (Recommended)**:
+```
+"Initialize my personal knowledge vault"
+```
+
+**CLI Reference**:
+```bash
+cp -R template_knowledge/* personal_knowledge/
+```
+
+**Important**: The `personal_knowledge/` directory is for your personal use and is **git-ignored**. Ensure you do not add its contents to the Unicorn project's Git repository.
+
+
 ## 5. Development Workflow
 
 ### Container Commands
@@ -141,6 +163,7 @@ docker compose run --rm --no-deps dev sh -c "gh pr list"
 ├── .obsidian/          Obsidian vault config
 ├── curriculum/         Student-facing learning content
 ├── knowledge/          READ-ONLY: PKM vault (Obsidian)
+├── personal_knowledge/ Your personal PKM vault (Obsidian), git-ignored.
 ├── projects/           Code changes happen here
 │   └── agentic-landing-template/
 ├── skills/             Agent skill definitions (canonical)
@@ -190,7 +213,17 @@ This constraint ensures every developer, from day one, works in the same environ
 - Do not skip tests. Run `npx vitest run` (inside the container) before committing changes.
 - Do not create files outside the project structure without explicit instruction.
 
-## 11. Security Rules
+## 11. Personal Development and Knowledge Management
+
+The `personal_knowledge/` directory is designated for your individual growth and learning. It is **git-ignored** and provides a space for:
+
+- **Personal Goals and Objectives**: Track your aspirations and progress.
+- **Resumes and Professional Documents**: Store and refine your career-related materials.
+- **Ideas and Lessons Learned**: Maintain a personal knowledge base, managed via tools like Obsidian, to foster continuous improvement and discover your 'superpower'.
+
+This content is for your personal use and development and will not be checked into the git repository.
+
+## 12. Security Rules
 
 ### Secrets and Credentials
 - **Never** hardcode API keys, passwords, or tokens in source files.
