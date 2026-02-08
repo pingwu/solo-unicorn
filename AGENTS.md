@@ -40,80 +40,9 @@ The project uses an "Office" metaphor. Each role maps to agent skills in `skills
 | CPO | Product definition | `pm-design-thinking`, `test-driven-scaffolding` |
 | CCO | Customer experience | `pm-design-thinking`, `multi-file-architecture` |
 
-## 4. Post-Clone Setup
+## 4. First-Time Setup
 
-### 4.1. Create Agent Skill Symlinks
-
-**Natural Language (Recommended)**:
-```
-"Set up the agent skill symlinks for .gemini, .claude, and .agent directories make sure you are at the root of unicorn project folder"
-```
-
-**CLI Reference (macOS / Linux)**:
-```bash
-mkdir -p .claude && ln -s skills .claude/skills
-mkdir -p .agent && ln -s skills .agent/skills
-mkdir -p .gemini && ln -s skills .gemini/skills
-```
-
-**CLI Reference (Windows — no admin required)**:
-
-Use junctions instead of symlinks. Junctions don't require admin privileges but need **absolute paths**.
-
-**PowerShell** (run from project root):
-```powershell
-$repoRoot = (Get-Location).Path
-
-# Create .claude directory if it doesn't exist
-New-Item -ItemType Directory -Force -Path "$repoRoot\.agent"
-New-Item -ItemType Directory -Force -Path "$repoRoot\.gemini"
-New-Item -ItemType Directory -Force -Path "$repoRoot\.claude"
-
-# use CMD to Create junctions with absolute paths
-cmd /c mklink /J "$repoRoot\.agent\skills" "$repoRoot\skills"
-cmd /c mklink /J "$repoRoot\.gemini\skills" "$repoRoot\skills"
-cmd /c mklink /J "$repoRoot\.claude\skills" "$repoRoot\skills"
-```
-
-
-> **Note**: Windows symlinks (`mklink /D`) require Administrator privileges. Junctions (`mklink /J`) are functionally equivalent for local directories and work without elevation.
-
-Verify: `dir .gemini\skills`, `dir .claude\skills`, and `dir .agent\skills` 
-
-### 4.2. Start the Dev Container
-
-All dev tools live inside the container. **Never install tools or npm packages on the host.**
-
-**Natural Language (Recommended)**:
-```
-"Start the dev container for the agentic-landing-template project"
-```
-
-**CLI Reference**:
-```bash
-cd projects/agentic-landing-template
-npm run docker:dev
-```
-
-Use the container for all commands:
-```bash
-npm run docker:shell
-docker compose run --rm --no-deps dev sh -c "<command>"
-```
-
-### 4.3. Initialize Personal Knowledge
-
-Upon first cloning the project, initialize your `personal_knowledge/` vault. See [Section 11](#11-personal-development-and-knowledge-management) for usage guidelines.
-
-**Natural Language (Recommended)**:
-```
-"Initialize my personal knowledge vault"
-```
-
-**CLI Reference**:
-```bash
-cp -R template_knowledge/* personal_knowledge/
-```
+See **[INIT_UNICORN.md](INIT_UNICORN.md)** for post-clone setup (symlinks, dev container, personal knowledge).
 
 
 ## 5. Development Workflow
