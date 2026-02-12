@@ -18,6 +18,7 @@ services:
         GID: ${GID:-1000}
     volumes:
       - .:/workspace:cached
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "3000:3000"
     environment:

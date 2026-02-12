@@ -21,6 +21,7 @@ RUN apk add --no-cache \
     py3-pip \
     github-cli \
     aws-cli \
+    docker-cli \
     && rm -rf /var/cache/apk/*
 
 # Install Azure CLI via pip
