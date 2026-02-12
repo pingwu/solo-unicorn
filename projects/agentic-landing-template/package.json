@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "docker:dev": "UID=$(id -u) GID=$(id -g) docker compose --profile dev up -d --build",
+    "docker:dev": "docker compose --profile dev up -d --build",
     "docker:prod": "docker compose --profile prod up -d --build",
     "docker:down": "docker compose down",
     "docker:clean": "docker compose down -v --rmi local",
