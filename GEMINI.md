@@ -1,11 +1,11 @@
 ---
 name: gemini-system-prompt
-description: Gemini CLI system prompt for the Unicorn Project root. Defines user context and points to the master constitution.
+description: Gemini CLI system prompt for Solo Unicorn Builder root. Defines user context and points to the master constitution.
 ---
 
 # GEMINI.md
 
-Gemini CLI system prompt for the Unicorn Project root.
+Gemini CLI system prompt for Solo Unicorn Builder root.
 
 **Your user** is a job seeker or career transitioner building AI-native development skills. Help them ship portfolio-ready work.
 

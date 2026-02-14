@@ -1,9 +1,9 @@
 ---
 name: unicorn-constitution
-description: Master agent constitution for the Unicorn Project. Behavioral rules, office structure, development conventions, and skills reference for helping job seekers and builders develop AI-native skills.
+description: Master agent constitution for Solo Unicorn Builder. Behavioral rules, office structure, development conventions, and skills reference for helping job seekers and builders develop AI-native skills.
 ---
 
-# UNICORN_CONSTITUTION.md — Unicorn Project Agent Constitution
+# UNICORN_CONSTITUTION.md — Solo Unicorn Builder Agent Constitution
 
 ## Our Mission
 
@@ -11,14 +11,15 @@ Refer to [MISSION.md](MISSION.md) for the overarching mission statement.
 
 **Primary audience:** Job seekers and career transitioners who want a role in AI-native development. Every interaction should help them build real skills, ship portfolio-ready work, and move closer to getting hired.
 
-Agent behavioral rules for the Unicorn Project. This file is for AI coding agents only.
+Agent behavioral rules for Solo Unicorn Builder. This file is for AI coding agents only.
 
 ## 1. Head/Hand Architecture
 
-- `template_knowledge/` is a template folder; when the user first clones/forks and initializes the Unicorn project, the template files are copied to `personal_knowledge/`.
-- `personal_knowledge/` is **personal/private context**. Use it as context to create projects or generate documents. This is the user's knowledge base — information collected from the Internet, LLMs, lectures, news, original ideas, inspiration, career materials, and resumes. It is git-ignored and should not be checked in. Users can create a separate git repo inside this folder for version control.
-- `projects/` is where **code changes happen**. All implementation work targets a sub-project.
-- `skills/` contains agent-agnostic prompting patterns (31 skills).
+- `template_knowledge/` is a template folder; when the user first clones/forks and initializes the Solo Unicorn Builder project, the template files are copied to `my_knowledge/`.
+- `my_knowledge/` is **personal/private context**. Use it as context to create projects or generate documents. This is the user's knowledge base — information collected from the Internet, LLMs, lectures, news, original ideas, inspiration, career materials, and resumes. It is git-ignored via the `my_*` wildcard and should never be checked into the Unicorn repo. **Users should create a separate git repo inside this folder** (`cd my_knowledge && git init`) to track their own changes independently.
+- `template_projects/` ships with starter/example projects (e.g., `landing-page`). Users copy or reference these as starting points for their own work in `my_projects/`.
+- `my_projects/` is where **code changes happen**. All implementation work targets a sub-project here. Like `my_knowledge/`, it is git-ignored via the `my_*` wildcard. **Users should create a separate git repo inside each project** for version control of their own work.
+- `skills/` contains agent-agnostic prompting patterns (36 skills).
 
 
 ## 2. Software Creation Rules
@@ -38,17 +39,17 @@ The project uses an "Office" metaphor. Each role maps to agent skills in `skills
 | Office | Role | Associated Skills |
 |--------|------|-------------------|
 | CEO | Root orchestrator | All skills as needed |
-| CFO | Financial / cost analysis | `aws-cli-architect`, `gcloud-expert`, `finance-accounting`, `fundraising`, `business-model` |
-| CTO | Tech architecture & dev | `aws-cli-architect`, `gcloud-expert`, `multi-file-architecture`, `test-first-development`, `context-aware-debugging`, `frontend-ui-ux`, `git-expert`, `github-cli`, `github-actions`, `docker-expert`, `python-dependency-expert` |
+| CFO | Financial / cost analysis | `aws-cli-architect`, `gcloud-expert`, `finance-accounting`, `fundraising`, `business-model`, `document-creation` |
+| CTO | Tech architecture & dev | `aws-cli-architect`, `gcloud-expert`, `multi-file-architecture`, `test-first-development`, `context-aware-debugging`, `frontend-ui-ux`, `git-expert`, `github-cli`, `github-actions`, `docker-expert`, `python-dependency-expert`, `mcp-builder`, `webapp-testing`, `skill-creator` |
 | CSO | Security | `context-aware-debugging`, `legal-compliance` |
-| CMO | Marketing & branding | `marketing-brand`, `go-to-market`, `growth-analytics`, `pm-design-thinking` |
-| CRO | Revenue & sales | `sales`, `go-to-market`, `business-model`, `growth-analytics`, `business-development` |
+| CMO | Marketing & branding | `marketing-brand`, `go-to-market`, `growth-analytics`, `pm-design-thinking`, `generative-art`, `document-creation` |
+| CRO | Revenue & sales | `sales`, `go-to-market`, `business-model`, `growth-analytics`, `business-development`, `document-creation` |
 | CPO | Product definition | `product`, `idea-validation`, `pm-design-thinking`, `test-first-development`, `frontend-ui-ux` |
 | CCO | Customer experience | `customer-success`, `pm-design-thinking`, `growth-analytics` |
-| COO | Operations & people | `operations`, `finance-accounting`, `obsidian-knowledge`, `career-resume`, `github-profile`, `portfolio-strategy`, `open-source-contribution`, `technical-writing` |
+| COO | Operations & people | `operations`, `finance-accounting`, `obsidian-knowledge`, `career-resume`, `github-profile`, `portfolio-strategy`, `open-source-contribution`, `technical-writing`, `document-creation` |
 | CLO | Legal & compliance | `legal-compliance` |
 
-**All 31 skills mapped.** Every skill in `skills/` has at least one Office owner.
+**All 36 skills mapped.** Every skill in `skills/` has at least one Office owner.
 
 ## 4. First-Time Setup
 
@@ -87,7 +88,7 @@ docker compose run --rm --no-deps dev sh -c "gh pr list"
 
 ## 6. Coding Conventions
 
-- **Markdown front matter (mandatory):** Every `.md` file in the Unicorn project must include YAML front matter with `name` and `description` fields. This makes files discoverable by AI agents and compatible with the skill system.
+- **Markdown front matter (mandatory):** Every `.md` file in the Solo Unicorn Builder project must include YAML front matter with `name` and `description` fields. This makes files discoverable by AI agents and compatible with the skill system.
   ```yaml
   ---
   name: kebab-case-name
@@ -104,10 +105,11 @@ docker compose run --rm --no-deps dev sh -c "gh pr list"
 
 | Path | Purpose |
 |------|---------|
-| `template_knowledge/` | Read-only template (copied to personal_knowledge on init) |
-| `personal_knowledge/` | Personal vault — ideas, resume, career materials (git-ignored) |
-| `projects/` | All code changes happen here |
-| `skills/` | Canonical agent skill definitions (31 skills) |
+| `template_knowledge/` | Read-only template (copied to my_knowledge on init) |
+| `my_knowledge/` | Personal vault — ideas, resume, career materials (git-ignored) |
+| `template_projects/` | Starter/example projects shipped with Solo Unicorn |
+| `my_projects/` | User's own projects — all code changes happen here |
+| `skills/` | Canonical agent skill definitions (36 skills) |
 
 ## 8. Troubleshooting
 
@@ -151,7 +153,7 @@ This constraint ensures every developer, from day one, works in the same environ
 
 ## 11. Personal Development and Knowledge Management
 
-The `personal_knowledge/` directory is designated for your individual growth and learning. It is **git-ignored** and provides a space for:
+The `my_knowledge/` directory is designated for your individual growth and learning. It is **git-ignored** and provides a space for:
 
 - **Personal Goals and Objectives**: Track your aspirations and progress.
 - **Resumes and Professional Documents**: Store and refine your career-related materials.

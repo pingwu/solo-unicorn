@@ -1,11 +1,11 @@
 ---
 name: contributing
-description: Step-by-step guide for contributing skills to the Unicorn project via fork, AI agent, and pull request.
+description: Step-by-step guide for contributing skills to the Solo Unicorn Builder project via fork, AI agent, and pull request.
 ---
 
 # Contributing Skills
 
-Unicorn's skills are open and community-driven. If you've built expertise in a domain — recruiting, accounting, coaching, design, anything — you can package it as a skill and contribute it to the project.
+Solo Unicorn Builder's skills are open and community-driven. If you've built expertise in a domain — recruiting, accounting, coaching, design, anything — you can package it as a skill and contribute it to the project.
 
 ## Why Contribute?
 
@@ -19,7 +19,7 @@ Contributing also builds your portfolio. An open-source contribution to an AI-na
 - [GitHub CLI (`gh`)](https://cli.github.com/) installed
 - An AI coding agent installed — pick one or more:
   - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (`npm install -g @anthropic-ai/claude-code`)
-  - [Gemini CLI](https://github.com/google-gemini/gemini-cli) (`npm install -g @anthropic-ai/gemini-cli`)
+  - [Gemini CLI](https://github.com/google-gemini/gemini-cli) (`npm install -g @google/gemini-cli`)
   - Or any agentic CLI that reads `SKILL.md` files
 
 ## Step-by-Step: Fork, Build, Contribute
@@ -36,22 +36,22 @@ Shell command:
 gh auth login
 ```
 
-### Step 2: Fork and clone the Unicorn project
+### Step 2: Fork and clone the Solo Unicorn Builder project
 
 Tell your AI agent:
 ```
-"Fork the pingwu/unicorn repo and clone it to my machine"
+"Fork the pingwu/solo-unicorn repo and clone it to my machine"
 ```
 
 Shell commands:
 ```bash
-gh repo fork pingwu/unicorn --clone
-cd unicorn
+gh repo fork pingwu/solo-unicorn --clone
+cd solo-unicorn
 ```
 
 This creates your own copy on GitHub and clones it locally. The original repo is set as the `upstream` remote automatically.
 
-### Step 3: Run the Unicorn init setup
+### Step 3: Run the Solo Unicorn Builder init setup
 
 Tell your AI agent:
 ```
@@ -136,7 +136,7 @@ git push -u origin add-skill-your-skill-name
 
 Tell your AI agent:
 ```
-"Create a pull request to contribute my new skill back to the original Unicorn project"
+"Create a pull request to contribute my new skill back to the original Solo Unicorn Builder project"
 ```
 
 Shell command:
@@ -170,7 +170,7 @@ Before starting new work, sync with the original project:
 
 Tell your AI agent:
 ```
-"Sync my fork with the latest changes from the upstream Unicorn project"
+"Sync my fork with the latest changes from the upstream Solo Unicorn Builder project"
 ```
 
 Shell commands:
@@ -220,4 +220,4 @@ It will read each conflicted file, explain what both sides changed, and help you
 
 ## Architecture
 
-The skills architecture follows the pattern established by Anthropic's [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/) — open-source, documented processes for AI to augment knowledge worker tasks. Unicorn extends this into a community-driven marketplace where practitioners contribute skills from their real-world expertise.
+The skills architecture follows the pattern established by Anthropic's [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/) — open-source, documented processes for AI to augment knowledge worker tasks. Solo Unicorn Builder extends this into a community-driven marketplace where practitioners contribute skills from their real-world expertise.

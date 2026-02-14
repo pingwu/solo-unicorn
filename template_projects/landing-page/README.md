@@ -1,5 +1,5 @@
 ---
-name: agentic-landing-template
+name: landing-page
 description: AI-powered personal landing page template. Your first portfolio project — tells your story and showcases your work.
 ---
 
@@ -17,7 +17,7 @@ A production-ready landing page template that teaches AI-assisted cloud developm
 
 **Tell your AI agent:**
 ```
-"Clone the agentic-landing-template repo, start the dev container, and open localhost:3000"
+"Clone the landing-page repo, start the dev container, and open localhost:3000"
 ```
 
 Then customize with natural language:
@@ -27,8 +27,8 @@ Then customize with natural language:
 
 **CLI Reference:**
 ```bash
-git clone https://github.com/pingwu/agentic-landing-template.git
-cd agentic-landing-template
+git clone https://github.com/pingwu/landing-page.git
+cd landing-page
 npm run docker:dev
 # Open http://localhost:3000
 ```
@@ -85,11 +85,11 @@ The default template works for consulting services, professional portfolios, dig
 
 AI coding agents read these files automatically:
 - `AGENTS.md` — Project goals, conventions, constraints
-- `../../UNICORN_CONSTITUTION.md` — Master constitution (Unicorn organization)
+- `../../UNICORN_CONSTITUTION.md` — Master constitution (Solo Unicorn Builder)
 
 ## Contributing
 
-Found an issue? [Open an issue](https://github.com/pingwu/agentic-landing-template/issues) or submit a PR.
+Found an issue? [Open an issue](https://github.com/pingwu/landing-page/issues) or submit a PR.
 
 ## Production Graduation Checklist
 

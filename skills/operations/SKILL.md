@@ -174,6 +174,98 @@ NEXT MONTH:
   - [Priority 2]
 ```
 
+## Internal Communications
+
+Clear internal communication is an operations function. Use these templates for recurring updates across your team or company.
+
+### 3P Updates (Progress, Plans, Problems)
+
+For weekly team updates. Readable in 30-60 seconds. Data-driven, not prose-heavy.
+
+```
+[emoji] [Team Name] (Week of [dates])
+
+Progress: [1-3 sentences — what shipped, milestones hit, metrics moved]
+Plans: [1-3 sentences — top priorities for next week]
+Problems: [1-3 sentences — blockers, resource gaps, risks]
+
+RULES:
+  → Score each on granularity: bigger team = bigger items
+  → Include metrics where possible
+  → Matter-of-fact tone — save storytelling for newsletters
+```
+
+### Company Newsletter
+
+For weekly or monthly company-wide updates. 20-25 bullet points. Sent via Slack and email.
+
+```
+Structure by area (not by team):
+  :megaphone: Company Announcements
+  :dart: Progress on Priorities
+  :pillar: Leadership Updates
+  :thread: External & Social
+
+RULES:
+  → Each bullet: 1-2 sentences max
+  → Use "we" tense — you are part of the company
+  → Link to source documents, Slack threads, press mentions
+  → Focus on company-wide impact, not team-specific details
+  → Highlight wins AND challenges honestly
+```
+
+### FAQ Responses
+
+Compile frequently asked questions across the company. Minimize confusion, keep everyone aligned.
+
+```
+Format:
+  - *Question*: [1 sentence — the real question people are asking]
+  - *Answer*: [1-2 sentences — clear, sourced, actionable]
+
+RULES:
+  → Base answers on official communications when possible
+  → If uncertain, say so — don't fabricate certainty
+  → Link to authoritative sources (docs, announcements)
+  → Focus on questions that affect a large portion of the team
+  → Cover: corporate events, launches, hiring, vision changes
+```
+
+### Status Reports and Project Updates
+
+```
+PROJECT UPDATE: [Project Name] — [Date]
+
+STATUS: [On Track / At Risk / Blocked] [green/yellow/red]
+
+SUMMARY: [2-3 sentences — current state and trajectory]
+
+KEY MILESTONES:
+  - [x] [Completed milestone]
+  - [ ] [Next milestone — target date]
+
+DECISIONS NEEDED:
+  - [Decision — who needs to decide, by when]
+
+RISKS:
+  - [Risk — likelihood, impact, mitigation]
+```
+
+### Incident Reports
+
+```
+INCIDENT: [Brief title]
+SEVERITY: [P0/P1/P2/P3]
+DURATION: [Start time — End time / Ongoing]
+
+WHAT HAPPENED: [2-3 sentences — factual description]
+IMPACT: [Who was affected, how many, what was broken]
+ROOT CAUSE: [What caused it — known or under investigation]
+RESOLUTION: [What was done to fix it]
+FOLLOW-UPS:
+  - [ ] [Action item — owner — due date]
+```
+
 ## Anti-Patterns
 
 | Ops Theater | Real Operations |

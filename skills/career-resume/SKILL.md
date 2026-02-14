@@ -55,7 +55,7 @@ End-to-end career lifecycle: research opportunities, generate targeted resumes, 
 
 Creates:
 ```
-personal_knowledge/career/
+my_knowledge/career/
 ├── INDEX.md                    # Central status tracker
 ├── Accomplishments-Tracker.md  # Your career history
 ├── research/                   # Company & market research
@@ -70,7 +70,7 @@ personal_knowledge/career/
 ### Complete Structure
 
 ```
-personal_knowledge/career/
+my_knowledge/career/
 ├── INDEX.md                           # Central tracker for everything
 ├── Accomplishments-Tracker.md         # Master career history
 │
@@ -655,7 +655,7 @@ Create `.claude/career-resume.json`:
 
 ```json
 {
-  "career_root": "personal_knowledge/career",
+  "career_root": "my_knowledge/career",
   "user_name": "Your Name",
   "contact": {
     "email": "you@example.com",
@@ -680,12 +680,12 @@ Your career data is sensitive. Recommended `.gitignore`:
 
 ```gitignore
 # All career data
-personal_knowledge/career/
+my_knowledge/career/
 
 # Or selective
-personal_knowledge/career/applications/
-personal_knowledge/career/roles/
-personal_knowledge/career/research/outreach/
+my_knowledge/career/applications/
+my_knowledge/career/roles/
+my_knowledge/career/research/outreach/
 .claude/career-resume.json
 ```
 

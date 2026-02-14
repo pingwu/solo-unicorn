@@ -1,6 +1,6 @@
 ---
 name: tech-stack
-description: Documents the complete technology stack, AI agent skills, and subagents for the agentic landing page template.
+description: Documents the complete technology stack, AI agent skills, and subagents for the landing page template.
 ---
 
 # Tech Stack Documentation
@@ -402,7 +402,7 @@ gemini "Push the Docker image to ECR and create App Runner service"
 ### package.json
 ```json
 {
-  "name": "agentic-landing-template",
+  "name": "landing-page",
   "version": "1.0.0",
   "type": "module",
   "scripts": {

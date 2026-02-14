@@ -35,7 +35,7 @@ Complete career lifecycle management: research companies, generate targeted resu
 /career-resume init
 
 # 2. Add your accomplishments
-# Edit personal_knowledge/career/Accomplishments-Tracker.md
+# Edit my_knowledge/career/Accomplishments-Tracker.md
 
 # 3. Research a company
 /career-resume research "Acme Corp"
@@ -128,7 +128,7 @@ skills/career-resume/
 ### Personal Files (Your data — gitignored)
 
 ```
-personal_knowledge/career/
+my_knowledge/career/
 ├── INDEX.md                                    # Central status tracker
 ├── Accomplishments-Tracker.md                  # Master career history
 │
@@ -310,7 +310,7 @@ Create `.claude/career-resume.json`:
 
 ```json
 {
-  "career_root": "personal_knowledge/career",
+  "career_root": "my_knowledge/career",
   "user_name": "Your Name",
   "contact": {
     "email": "you@example.com",
@@ -340,18 +340,18 @@ Copy and modify templates in `assets/` to match your preferences.
 ### Option A: Gitignore All Career Data
 
 ```gitignore
-personal_knowledge/career/
+my_knowledge/career/
 .claude/career-resume.json
 ```
 
 ### Option B: Keep Structure, Ignore Content
 
 ```gitignore
-personal_knowledge/career/applications/
-personal_knowledge/career/roles/
-personal_knowledge/career/research/outreach/
-personal_knowledge/career/INDEX.md
-personal_knowledge/career/Accomplishments-Tracker.md
+my_knowledge/career/applications/
+my_knowledge/career/roles/
+my_knowledge/career/research/outreach/
+my_knowledge/career/INDEX.md
+my_knowledge/career/Accomplishments-Tracker.md
 ```
 
 ### Option C: External Location

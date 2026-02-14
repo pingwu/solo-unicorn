@@ -103,10 +103,10 @@ Append today's learnings to my daily note...
 
 ## Vault Structure for Knowledge Management
 
-Recommended folder structure for the Unicorn personal_knowledge vault:
+Recommended folder structure for the Unicorn my_knowledge vault:
 
 ```
-personal_knowledge/
+my_knowledge/
 ├── daily/           # Daily notes and reflections
 ├── ideas/           # Captured insights and inventions
 ├── people/          # Relationship notes

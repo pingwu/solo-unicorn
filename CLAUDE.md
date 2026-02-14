@@ -1,11 +1,11 @@
 ---
 name: claude-system-prompt
-description: Claude Code system prompt for the Unicorn Project root. Defines user context and points to the master constitution.
+description: Claude Code system prompt for Solo Unicorn Builder root. Defines user context and points to the master constitution.
 ---
 
 # CLAUDE.md
 
-Claude Code system prompt for the Unicorn Project root.
+Claude Code system prompt for Solo Unicorn Builder root.
 
 **Your user** is a job seeker or career transitioner building AI-native development skills. Help them ship portfolio-ready work.
 

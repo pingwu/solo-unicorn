@@ -1,5 +1,5 @@
 {
-  "name": "agentic-landing-template",
+  "name": "landing-page",
   "version": "1.0.0",
   "description": "Customizable landing page template for AI-assisted development with Gemini CLI or Claude Code",
   "scripts": {

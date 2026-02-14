@@ -572,6 +572,80 @@ test("form has no accessibility violations", async () => {
 - Use Playwright's `page.setViewportSize()` to automate responsive checks.
 - Test touch interactions on real devices -- emulators miss gesture nuances.
 
+## Design Thinking Phase
+
+Before writing code, commit to a bold aesthetic direction. Generic "AI slop" aesthetics — purple gradients on white, centered layouts, Inter/Roboto fonts — are the fastest way to make a project look like every other AI-generated site.
+
+### Pre-Code Checklist
+
+```
+1. PURPOSE: What problem does this interface solve? Who uses it?
+2. TONE: Pick a direction and commit — brutally minimal, maximalist,
+   retro-futuristic, organic/natural, luxury/refined, editorial,
+   brutalist/raw, art deco, soft/pastel, industrial, playful.
+3. CONSTRAINTS: Framework, performance budget, accessibility level.
+4. DIFFERENTIATOR: What's the one thing someone will remember?
+```
+
+Bold maximalism and refined minimalism both work. The key is intentionality, not intensity.
+
+### Distinctive Typography
+
+Choose fonts that have character. Pair a distinctive display font with a refined body font.
+
+```
+NEVER default to:
+  Inter, Roboto, Arial, system-ui, sans-serif
+
+INSTEAD choose fonts with personality:
+  Display: Space Grotesk, Clash Display, Satoshi, Cabinet Grotesk,
+           General Sans, Switzer, Zodiak, Gambetta
+  Body: Outfit, Plus Jakarta Sans, DM Sans, Figtree, Geist
+
+Pair a distinctive display font with a refined body font.
+Vary choices between projects — never converge on the same pairing.
+```
+
+### Color & Theme Commitment
+
+```css
+/* Use CSS variables for consistency. Dominant color with sharp accent. */
+:root {
+  --color-dominant: #1a1a2e;   /* 60-70% visual weight */
+  --color-support: #16213e;    /* supporting tone */
+  --color-accent: #e94560;     /* sharp accent — used sparingly */
+}
+```
+
+Dominant colors with sharp accents outperform timid, evenly-distributed palettes. Commit to a cohesive palette — do not spread colors equally.
+
+### Motion & Micro-Interactions
+
+```
+High-impact moments over scattered effects:
+  → One well-orchestrated page load with staggered reveals
+    (animation-delay) creates more delight than random micro-interactions
+  → Scroll-triggered reveals and hover states that surprise
+  → Prefer CSS-only animations for HTML; use Motion (Framer Motion)
+    for React when available
+```
+
+### Spatial Composition
+
+Break out of predictable layouts: asymmetry, overlap, diagonal flow, grid-breaking elements, generous negative space OR controlled density. Unexpected layouts make interfaces memorable.
+
+### Backgrounds & Visual Details
+
+Create atmosphere and depth instead of defaulting to flat solid colors:
+
+```
+Consider: gradient meshes, noise textures, geometric patterns,
+layered transparencies, dramatic shadows, decorative borders,
+custom cursors, grain overlays.
+Match the effect to the overall aesthetic — not every project
+needs every technique.
+```
+
 ## Anti-Patterns
 
 | Anti-Pattern | Why It Hurts | Do This Instead |

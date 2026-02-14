@@ -19,7 +19,7 @@ jobs:
 
       - name: Build and test in production container
         run: |
-          cd projects/agentic-landing-template
+          cd template_projects/landing-page
           docker compose build
           docker compose run --rm dev npm run test:run
           docker compose run --rm dev npm run build

@@ -45,7 +45,7 @@ career/
 ## Getting Started
 
 ### For Job Search
-1. Copy this folder to `personal_knowledge/career/`
+1. Copy this folder to `my_knowledge/career/`
 2. Edit `Accomplishments-Tracker.md` with your career history
 3. Use `/career-resume research "Company"` to start researching
 4. Use `/career-resume new "Company" "Role"` to create applications

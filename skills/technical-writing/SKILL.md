@@ -176,7 +176,7 @@ Use PostgreSQL as our primary database.
 
 ## YAML Front Matter Convention
 
-Unicorn skills and many documentation systems use YAML front matter for metadata. Keep it minimal.
+Solo Unicorn Builder skills and many documentation systems use YAML front matter for metadata. Keep it minimal.
 
 ```yaml
 ---
@@ -407,6 +407,88 @@ Create a new user account.
 3. Document error responses, not just happy paths.
 4. Include authentication requirements on every endpoint.
 5. Version your API docs alongside your API code.
+```
+
+## Doc Co-Authoring Workflow
+
+When writing substantial documentation — proposals, technical specs, decision docs, RFCs, PRDs — use this three-stage workflow instead of trying to draft everything in one pass.
+
+### Stage 1: Context Gathering
+
+Close the gap between what you know and what the AI knows.
+
+```
+1. Define the document:
+   - Type (tech spec, decision doc, proposal, RFC)
+   - Primary audience
+   - Desired impact when someone reads it
+   - Template or format to follow
+
+2. Dump all context — don't organize, just get it out:
+   - Background on the project/problem
+   - Why alternatives don't work
+   - Organizational context (team dynamics, past incidents)
+   - Timeline pressures and constraints
+   - Technical architecture and dependencies
+   - Stakeholder concerns
+
+3. Answer clarifying questions:
+   - AI generates 5-10 questions based on gaps
+   - Answer in shorthand — efficiency over formality
+
+EXIT CONDITION: Edge cases and trade-offs can be discussed
+without needing basics explained.
+```
+
+### Stage 2: Refinement & Structure
+
+Build section by section through brainstorming, curation, and iterative refinement.
+
+```
+For each section:
+  1. Clarifying questions — what should this section cover?
+  2. Brainstorm 5-20 points that might belong here
+  3. Curate — keep, remove, or combine ("Keep 1,4,7" / "Remove 3")
+  4. Draft the section from curated points
+  5. Refine through surgical edits (not full rewrites)
+
+Section ordering:
+  → Start with the section that has the most unknowns
+  → For decision docs: core proposal first
+  → For specs: technical approach first
+  → Summary sections last
+
+Near completion (80%+ done):
+  → Review full document for flow, consistency, redundancy
+  → Ask: "Can anything be removed without losing information?"
+```
+
+### Stage 3: Reader Testing
+
+Test the document with a fresh perspective to catch blind spots.
+
+```
+1. Predict 5-10 questions a reader would realistically ask
+2. Test with a fresh AI instance (no prior context):
+   - Paste only the document + one question at a time
+   - Check: does the AI answer correctly from the doc alone?
+3. Run additional checks:
+   - Ambiguity: are any statements open to misinterpretation?
+   - Assumptions: what knowledge does the doc assume?
+   - Contradictions: do any sections conflict?
+4. Fix gaps, then re-test affected sections
+
+EXIT CONDITION: Fresh reader consistently answers questions
+correctly and surfaces no new gaps.
+```
+
+### When to Use This Workflow
+
+```
+USE for:    PRDs, design docs, decision docs, RFCs, proposals,
+            specs — anything where "the doc must work for readers"
+SKIP for:   READMEs, changelogs, commit messages, quick how-to guides
+            — use the specific templates in other sections instead
 ```
 
 ## Anti-Patterns

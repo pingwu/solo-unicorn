@@ -50,8 +50,8 @@ Get the landing page running locally inside a Docker container and customize con
 
 **CLI Reference**:
 ```bash
-git clone https://github.com/YOUR-USERNAME/agentic-landing-template.git
-cd agentic-landing-template
+git clone https://github.com/YOUR-USERNAME/landing-page.git
+cd landing-page
 npm run docker:dev
 # Open http://localhost:3000
 ```

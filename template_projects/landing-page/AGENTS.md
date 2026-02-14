@@ -1,11 +1,11 @@
 ---
-name: agentic-landing-template-agents
-description: Agent instructions for the agentic landing template project. Tech stack, container commands, code conventions, and constraints.
+name: landing-page-agents
+description: Agent instructions for the landing page template project. Tech stack, container commands, code conventions, and constraints.
 ---
 
 # AGENTS.md — Agentic Landing Template
 
-Agent instructions for this project. For the Unicorn organization's master constitution, see [../../UNICORN_CONSTITUTION.md](../../UNICORN_CONSTITUTION.md).
+Agent instructions for this project. For Solo Unicorn Builder's master constitution, see [../../UNICORN_CONSTITUTION.md](../../UNICORN_CONSTITUTION.md).
 
 ## Project Goals
 

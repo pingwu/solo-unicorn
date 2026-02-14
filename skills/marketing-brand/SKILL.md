@@ -168,6 +168,84 @@ AMBASSADOR (community leader)
   Action: Moderator roles, co-creation opportunities, advisory board
 ```
 
+## Brand Identity System
+
+Voice alone is not a brand. A complete brand identity includes visual consistency — colors, typography, and how they're applied.
+
+### Color Palette Structure
+
+```
+Every brand needs three color groups:
+
+MAIN COLORS (backgrounds, primary text)
+  Dark:       #______  — Primary text and dark backgrounds
+  Light:      #______  — Light backgrounds and text on dark
+  Mid Gray:   #______  — Secondary elements
+  Light Gray: #______  — Subtle backgrounds
+
+ACCENT COLORS (CTAs, highlights, differentiation)
+  Primary:    #______  — Main accent (buttons, links, emphasis)
+  Secondary:  #______  — Supporting accent
+  Tertiary:   #______  — Optional third accent
+
+RULES:
+  → One accent dominates. Never give all accents equal weight.
+  → Test contrast ratios — 4.5:1 minimum for text on backgrounds.
+  → Document hex values. Don't let "close enough" drift across pages.
+```
+
+### Typography System
+
+```
+Choose two fonts maximum:
+
+HEADING FONT: Distinctive, personality-driven
+  → Carries the brand's visual identity
+  → Used at 24pt and larger
+  → Example: Poppins, Clash Display, Space Grotesk
+
+BODY FONT: Readable, professional
+  → Optimized for long-form text
+  → Used for all body copy and UI text
+  → Example: Lora, DM Sans, Source Serif Pro
+
+FALLBACKS: Always define system font fallbacks
+  → Heading: "Poppins", "Arial", sans-serif
+  → Body: "Lora", "Georgia", serif
+
+RULES:
+  → Self-host fonts for performance and privacy
+  → Use font-display: swap to prevent invisible text
+  → Keep heading/body pairing consistent across all materials
+```
+
+### Color Application Guidelines
+
+```
+Where to apply brand colors:
+
+TEXT:
+  → Headings: Main dark color
+  → Body: Main dark color (slightly lighter for secondary)
+  → Links: Primary accent color
+  → Hover states: Darkened accent or underline shift
+
+BACKGROUNDS:
+  → Page backgrounds: Light/white
+  → Card backgrounds: Light gray
+  → Hero sections: Dark for impact, light for approachability
+  → CTAs: Primary accent on light, inverted on dark
+
+SHAPES & ACCENTS:
+  → Non-text elements (icons, borders, dividers): cycle through accents
+  → Use accent colors sparingly — they lose impact when overused
+
+DARK MODE:
+  → Swap main dark ↔ light
+  → Keep accent colors or adjust brightness (not hue)
+  → Test contrast ratios in both modes
+```
+
 ## Anti-Patterns
 
 | Marketing Theater | Real Marketing |
