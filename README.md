@@ -1,19 +1,21 @@
 ---
 name: solo-unicorn-builder
-description: Free, open-source AI command center that turns one builder into a full team. 36 AI-powered skills spanning engineering, product, marketing, sales, finance, and operations — so you can build, ship, and grow without hiring an army.
+description: Free, open-source AI command center for engineers who've never shipped end-to-end. 36 AI-powered skills spanning engineering, product, marketing, sales, finance, and operations — AI fills the gaps between your specialty and everything else it takes to go from requirement to production.
 ---
 
 # Solo Unicorn Builder
 
-**You've been told AI is replacing knowledge workers. What if you became the AI-augmented knowledge worker who can perform multiple roles?**
+**You're great at your specialty. But you've never shipped an application end-to-end — because someone else always handled the parts outside your lane.**
 
-Solo Unicorn Builder is a free, open-source command center that gives you 36 AI-powered skills — spanning engineering, product, marketing, sales, finance, legal, and operations. One builder, augmented by AI, doing the work that used to require an entire team.
+Solo Unicorn Builder is a free, open-source command center that gives you 36 AI-powered skills — spanning engineering, product, marketing, sales, finance, legal, and operations. AI fills the gaps between your expertise and everything else it takes to go from requirement to production.
 
 ## Who This Is For
 
-**Builders who want to transition into AI-native development roles.** Software engineers who want to prove they can build end-to-end with AI. Career transitioners who want to ship real projects — not just write prompts. Anyone who wants to demonstrate they can operate across engineering, product, and business functions, augmented by AI.
+**Engineers and technical specialists who can do their job — but have never carried an application from requirement to production on their own.** You're a frontend engineer who's never set up a CI/CD pipeline. A backend developer who's never written a PRD. A DevOps specialist who's never validated a product idea. A PM who's never deployed to the cloud.
 
-If you've been using AI as a chatbot, Solo Unicorn Builder turns it into your team.
+You're good at what you do. But the work outside your specialty — requirements gathering, design, testing, deployment, marketing, legal, finance — was always someone else's job. That gap is what keeps you from building something end-to-end.
+
+Solo Unicorn Builder fills that gap with AI. You bring the expertise in your domain. AI covers the rest — so you can finally ship the whole thing, not just your piece of it.
 
 ## Your AI-Augmented Team
 
@@ -34,11 +36,11 @@ You don't need to hire a team. You need to ask the right questions — and let A
 
 Here's the real problem:
 
-- **AI can do a lot — but you don't know what to ask.** AI can't architect your solution if you don't know what problem to solve first.
+- **Specialization created blind spots.** You've spent years going deep in one area. But shipping a product requires breadth — requirements, architecture, testing, deployment, marketing, legal, finance. Nobody taught you the other 80%.
+- **AI can fill the gaps — but only with structure.** A chatbot can answer questions. It can't guide you through a product launch, a deployment pipeline, or a fundraising round — unless it has a framework for each one.
 - **Your thinking is scattered.** A thread in ChatGPT, a conversation in Claude, notes in one app, code in another. Nothing connects.
-- **Being AI-augmented requires structure, not just prompts.** The difference between asking AI a question and operating as an AI-native builder is a repeatable workflow.
 
-Solo Unicorn Builder gives you the skills, the knowledge vault, and the project workspace to operate across multiple roles — with AI doing the heavy lifting.
+Solo Unicorn Builder gives you 36 structured skills, a knowledge vault, and a project workspace — so AI can operate as your team across every function you've never done before.
 
 ## What You Get
 
@@ -73,10 +75,11 @@ Solo Unicorn Builder meets you where you are — and scales with you.
 
 | Stage | You're saying... | How it helps... |
 |-------|-----------------|---------------------|
-| **Building** | "I want to ship with AI-assisted workflows" | Architecture, testing, debugging, deployment |
+| **Learning the gaps** | "I've never done deployment / product / marketing" | AI walks you through each discipline with structured skills |
+| **Building end-to-end** | "I want to ship something from scratch to production" | Architecture, testing, debugging, CI/CD, deployment |
 | **Launching** | "I have something — now I need users" | Validate ideas, define your product, go to market |
 | **Growing** | "I need to understand the business side" | Revenue models, partnerships, legal, finance, operations |
-| **Getting hired** | "I want to prove I can build with AI" | Portfolio projects, resume tailoring, GitHub presence |
+| **Getting hired** | "I want to prove I can build end-to-end with AI" | Portfolio projects, resume tailoring, GitHub presence |
 
 ## The Things AI Can't Do for You
 
