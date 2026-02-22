@@ -1,0 +1,2 @@
+# Add any false positive secrets or fingerprints to ignore here
+.env.example
