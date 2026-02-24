@@ -137,6 +137,17 @@ This step must be done manually in your browser (AWS Console).
 - **Never use root account for daily tasks** - create IAM users
 - Root account should only be used for billing and initial IAM setup
 
+### Activate App Runner (One-Time Per Region)
+
+App Runner must be explicitly activated before first use:
+
+1. **Navigate to**: AWS Console → search "App Runner" → click the service
+2. **Click "Get started"** to activate App Runner in your region
+3. This is a **one-time step per region** — once activated, the CLI and scripts work normally
+4. **App Runner is NOT part of AWS Free Tier** — minimum cost is ~$5-15/month (1 vCPU, 2 GB RAM minimum)
+
+If you skip this step, `aws apprunner create-service` will fail with a "service not activated" error.
+
 ---
 
 ## 2. Create Admin IAM User (Manual)
@@ -453,8 +464,8 @@ aws apprunner create-service \
     }
   }' \
   --instance-configuration '{
-    "Cpu": "0.25 vCPU",
-    "Memory": "0.5 GB"
+    "Cpu": "1 vCPU",
+    "Memory": "2 GB"
   }' \
   --region us-east-2 \
   --profile landing-deployer
@@ -466,7 +477,7 @@ aws apprunner create-service \
 - `AutoDeploymentsEnabled`: If true, automatically redeploys when ECR image updates
 - `ImageIdentifier`: The full URI of your Docker image in ECR
 - `Port`: Which port your app listens on (Next.js uses 3000)
-- `Cpu/Memory`: Computing resources allocated (0.25 vCPU is minimum, ~$5/month)
+- `Cpu/Memory`: Computing resources allocated (1 vCPU / 2 GB is the App Runner minimum, ~$5-15/month)
 
 ### Step 7.6: Wait for Deployment
 
@@ -581,6 +592,8 @@ Or check the AWS Console: https://console.aws.amazon.com/cost-management/
 | App Runner stuck | "Check App Runner service events for errors" | Image pull failed or app crashed |
 | Image push fails | "Verify ECR repository exists" | Wrong region or repository name |
 | Service won't start | "Show me the App Runner logs" | Application error during startup |
+| Health check fails on new deployment | Check Dockerfile uses shell-form CMD: `CMD HOSTNAME=0.0.0.0 node server.js` | App Runner overrides the `HOSTNAME` env var with the EC2 internal hostname, causing Next.js to bind to the wrong interface. The exec-form `CMD ["node", "server.js"]` does NOT override `HOSTNAME` — you must use shell-form. |
+| App Runner "service not activated" | Navigate to AWS Console → App Runner → "Get started" to activate | App Runner must be explicitly activated in each region before first use |
 
 ### Debug Commands
 
@@ -598,14 +611,14 @@ Or check the AWS Console: https://console.aws.amazon.com/cost-management/
 
 | Service | Configuration | Monthly Cost |
 |---------|--------------|--------------|
-| App Runner | 0.25 vCPU, 0.5 GB | ~$5 |
+| App Runner | 1 vCPU, 2 GB (minimum) | ~$5-15 |
 | ECR Storage | < 1 GB | ~$0.10 |
 | Data Transfer | < 1 GB | ~$0.09 |
-| **Total** | | **~$5-6/month** |
+| **Total** | | **~$5-15/month** |
 
 ### Cost Optimization Tips
 
-1. **Use minimum instance size** (0.25 vCPU, 0.5 GB) for landing pages
+1. **Use minimum instance size** (1 vCPU, 2 GB — this is App Runner's minimum) for landing pages
 2. **Enable auto-pause** if traffic is sporadic
 3. **Delete unused resources** when not actively using
 4. **Monitor with Cost Explorer** to catch unexpected charges

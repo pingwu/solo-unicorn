@@ -143,9 +143,9 @@ Short-term free trials for specific services:
 |---------|-------|
 | SageMaker | 250 hours for 2 months |
 | Bedrock | Limited free tier for some models |
-| App Runner | No free tier (but very low cost) |
+| App Runner | No free tier — requires service activation in the AWS Console |
 
-**Important**: App Runner does NOT have a free tier. Budget ~$5-15/month.
+**Important**: App Runner has NO free tier and requires service activation in the AWS Console (one-time per region). Minimum instance is 1 vCPU / 2 GB. Budget ~$5-15/month.
 
 ---
 
@@ -252,14 +252,14 @@ aws budgets create-budget --account-id <ACCOUNT_ID> \
 **Example for Landing Page**:
 ```
 App Runner:
-- 1 instance, 0.25 vCPU, 0.5 GB
-- Estimated: $5-7/month
+- 1 instance, 1 vCPU, 2 GB (minimum)
+- Estimated: $5-15/month
 
 ECR:
 - 1 GB storage
 - Estimated: $0.10/month
 
-Total: ~$5-8/month
+Total: ~$5-15/month
 ```
 
 ---
@@ -275,11 +275,11 @@ Total: ~$5-8/month
 | **Requests** | Included (no per-request charge) |
 | **Auto-pause** | No charge when paused |
 
-**Minimum Configuration Costs**:
+**Minimum Configuration Costs** (1 vCPU, 2 GB — App Runner minimum):
 | Config | Active Hours | Monthly Cost |
 |--------|--------------|--------------|
-| 0.25 vCPU, 0.5 GB | 24/7 | ~$15 |
-| 0.25 vCPU, 0.5 GB | 8 hrs/day | ~$5 |
+| 1 vCPU, 2 GB | 24/7 | ~$15 |
+| 1 vCPU, 2 GB | 8 hrs/day | ~$5 |
 | With auto-pause | Variable | $0-15 |
 
 ---
@@ -354,13 +354,13 @@ Total: ~$5-8/month
 
 | Resource | Recommended | Why |
 |----------|-------------|-----|
-| App Runner CPU | 0.25 vCPU | Minimum, sufficient for static content |
-| App Runner Memory | 0.5 GB | Minimum, sufficient for Next.js |
+| App Runner CPU | 1 vCPU | App Runner minimum (no 0.25 vCPU option exists) |
+| App Runner Memory | 2 GB | App Runner minimum (no 0.5 GB option exists) |
 | ECR Images | 1-2 tags | Delete old images |
 
 **Natural Language**:
 ```
-"Deploy to App Runner with minimum resources: 0.25 vCPU and 0.5 GB memory"
+"Deploy to App Runner with minimum resources: 1 vCPU and 2 GB memory"
 ```
 
 ---
@@ -440,17 +440,17 @@ aws cloudwatch put-metric-alarm \
 
 | Service | Estimated Cost |
 |---------|---------------|
-| App Runner (0.25 vCPU, 0.5 GB) | $5-8 |
+| App Runner (1 vCPU, 2 GB) | $5-15 |
 | ECR Storage | $0.10 |
 | CloudWatch (within free tier) | $0 |
 | Data Transfer | <$1 |
-| **Total** | **$5-10/month** |
+| **Total** | **$5-15/month** |
 
 ### Landing Page (Medium Traffic)
 
 | Service | Estimated Cost |
 |---------|---------------|
-| App Runner (0.5 vCPU, 1 GB) | $10-15 |
+| App Runner (1 vCPU, 2 GB) | $10-15 |
 | ECR Storage | $0.20 |
 | CloudWatch Logs | $1-2 |
 | Data Transfer (10 GB out) | $0.90 |

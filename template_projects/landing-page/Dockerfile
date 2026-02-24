@@ -9,6 +9,9 @@
 # 3. Cloud Run / App Runner require linux/amd64. On Apple Silicon, build with:
 #      docker build --platform linux/amd64 -t <tag> .
 # 4. Always test locally with `npm run docker:prod` before pushing to the cloud.
+# 5. App Runner overrides the HOSTNAME env var with the EC2 internal hostname.
+#    Use shell-form CMD to force HOSTNAME=0.0.0.0 at runtime, otherwise Next.js
+#    binds to the wrong interface and health checks fail.
 
 # Stage 1: Build the application (needs ALL deps — TypeScript is required
 # to transpile next.config.ts even though it's a devDependency)
@@ -40,4 +43,4 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["node", "server.js"]
+CMD HOSTNAME=0.0.0.0 node server.js
