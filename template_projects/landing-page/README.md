@@ -51,16 +51,29 @@ The default template works for consulting services, professional portfolios, dig
 
 ## Container Commands
 
+**Important for AI agents:** `npm run docker:dev` already runs the container in detached mode with hot-reload enabled. The dev server starts automatically - do NOT run additional `npm run dev` commands inside the container.
+
 | Natural Language | CLI Command | Purpose |
 |-----------------|-------------|---------|
-| "Start the dev server" | `npm run docker:dev` | Dev server with hot-reload (port 3000) |
+| "Start the dev server" | `npm run docker:dev` | Dev server with hot-reload (port 3000) - runs in background |
 | "Start a production preview" | `npm run docker:prod` | Production preview (port 3001) |
 | "Stop the containers" | `npm run docker:down` | Stop containers |
 | "Open a shell in the container" | `npm run docker:shell` | Shell into container |
-| "Show the container logs" | `npm run docker:logs` | View logs |
+| "Show the container logs" | `docker compose logs dev -f` | View logs (follow mode) |
 | "Run the tests" | `docker compose exec dev npm run test:run` | Run tests |
 | "Type-check the project" | `docker compose exec dev npm run typecheck` | TypeScript check |
 | "Lint the code" | `docker compose exec dev npm run lint` | ESLint |
+
+### Correct Workflow
+```bash
+npm run docker:dev          # Start (runs in background automatically)
+# Server is now running at http://localhost:3000
+docker compose logs dev -f  # View logs if needed (optional)
+npm run docker:down         # Stop when done
+```
+
+### What NOT to do
+❌ `docker compose run --rm dev npm run dev` - This is redundant and blocks the terminal
 
 ## Documentation
 
