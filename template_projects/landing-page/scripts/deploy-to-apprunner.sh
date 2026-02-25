@@ -418,6 +418,16 @@ else
     }" > /dev/null
 
   log "Service update initiated"
+  
+  # Force immediate deployment to pull the new image.
+  # Without this, AutoDeploymentsEnabled may not trigger immediately when
+  # pushing to the same :latest tag. This ensures the new container starts now.
+  log "Triggering immediate deployment..."
+  aws apprunner start-deployment \
+    --service-arn "${SERVICE_ARN}" \
+    --region "${REGION}" \
+    --output text > /dev/null
+  log "Deployment triggered"
 fi
 
 # ---------------------------------------------------------------------------
