@@ -74,6 +74,7 @@ These agents run in your terminal and can **read, write, and execute** — the f
 | **Kiro CLI**    | AWS         | See [kiro.dev/cli](https://kiro.dev/cli/)                                         | `kiro-cli`    | **Spec-driven development.** Turns prompts into structured requirements, then code. Deep AWS integration and DevOps automation. |
 | **Codex CLI**   | OpenAI      | `npm install -g @openai/codex`                                                    | `codex`       | **OpenAI ecosystem.** Quick code generation, integrates with ChatGPT.                                                           |
 | **OpenCode**    | Open Source | `brew install opencode-ai/tap/opencode` or see [opencode.ai](https://opencode.ai) | `opencode`    | **75+ model support.** Works with Claude, OpenAI, Gemini, and local models. Go-based TUI, LSP integration, vim-like editor.     |
+| **Pi**          | Open Source | `npm install -g @mariozechner/pi-coding-agent`                                    | `pi`          | **Minimal and yours.** Tree-structured sessions, 15+ providers, TypeScript extensions. Built for developers who want full control. |
 
 ### What CLI Agents Can Do That IDE Agents Can't
 
@@ -197,6 +198,31 @@ These agents live inside your editor. Great for real-time autocomplete and inlin
 - Newer project, smaller community than Claude Code
 - Go installation required
 
+### Pi - The Minimal Terminal Agent
+
+**Official Docs:** https://pi.dev
+
+**What makes it special:**
+- **"This one is mine"** philosophy — minimal core that adapts to your workflow, not the other way around
+- **Tree-structured sessions** — conversation history stored as a branching tree; navigate to any prior point and fork from there
+- **15+ providers, hundreds of models** — Anthropic, OpenAI, Google, Azure, Bedrock, Mistral, Groq, and more
+- **TypeScript extensions** — extend with skills, prompt templates, themes, and context injection
+- **Multiple output modes** — interactive TUI, print/JSON output, RPC protocol, and an SDK for embedding in your own tools
+- **Intentionally minimal** — no built-in MCP, sub-agents, or plan mode by default; build what you need via extensions
+
+**Best for:**
+- Developers who want a lightweight, hackable agent with no opinions
+- Context engineering experimentation (configurable system prompts, auto-compaction, skills)
+- Multi-provider workflows without committing to one vendor
+- Embedding AI capabilities directly into your own tooling via the SDK
+
+**Pricing:** Free and open source (MIT License)
+
+**Install:**
+```bash
+npm install -g @mariozechner/pi-coding-agent
+```
+
 ---
 
 ## Choosing Your Agent(s)
@@ -208,6 +234,7 @@ These agents live inside your editor. Great for real-time autocomplete and inlin
    - Large codebases, multimodal → **Gemini CLI**
    - AWS infrastructure and DevOps → **Kiro CLI**
    - Maximum model flexibility → **OpenCode**
+   - Minimal, hackable, self-owned → **Pi**
    - Real-time autocomplete → **Copilot** or **Cursor** (IDE)
 
 2. **What's your budget?**
@@ -297,5 +324,6 @@ AI coding tools evolve rapidly. Key resources:
 - **Kiro CLI:** https://kiro.dev/docs/cli/
 - **Codex CLI:** https://github.com/openai/codex
 - **OpenCode:** https://opencode.ai
+- **Pi:** https://pi.dev
 - **GitHub Copilot:** https://github.com/features/copilot
 - **Cursor:** https://cursor.com/docs
