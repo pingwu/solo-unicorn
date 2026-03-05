@@ -1,6 +1,6 @@
 ---
 name: coding-agents
-description: Complete comparison guide for CLI coding agents — Claude Code, Gemini CLI, Kiro CLI, Codex CLI, OpenCode, and more. Solo Unicorn Builder prefers CLI agents for their ability to translate natural language into system commands.
+description: Complete comparison guide for CLI coding agents — Claude Code, GitHub Copilot CLI, Gemini CLI, Kiro CLI, Codex CLI, OpenCode, and more. Solo Unicorn Builder prefers CLI agents for their ability to translate natural language into system commands.
 ---
 
 # AI Coding Agents: Complete Comparison Guide
@@ -52,7 +52,7 @@ Think of an AI coding agent as a **smart assistant that helps you write, edit, a
 **Like:** Having an expert you can ask questions, but can't see your files
 
 ### Phase 3: Project-Aware CLI Agents (2024-2025)
-**Tools:** Claude Code, Gemini CLI, Kiro CLI, Codex CLI, OpenCode
+**Tools:** Claude Code, Gemini CLI, GitHub Copilot CLI, Kiro CLI, Codex CLI, OpenCode
 **Capability:** Understand your entire project, execute commands, modify multiple files
 **Like:** A senior developer who can both think and type — reading your codebase, running your tests, and shipping your code
 
@@ -67,14 +67,15 @@ Think of an AI coding agent as a **smart assistant that helps you write, edit, a
 
 These agents run in your terminal and can **read, write, and execute** — the full development loop.
 
-| Agent           | Provider    | Installation                                                                      | Start Command | Key Strength                                                                                                                    |
-| --------------- | ----------- | --------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Claude Code** | Anthropic   | `npm install -g @anthropic-ai/claude-code`                                        | `claude`      | **Best reasoning and code quality.** Deep project understanding, multi-file refactoring, architecture decisions.                |
-| **Gemini CLI**  | Google      | `npm install -g @google/gemini-cli`                                               | `gemini`      | **Largest context window (1M+ tokens).** Multimodal — understands images, diagrams, screenshots alongside code.                 |
-| **Kiro CLI**    | AWS         | See [kiro.dev/cli](https://kiro.dev/cli/)                                         | `kiro-cli`    | **Spec-driven development.** Turns prompts into structured requirements, then code. Deep AWS integration and DevOps automation. |
-| **Codex CLI**   | OpenAI      | `npm install -g @openai/codex`                                                    | `codex`       | **OpenAI ecosystem.** Quick code generation, integrates with ChatGPT.                                                           |
-| **OpenCode**    | Open Source | `brew install opencode-ai/tap/opencode` or see [opencode.ai](https://opencode.ai) | `opencode`    | **75+ model support.** Works with Claude, OpenAI, Gemini, and local models. Go-based TUI, LSP integration, vim-like editor.     |
-| **Pi**          | Open Source | `npm install -g @mariozechner/pi-coding-agent`                                    | `pi`          | **Minimal and yours.** Tree-structured sessions, 15+ providers, TypeScript extensions. Built for developers who want full control. |
+| Agent                  | Provider    | Installation                                                                      | Start Command       | Key Strength                                                                                                                    |
+| ---------------------- | ----------- | --------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Claude Code**        | Anthropic   | `npm install -g @anthropic-ai/claude-code`                                        | `claude`            | **Best reasoning and code quality.** Deep project understanding, multi-file refactoring, architecture decisions.                |
+| **GitHub Copilot CLI** | GitHub      | `npm install -g @github/copilot-cli`                                              | `gh copilot`        | **Natural language shell commands.** Translate English to CLI commands, explain code. Integrated with GitHub.                   |
+| **Gemini CLI**         | Google      | `npm install -g @google/gemini-cli`                                               | `gemini`            | **Largest context window (1M+ tokens).** Multimodal — understands images, diagrams, screenshots alongside code.                 |
+| **Kiro CLI**           | AWS         | See [kiro.dev/cli](https://kiro.dev/cli/)                                         | `kiro-cli`          | **Spec-driven development.** Turns prompts into structured requirements, then code. Deep AWS integration and DevOps automation. |
+| **Codex CLI**          | OpenAI      | `npm install -g @openai/codex`                                                    | `codex`             | **OpenAI ecosystem.** Quick code generation, integrates with ChatGPT.                                                           |
+| **OpenCode**           | Open Source | `brew install opencode-ai/tap/opencode` or see [opencode.ai](https://opencode.ai) | `opencode`          | **75+ model support.** Works with Claude, OpenAI, Gemini, and local models. Go-based TUI, LSP integration, vim-like editor.     |
+| **Pi**                 | Open Source | `npm install -g @mariozechner/pi-coding-agent`                                    | `pi`                | **Minimal and yours.** Tree-structured sessions, 15+ providers, TypeScript extensions. Built for developers who want full control. |
 
 ### What CLI Agents Can Do That IDE Agents Can't
 
@@ -130,6 +131,41 @@ These agents live inside your editor. Great for real-time autocomplete and inlin
 - Requires API key and internet connection
 - Not free (pay per use via Anthropic API)
 - No autocomplete while typing (pair with Copilot for that)
+
+---
+
+### GitHub Copilot CLI - The Command-Line Expert
+
+**Official Docs:** https://gh.io/copilot-cli
+
+**What makes it special:**
+- **Natural language to shell commands** - translate English to bash, PowerShell, zsh commands
+- **Command explanation** - ask what a complex command does and get a clear explanation
+- **GitHub integration** - seamlessly works with GitHub repositories and pull requests
+- **Lightweight CLI tool** - installs via `gh` extension, minimal overhead
+- **Consistent Copilot experience** - same underlying models as Copilot IDE extension
+
+**Best for:**
+- Learning shell commands by describing what you want to do
+- Understanding complex bash/PowerShell/zsh commands
+- Developers who already use GitHub Copilot in their IDE
+- Quick command generation without leaving the terminal
+- Getting help with CLI operations in natural language
+
+**Limitations:**
+- Primary focus is shell commands, not code generation or refactoring
+- Requires GitHub Copilot subscription
+- Not designed for full project analysis or multi-file code changes
+- More command-focused than architecture-focused
+
+**Example usage:**
+```bash
+gh copilot suggest "recursively list all JavaScript files in src directory"
+# Suggests: find src -name "*.js"
+
+gh copilot explain "grep -r 'TODO' . | grep -v node_modules"
+# Explains: Search for TODO comments in all files, excluding node_modules
+```
 
 ---
 
@@ -231,6 +267,7 @@ npm install -g @mariozechner/pi-coding-agent
 
 1. **What's your primary use case?**
    - Complex architecture and refactoring → **Claude Code**
+   - Shell commands and CLI operations → **GitHub Copilot CLI**
    - Large codebases, multimodal → **Gemini CLI**
    - AWS infrastructure and DevOps → **Kiro CLI**
    - Maximum model flexibility → **OpenCode**
@@ -304,7 +341,7 @@ Each agent does what it does best. Your job is to ask the right questions.
 
 ## Getting Started with Solo Unicorn Builder
 
-Solo Unicorn Builder works with **any CLI coding agent**. The skills in `skills/` are agent-agnostic — they work with Claude Code, Gemini CLI, Kiro CLI, Codex CLI, OpenCode, or any tool that reads markdown files.
+Solo Unicorn Builder works with **any CLI coding agent**. The skills in `skills/` are agent-agnostic — they work with Claude Code, GitHub Copilot CLI, Gemini CLI, Kiro CLI, Codex CLI, OpenCode, or any tool that reads markdown files.
 
 **Setup:**
 1. Install at least one CLI agent (Claude Code, Gemini CLI, or Kiro CLI)
@@ -320,6 +357,7 @@ The AI-augmented knowledge worker doesn't need to master every tool. Pick one, s
 AI coding tools evolve rapidly. Key resources:
 
 - **Claude Code:** https://docs.anthropic.com/en/docs/claude-code
+- **GitHub Copilot CLI:** https://gh.io/copilot-cli
 - **Gemini CLI:** https://github.com/google-gemini/gemini-cli
 - **Kiro CLI:** https://kiro.dev/docs/cli/
 - **Codex CLI:** https://github.com/openai/codex
