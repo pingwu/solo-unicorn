@@ -1,4 +1,5 @@
 *.DS_Store
+._*
 
 # Agent skill junctions/symlinks (created locally per INIT_UNICORN.md instructions)
 .claude/skills
@@ -26,3 +27,5 @@ curriculum/
 
 # Obsidian vault metadata
 .obsidian
+.smart-env
+my_knowledge/

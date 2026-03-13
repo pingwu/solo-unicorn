@@ -52,7 +52,7 @@ Think of an AI coding agent as a **smart assistant that helps you write, edit, a
 **Like:** Having an expert you can ask questions, but can't see your files
 
 ### Phase 3: Project-Aware CLI Agents (2024-2025)
-**Tools:** Claude Code, Gemini CLI, GitHub Copilot CLI, Kiro CLI, Codex CLI, OpenCode
+**Tools:** Claude Code, Gemini CLI, GitHub Copilot CLI, Atlassian Rovo Dev CLI, LangChain DeepAgents, Kiro CLI, Codex CLI, OpenCode
 **Capability:** Understand your entire project, execute commands, modify multiple files
 **Like:** A senior developer who can both think and type — reading your codebase, running your tests, and shipping your code
 
@@ -72,6 +72,8 @@ These agents run in your terminal and can **read, write, and execute** — the f
 | **Claude Code**        | Anthropic   | `npm install -g @anthropic-ai/claude-code`                                        | `claude`            | **Best reasoning and code quality.** Deep project understanding, multi-file refactoring, architecture decisions.                |
 | **GitHub Copilot CLI** | GitHub      | `npm install -g @github/copilot-cli`                                              | `gh copilot`        | **Natural language shell commands.** Translate English to CLI commands, explain code. Integrated with GitHub.                   |
 | **Gemini CLI**         | Google      | `npm install -g @google/gemini-cli`                                               | `gemini`            | **Largest context window (1M+ tokens).** Multimodal — understands images, diagrams, screenshots alongside code.                 |
+| **Atlassian Rovo**     | Atlassian   | `npm install -g @atlassian/rovo-dev`                                              | `rovo`              | **Jira & Confluence integration.** Specialized subagents, MCP support, and "shadow mode" for safe code testing.                 |
+| **DeepAgents**         | LangChain   | `uv tool install 'deepagents-cli[anthropic]'`                                     | `deepagents`        | **Persistent memory & sandboxing.** Learns project conventions, supports remote sandboxes (Modal, Daytona), and MCP.             |
 | **Kiro CLI**           | AWS         | See [kiro.dev/cli](https://kiro.dev/cli/)                                         | `kiro-cli`          | **Spec-driven development.** Turns prompts into structured requirements, then code. Deep AWS integration and DevOps automation. |
 | **Codex CLI**          | OpenAI      | `npm install -g @openai/codex`                                                    | `codex`             | **OpenAI ecosystem.** Quick code generation, integrates with ChatGPT.                                                           |
 | **OpenCode**           | Open Source | `brew install opencode-ai/tap/opencode` or see [opencode.ai](https://opencode.ai) | `opencode`          | **75+ model support.** Works with Claude, OpenAI, Gemini, and local models. Go-based TUI, LSP integration, vim-like editor.     |
@@ -192,6 +194,65 @@ gh copilot explain "grep -r 'TODO' . | grep -v node_modules"
 
 ---
 
+### Atlassian Rovo Dev CLI - The Enterprise Workflow Partner
+
+**Official Docs:** https://support.atlassian.com/rovo/docs/use-rovo-dev-cli/
+
+**What makes it special:**
+- **Atlassian Ecosystem Integration** - Deeply integrated with Jira and Confluence for task management and project context.
+- **Specialized Subagents** - Access to specialized AI agents for specific tasks like code refactoring, bug fixing, or documentation.
+- **Model Context Protocol (MCP)** - Supports MCP servers for extensible context (e.g., fetching data from external APIs or databases).
+- **Shadow Mode** - A safety feature that allows you to see what the agent *would* do before it makes any changes.
+- **Enterprise-Ready** - Built for collaborative teams already using the Atlassian suite.
+
+**Best for:**
+- Teams using Jira for task tracking and Confluence for documentation.
+- Developers who want task-specific subagents for specialized coding work.
+- Enterprise workflows requiring high security and "shadow mode" validation.
+- Complex projects that need to integrate external data via MCP.
+
+**Limitations:**
+- Requires an active Atlassian account with Rovo permissions.
+- Best used within projects that are already tracked in Jira/Confluence.
+- Newer addition to the CLI market.
+
+**Example usage:**
+```bash
+rovo "Create a new branch for JIRA-123 and implement the search feature"
+rovo "Refactor this component to use React hooks and update Confluence docs"
+```
+
+---
+
+### LangChain DeepAgents CLI - The Memory-First Assistant
+
+**Official Docs:** https://docs.langchain.com/oss/python/deepagents/cli/overview
+
+**What makes it special:**
+- **Persistent Memory** - Automatically learns and stores project conventions and architecture in local markdown files.
+- **Remote Sandboxes** - Execute code in isolated environments like Modal, Daytona, or Runloop for added security and reproducibility.
+- **Extensible with Skills & MCP** - Supports custom expert instructions (Skills) and Model Context Protocol tools.
+- **Flexible Interaction** - Supports both interactive chat and non-interactive piping (e.g., `cat logs | deepagents "Fix this"`).
+- **Human-in-the-Loop** - Built-in safeguards requiring user approval for destructive actions, with optional auto-approval.
+
+**Best for:**
+- Developers who want an agent that "gets" their specific coding style over time.
+- Security-conscious workflows requiring isolated code execution (sandboxing).
+- Complex, multi-step tasks that need robust todo tracking.
+- Users who want to leverage the LangChain / Deep Agents ecosystem.
+
+**Limitations:**
+- Requires Python/`uv` environment for installation.
+- Newer ecosystem; documentation and community are growing.
+
+**Example usage:**
+```bash
+deepagents "Refactor the authentication module and update the unit tests"
+cat error.log | deepagents -n "Explain and fix this error"
+```
+
+---
+
 ### Kiro CLI - The Spec-Driven Builder
 
 **Official Docs:** https://kiro.dev/docs/cli/
@@ -269,24 +330,28 @@ npm install -g @mariozechner/pi-coding-agent
    - Complex architecture and refactoring → **Claude Code**
    - Shell commands and CLI operations → **GitHub Copilot CLI**
    - Large codebases, multimodal → **Gemini CLI**
+   - Jira/Confluence integration, enterprise workflow → **Atlassian Rovo**
+   - Persistent project memory & sandboxing → **LangChain DeepAgents**
    - AWS infrastructure and DevOps → **Kiro CLI**
    - Maximum model flexibility → **OpenCode**
    - Minimal, hackable, self-owned → **Pi**
    - Real-time autocomplete → **Copilot** or **Cursor** (IDE)
 
 2. **What's your budget?**
-   - Pay per use → Claude Code, Gemini CLI
-   - Monthly subscription → Kiro CLI ($0-200), Copilot ($10-20), Cursor ($20)
+   - Pay per use → Claude Code, Gemini CLI, DeepAgents
+   - Monthly/Seat-based subscription → Atlassian Rovo, Kiro CLI, Copilot, Cursor
    - Free/open source → OpenCode (but you pay for LLM API, or use local models)
 
-3. **What cloud do you use?**
+3. **What cloud/stack do you use?**
+   - Atlassian Ecosystem → Atlassian Rovo
+   - LangChain / Python Ecosystem → LangChain DeepAgents
    - AWS → Kiro CLI
    - GCP → Gemini CLI
    - Any/none → Claude Code or OpenCode
 
 ### Recommended for Solo Unicorn Builder
 
-**Primary:** Pick one CLI agent — Claude Code, Gemini CLI, or Kiro CLI
+**Primary:** Pick one CLI agent — Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, or Kiro CLI
 **Optional:** Add Cursor or Copilot for real-time autocomplete in your IDE
 
 All of Solo Unicorn Builder's skills work with any CLI agent. You describe what you need in natural language, the agent reads the relevant `SKILL.md`, and executes.
@@ -300,17 +365,20 @@ All of Solo Unicorn Builder's skills work with any CLI agent. You describe what 
 ### Example: Building and Deploying a Feature
 
 ```
-1. Claude Code: "Analyze the codebase and design an OAuth integration"
-   → Architectural plan, multi-file changes
+1. Atlassian Rovo: "Analyze the Jira ticket JIRA-456 and suggest a technical design"
+   → Context-aware planning based on existing tasks
 
-2. Kiro CLI: "Deploy this to AWS with a staging environment"
+2. LangChain DeepAgents: "Summarize the project conventions and architecture for the new dev"
+   → Persistent memory makes context retrieval fast
+
+3. Claude Code: "Implement the feature according to the design"
+   → High-quality code generation and multi-file changes
+
+4. Kiro CLI: "Deploy this to AWS with a staging environment"
    → Infrastructure setup, container registry, Cloud Run config
 
-3. Gemini CLI: "Generate comprehensive API documentation from the codebase"
+5. Gemini CLI: "Generate comprehensive API documentation from the codebase"
    → Large context window handles the full system
-
-4. Claude Code: "Review the PR for security issues before merge"
-   → Detailed code review with reasoning
 ```
 
 Each agent does what it does best. Your job is to ask the right questions.
@@ -323,7 +391,7 @@ Each agent does what it does best. Your job is to ask the right questions.
 **A:** No. AI makes developers more productive, but humans still define requirements, make architectural decisions, review suggestions, and handle business logic.
 
 **Q: Which agent should I learn first?**
-**A:** Pick one CLI agent and start building. Skills transfer between agents. For Solo Unicorn Builder, Claude Code or Gemini CLI are the most common starting points.
+**A:** Pick one CLI agent and start building. Skills transfer between agents. For Solo Unicorn Builder, Claude Code, Gemini CLI, Atlassian Rovo, or LangChain DeepAgents are the most common starting points.
 
 **Q: What happened to Amazon CodeWhisperer?**
 **A:** AWS retired CodeWhisperer in April 2024 and merged its features into Amazon Q Developer. Kiro is AWS's newer, more ambitious offering — a spec-first AI development platform available as both an IDE and a CLI.
@@ -333,7 +401,7 @@ Each agent does what it does best. Your job is to ask the right questions.
 
 **Q: What about code privacy?**
 **A:** Varies by tool:
-- **Claude Code, Gemini CLI, Kiro CLI:** Code sent to cloud for processing
+- **Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI:** Code sent to cloud for processing
 - **OpenCode:** Can use local LLMs for full privacy
 - Check each tool's privacy policy for your compliance needs
 
@@ -341,10 +409,10 @@ Each agent does what it does best. Your job is to ask the right questions.
 
 ## Getting Started with Solo Unicorn Builder
 
-Solo Unicorn Builder works with **any CLI coding agent**. The skills in `skills/` are agent-agnostic — they work with Claude Code, GitHub Copilot CLI, Gemini CLI, Kiro CLI, Codex CLI, OpenCode, or any tool that reads markdown files.
+Solo Unicorn Builder works with **any CLI coding agent**. The skills in `skills/` are agent-agnostic — they work with Claude Code, GitHub Copilot CLI, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Codex CLI, OpenCode, or any tool that reads markdown files.
 
 **Setup:**
-1. Install at least one CLI agent (Claude Code, Gemini CLI, or Kiro CLI)
+1. Install at least one CLI agent (Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, or Kiro CLI)
 2. Clone Solo Unicorn Builder and run the init setup
 3. Start describing what you want to build — the agent reads the relevant skills and executes
 
@@ -359,6 +427,8 @@ AI coding tools evolve rapidly. Key resources:
 - **Claude Code:** https://docs.anthropic.com/en/docs/claude-code
 - **GitHub Copilot CLI:** https://gh.io/copilot-cli
 - **Gemini CLI:** https://github.com/google-gemini/gemini-cli
+- **Atlassian Rovo:** https://support.atlassian.com/rovo/docs/use-rovo-dev-cli/
+- **LangChain DeepAgents:** https://docs.langchain.com/oss/python/deepagents/cli/overview
 - **Kiro CLI:** https://kiro.dev/docs/cli/
 - **Codex CLI:** https://github.com/openai/codex
 - **OpenCode:** https://opencode.ai
