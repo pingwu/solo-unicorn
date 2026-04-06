@@ -1,0 +1,44 @@
+# Solo Unicorn Builder - Development Environment
+#
+# Start the dev environment:
+#   docker compose up -d
+#
+# Get a shell:
+#   docker compose exec dev bash
+#
+# Stop:
+#   docker compose down
+
+services:
+  dev:
+    build:
+      context: .devcontainer
+      dockerfile: Dockerfile
+    container_name: unicorn-dev
+    volumes:
+      # Mount the project directory
+      - .:/workspace
+      # Persist npm cache
+      - npm-cache:/home/developer/.npm
+      # Persist pip cache
+      - pip-cache:/home/developer/.cache/pip
+      # Mount git config for commits (read-only)
+      - ~/.gitconfig:/home/developer/.gitconfig:ro
+      # Mount SSH keys for git operations (read-only)
+      - ~/.ssh:/home/developer/.ssh:ro
+    working_dir: /workspace
+    # Keep the container running
+    stdin_open: true
+    tty: true
+    # Environment variables
+    environment:
+      - TERM=xterm-256color
+    # Optional: expose ports for web development
+    ports:
+      - "3000:3000"   # Frontend dev server
+      - "8000:8000"   # Backend/API server
+      - "5173:5173"   # Vite dev server
+
+volumes:
+  npm-cache:
+  pip-cache:

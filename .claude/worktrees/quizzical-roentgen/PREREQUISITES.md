@@ -21,17 +21,17 @@ This gives you a fully-equipped environment with Python, Node.js, gcloud, aws-cl
 
 ## What's Inside the Dev Container
 
-| Tool                            | Version | Purpose                                   |
-| ------------------------------- | ------- | ----------------------------------------- |
-| **Python**                      | 3.11    | Run Python scripts, AI/ML tools           |
-| **Node.js**                     | 20 LTS  | Run frontend builds, npm packages         |
-| **Git**                         | Latest  | Version control                           |
-| **GitHub CLI** (`gh`)           | Latest  | Create PRs, manage issues from terminal   |
-| **Google Cloud CLI** (`gcloud`) | Latest  | Deploy to GCP (Cloud Run, GCS, etc.)      |
-| **AWS CLI** (`aws`)             | v2      | Deploy to AWS (Lambda, S3, EC2, etc.)     |
-| **FFmpeg**                      | Latest  | Media processing (video/audio)            |
-| **jq**                          | Latest  | JSON processing in shell                  |
-| **Docker-in-Docker**            | Latest  | Build containers inside the dev container |
+| Tool | Version | Purpose |
+|------|---------|---------|
+| **Python** | 3.11 | Run Python scripts, AI/ML tools |
+| **Node.js** | 20 LTS | Run frontend builds, npm packages |
+| **Git** | Latest | Version control |
+| **GitHub CLI** (`gh`) | Latest | Create PRs, manage issues from terminal |
+| **Google Cloud CLI** (`gcloud`) | Latest | Deploy to GCP (Cloud Run, GCS, etc.) |
+| **AWS CLI** (`aws`) | v2 | Deploy to AWS (Lambda, S3, EC2, etc.) |
+| **FFmpeg** | Latest | Media processing (video/audio) |
+| **jq** | Latest | JSON processing in shell |
+| **Docker-in-Docker** | Latest | Build containers inside the dev container |
 
 ---
 
@@ -43,14 +43,14 @@ If you prefer to install tools directly on your machine, here's what you need:
 
 These 6 tools are the essential foundation — one in each category:
 
-| Category             | Tool             | Download                                                                             | Verify             |
-| -------------------- | ---------------- | ------------------------------------------------------------------------------------ | ------------------ |
-| **IDE**              | VS Code          | [code.visualstudio.com](https://code.visualstudio.com)                               | Open the app       |
-| **AI Coding Agent**  | Gemini CLI       | [github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)   | `gemini --version` |
-| **Cloud CLI**        | Google Cloud CLI | [cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install)       | `gcloud --version` |
-| **Version Control**  | Git              | [git-scm.com](https://git-scm.com)                                                   | `git --version`    |
-| **GitHub CLI**       | gh               | [cli.github.com](https://cli.github.com)                                             | `gh --version`     |
-| **Containerization** | Docker Desktop   | [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop) | `docker --version` |
+| Category | Tool | Download | Verify |
+|----------|------|----------|--------|
+| **IDE** | VS Code | [code.visualstudio.com](https://code.visualstudio.com) | Open the app |
+| **AI Coding Agent** | Gemini CLI | [github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | `gemini --version` |
+| **Cloud CLI** | Google Cloud CLI | [cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install) | `gcloud --version` |
+| **Version Control** | Git | [git-scm.com](https://git-scm.com) | `git --version` |
+| **GitHub CLI** | gh | [cli.github.com](https://cli.github.com) | `gh --version` |
+| **Containerization** | Docker Desktop | [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop) | `docker --version` |
 
 **Quick install for Gemini CLI:**
 ```bash
