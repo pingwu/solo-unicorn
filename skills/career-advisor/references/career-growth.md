@@ -295,6 +295,85 @@ Run every quarter, even when not searching:
 
 ---
 
+## Backfill: Documenting Past Roles
+
+For roles not yet documented, run a guided backfill conversation. Process one role at a time.
+
+### Backfill Workflow
+
+1. **Gather basics** — company, title, dates, team size, scope, why you joined, why you left
+2. **Mine achievements** using memory-jogging prompts:
+   - "What did you ship that people still use?"
+   - "What broke that you fixed? What was the blast radius?"
+   - "What process did you create or improve?"
+   - "What did your manager praise in reviews?"
+   - "What would your best colleague say was your biggest contribution?"
+   - "What did you build that you're proudest of?"
+   - "What did you learn that changed how you work?"
+3. **Quantification pass** — push for numbers on every achievement: users, revenue, time saved, % improvement, team size, systems affected
+4. **STAR conversion** — convert the best 3-5 achievements into full STAR stories marked `[INTERVIEW-READY]`
+5. **Skills extraction** — identify skills demonstrated, merge into `1-identity/skills-inventory.md`
+
+### File Save Map (Backfill)
+
+Every backfill session must produce these files:
+
+| File | Location | Content |
+|------|----------|---------|
+| Role section | `1-identity/accomplishments.md` | Append role heading + key achievements + STAR stories |
+| Achievement records | `5-roles/ROLE-NNN/achievements/ACH-NNN-title.md` | One file per achievement using STAR template |
+| Role growth notes | `5-roles/ROLE-NNN/growth.md` | Skills developed, lessons learned (even for past roles) |
+| Skills inventory | `1-identity/skills-inventory.md` | Merge newly identified skills |
+| Archive (past roles) | `6-archive/past-roles/ROLE-NNN/` | Move role folder here after backfill complete |
+
+**Rule:** Nothing discussed in conversation stays only in conversation. Save every answer to the appropriate file before moving to the next role.
+
+### Review for Truth, Keep the Confidence
+
+After saving backfill files, always remind the user:
+
+> "Please review what I wrote. AI-generated achievement descriptions tend to drift toward hyperbole — I may have made your work sound bigger or more impactful than it actually was. Remove any exaggerations or claims you couldn't defend in an interview. But don't swing the other way and undersell yourself. If you led the project, say you led it. If the numbers are real, keep them. The goal is **confident accuracy** — every claim true, every result quantified, every story something you'd tell with conviction to a hiring manager's face."
+
+Common things to check:
+- **Inflated scope:** "Transformed the entire engineering organization" when you improved one team's process
+- **Vague superlatives:** "Dramatically improved" — replace with actual numbers
+- **Assumed causation:** "Increased revenue by 40%" when you built one feature among many contributors
+- **Borrowed credit:** Make sure "I" vs "we" accurately reflects your role
+
+### Backfill Priority
+
+If you have multiple undocumented roles, backfill in this order:
+1. Most recent role (freshest memory, highest resume relevance)
+2. Longest-held role (likely richest in achievements)
+3. Most relevant to target role (if dream job is defined)
+4. Everything else (even short stints have at least one story)
+
+---
+
+## Weekly Recall: Keeping Current Role Fresh
+
+Run weekly or after any notable event. A 5-minute conversation:
+
+1. "What did you ship, fix, or improve this week?"
+2. "Did anyone give you positive feedback? What did they say — exact words?"
+3. "Did you learn something new? Lead something? Mentor someone?"
+4. "Any metrics that moved because of your work?"
+
+### File Save Map (Recall)
+
+| File | Location | Content |
+|------|----------|---------|
+| Quick win | `5-roles/ROLE-NNN/achievements/ACH-NNN-title.md` | Lightweight win template |
+| Full achievement | `5-roles/ROLE-NNN/achievements/ACH-NNN-title.md` | Full STAR template |
+| Vault summary | `1-identity/accomplishments.md` | Append one-liner under current role |
+| Goals progress | `5-roles/ROLE-NNN/growth.md` | Update if achievement advances a goal |
+
+**Rule:** Every recall session produces at least one saved file. If the user says "nothing happened this week," probe harder — maintenance, mentoring, and learning all count.
+
+**After saving, prompt review.** Same truth-check as backfill: "Check that every claim is something you could defend in an interview. Remove exaggerations — but don't remove confidence. Own what you actually did."
+
+---
+
 ## Role Folder Structure
 
 ```

@@ -17,35 +17,33 @@ The tactical engine: from discovering opportunities to landing offers.
 
 ```
 my_knowledge/career/
-├── INDEX.md                           # Central dashboard
-├── Accomplishments-Tracker.md         # Master career history
-├── research/
-│   ├── companies/CO-NNN-Company.md    # Company due diligence
-│   ├── market/                        # Salary & market research
-│   └── outreach/OUT-NNN-Name.md       # Networking contacts
-├── opportunities/                     # Pre-application JDs under evaluation
-│   └── Company-Role.md
-├── applications/
-│   └── APP-NNN-Company-Role/
-│       ├── JD-Company-Role.md         # Verbatim job description
-│       ├── Resume-Company-Role.md     # Tailored resume
-│       ├── notes.md                   # Application log + interview notes
-│       ├── INT-NNN-Stage.md           # Individual interview records
-│       └── assets/                    # Cover letters, video scripts, etc.
-└── roles/                             # Post-hire (see career-growth.md)
+|-- INDEX.md                              # Central dashboard
+|-- 1-identity/
+|   +-- accomplishments.md               # Master career vault
+|-- 3-research/
+|   |-- companies/CO-NNN-company.md       # Company due diligence
+|   |-- market/                           # Salary & market research
+|   +-- outreach/OUT-NNN-name.md          # Networking contacts
+|-- 4-applications/
+|   +-- APP-NNN-company-role/
+|       |-- jd.md                         # Verbatim job description
+|       |-- resume.md                     # Tailored resume
+|       |-- notes.md                      # Application log + fit analysis
+|       +-- interviews/
+|           +-- INT-NNN-stage.md          # Individual interview records
++-- 5-roles/                              # Post-hire (see career-growth.md)
 ```
 
 ### Naming Conventions
 
 | Type | Convention | Example |
 |------|-----------|---------|
-| Company research | `CO-NNN-Company.md` | `CO-001-Acme.md` |
-| Outreach contact | `OUT-NNN-Name.md` | `OUT-001-JohnDoe-Referral.md` |
-| Opportunity (pre-app) | `Company-Role.md` | `Acme-SeniorDev.md` |
-| Application folder | `APP-NNN-Company-Role/` | `APP-001-Acme-SeniorDev/` |
-| Job description | `JD-Company-Role.md` | `JD-Acme-SeniorDev.md` |
-| Resume | `Resume-Company-Role.md` | `Resume-Acme-SeniorDev.md` |
-| Interview record | `INT-NNN-Stage.md` | `INT-001-PhoneScreen.md` |
+| Company research | `CO-NNN-company.md` | `CO-001-acme-corp.md` |
+| Outreach contact | `OUT-NNN-name.md` | `OUT-001-jane-doe.md` |
+| Application folder | `APP-NNN-company-role/` | `APP-001-acme-swe/` |
+| Job description | `jd.md` | `jd.md` (inside app folder) |
+| Resume | `resume.md` | `resume.md` (inside app folder) |
+| Interview record | `INT-NNN-stage.md` | `INT-001-phone-screen.md` |
 
 ---
 

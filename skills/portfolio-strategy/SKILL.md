@@ -357,4 +357,4 @@ The agent becomes your portfolio critic — giving you the honest, specific feed
 | Skill | When to use it |
 |-------|---------------|
 | `github-profile` | Implement GitHub platform mechanics — profile README, repo pinning, topics, activity graph |
-| `career-resume` | Full career lifecycle — job search, interviews, onboarding, performance reviews |
+| `career-advisor` | Full career lifecycle — self-discovery, gap analysis, job search, growth |
