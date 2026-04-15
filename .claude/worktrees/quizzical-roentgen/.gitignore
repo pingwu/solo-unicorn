@@ -1,0 +1,31 @@
+*.DS_Store
+._*
+
+# Agent skill junctions/symlinks (created locally per INIT_UNICORN.md instructions)
+.claude/skills
+.gemini/skills
+
+# Agent skill junctions/symlinks (additional agents)
+.kiro/
+.opencode/
+
+# Local settings
+.claude/settings.local.json
+.agent/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# User-owned directories (my_* pattern — never check these in)
+# Users should create a separate git repo inside each for version control.
+my_*
+
+# Curriculum (proprietary course content)
+curriculum/
+
+# Obsidian vault metadata
+.obsidian
+.smart-env
+my_knowledge/

@@ -1,0 +1,4 @@
+policy:
+  constraint: constraints/run.allowUnauthenticated
+  booleanPolicy:
+    enforced: false

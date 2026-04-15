@@ -11,18 +11,18 @@ You don't need all of them. You need the right one for where you are right now.
 
 ## By Stage
 
-| Stage | Where you are | Skills that help |
-|-------|--------------|-----------------|
-| Job seeking / AI-native roles | "I want to work in AI but don't know how to prove it" | `career-resume`, `github-profile`, `portfolio-strategy` |
-| Figuring out what to build | "I have an idea but I'm not sure" | `idea-validation`, `product`, `pm-design-thinking`, `business-model` |
-| Getting your first clients | "I'm reaching out but nothing sticks" | `go-to-market`, `sales`, `marketing-brand`, `business-development` |
-| Growing and keeping clients | "I have some clients but need more" | `growth-analytics`, `customer-success`, `business-development` |
-| Running a business | "I need to operate and scale" | `legal-compliance`, `finance-accounting`, `operations`, `fundraising` |
-| Building and shipping | "I need to make this real" | `multi-file-architecture`, `test-first-development`, `context-aware-debugging`, `frontend-ui-ux`, `git-expert`, `github-cli`, `github-actions`, `docker-expert`, `python-dependency-expert`, `aws-cli-architect`, `gcloud-expert`, `mcp-builder`, `webapp-testing` |
-| Creating documents & visuals | "I need polished deliverables" | `document-creation`, `generative-art` |
-| Contributing to open source | "I want to build credibility" | `open-source-contribution`, `technical-writing` |
-| Managing your knowledge | "I need to organize my thinking" | `obsidian-knowledge` |
-| Extending the platform | "I want to create new skills" | `skill-creator` |
+| Stage                         | Where you are                                         | Skills that help                                                                                                                                                                                                                                                   |
+| ----------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Job seeking / AI-native roles | "I want to work in AI but don't know how to prove it" | `career-resume`, `github-profile`, `portfolio-strategy`                                                                                                                                                                                                            |
+| Figuring out what to build    | "I have an idea but I'm not sure"                     | `idea-validation`, `product`, `pm-design-thinking`, `business-model`                                                                                                                                                                                               |
+| Getting your first clients    | "I'm reaching out but nothing sticks"                 | `go-to-market`, `sales`, `marketing-brand`, `business-development`                                                                                                                                                                                                 |
+| Growing and keeping clients   | "I have some clients but need more"                   | `growth-analytics`, `customer-success`, `business-development`                                                                                                                                                                                                     |
+| Running a business            | "I need to operate and scale"                         | `legal-compliance`, `finance-accounting`, `operations`, `fundraising`                                                                                                                                                                                              |
+| Building and shipping         | "I need to make this real"                            | `multi-file-architecture`, `test-first-development`, `context-aware-debugging`, `frontend-ui-ux`, `git-expert`, `github-cli`, `github-actions`, `docker-expert`, `python-dependency-expert`, `aws-cli-architect`, `gcloud-expert`, `mcp-builder`, `webapp-testing` |
+| Creating documents & visuals  | "I need polished deliverables"                        | `document-creation`, `generative-art`                                                                                                                                                                                                                              |
+| Contributing to open source   | "I want to build credibility"                         | `open-source-contribution`, `technical-writing`                                                                                                                                                                                                                    |
+| Managing your knowledge       | "I need to organize my thinking"                      | `obsidian-knowledge`                                                                                                                                                                                                                                               |
+| Extending the platform        | "I want to create new skills"                         | `skill-creator`                                                                                                                                                                                                                                                    |
 
 ## By Category
 

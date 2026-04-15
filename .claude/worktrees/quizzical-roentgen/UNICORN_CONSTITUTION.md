@@ -56,28 +56,7 @@ The project uses an "Office" metaphor. Each role maps to agent skills in `skills
 See **[INIT_UNICORN.md](INIT_UNICORN.md)** for post-clone setup (symlinks, dev container, personal knowledge).
 
 
-## 5. Creating a New Project
-
-When scaffolding a new project under `my_projects/`, copy the template **directly into** the project folder — do not create a named subfolder inside it.
-
-```bash
-# CORRECT — template contents land at my_projects/<project-name>/
-cp -r template_projects/landing-page my_projects/<project-name>
-
-# WRONG — causes double-nesting: my_projects/<project-name>/<project-name>/
-mkdir my_projects/<project-name>
-cp -r template_projects/landing-page my_projects/<project-name>/<project-name>
-```
-
-If using a tool that auto-creates a folder (e.g. `git clone`, `create-next-app`), run it **from** `my_projects/` with the project name as the target, not from inside a pre-created folder:
-
-```bash
-# Run from my_projects/ — lets the tool create the folder itself
-cd my_projects && git clone <url> <project-name>
-cd my_projects && npx create-next-app <project-name>
-```
-
-## 6. Development Workflow
+## 5. Development Workflow
 
 ### Container Commands
 
@@ -107,7 +86,7 @@ docker compose run --rm --no-deps dev sh -c "npm install -D <package>"
 docker compose run --rm --no-deps dev sh -c "gh pr list"
 ```
 
-## 7. Coding Conventions
+## 6. Coding Conventions
 
 - **Markdown front matter (mandatory):** Every `.md` file in the Solo Unicorn Builder project must include YAML front matter with `name` and `description` fields. This makes files discoverable by AI agents and compatible with the skill system.
   ```yaml
@@ -122,7 +101,7 @@ docker compose run --rm --no-deps dev sh -c "gh pr list"
 - **Docker**: Always detached mode (`-d`) for container startup.
 - **Container-first installs**: Never install npm packages on the host. Use `docker compose run --rm --no-deps dev sh -c "npm install -D <package>"`.
 
-## 8. Key Paths
+## 7. Key Paths
 
 | Path | Purpose |
 |------|---------|
@@ -132,7 +111,7 @@ docker compose run --rm --no-deps dev sh -c "gh pr list"
 | `my_projects/` | User's own projects — all code changes happen here |
 | `skills/` | Canonical agent skill definitions (36 skills) |
 
-## 9. Troubleshooting
+## 8. Troubleshooting
 
 - **Build failures**: Check error messages, verify Node.js version in container, check dependencies.
 - **`next build` fails with "Cannot find module 'typescript'"**: The builder stage needs ALL dependencies (`npm ci`), not just production deps. `next.config.ts` requires TypeScript at build time.
@@ -142,7 +121,7 @@ docker compose run --rm --no-deps dev sh -c "gh pr list"
 - **Deployment issues**: Verify Docker image compatibility, cloud service configs, IAM permissions.
 - **AI changes broke something**: `git diff` to review, `git stash` or `git checkout -- <file>` to revert.
 
-## 10. Container-First Development (Mandatory)
+## 9. Container-First Development (Mandatory)
 
 Development MUST mirror the production environment from day one. All code execution, dependency installation, builds, and tests happen inside Docker containers.
 
@@ -165,14 +144,14 @@ docker compose run --rm --no-deps dev sh -c "npm install -D <package>"
 
 This constraint ensures every developer, from day one, works in the same environment that runs in production. No "works on my machine" surprises.
 
-## 11. Additional Constraints
+## 10. Additional Constraints
 
 - Do not modify files in `template_knowledge/` unless explicitly instructed.
 - Do not run containers in foreground mode; always use `-d`.
 - Do not skip tests. Run `npx vitest run` (inside the container) before committing changes.
 - Do not create files outside the project structure without explicit instruction.
 
-## 12. Personal Development and Knowledge Management
+## 11. Personal Development and Knowledge Management
 
 The `my_knowledge/` directory is designated for your individual growth and learning. It is **git-ignored** and provides a space for:
 
