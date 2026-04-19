@@ -374,6 +374,32 @@ Run weekly or after any notable event. A 5-minute conversation:
 
 ---
 
+## Corporate HR Alignment
+
+Your company has a performance review cycle — OKRs, goals, competency frameworks, calibration sessions. **This system doesn't replace that. It feeds it.**
+
+The biggest mistake: treating corporate HR goals as a checkbox exercise in Workday/Lattice/Culture Amp, then scrambling at review time to remember what you did. Flip it:
+
+1. **Copy your corporate goals into `5-roles/ROLE-NNN/growth.md`.** Paste verbatim or summarize — the point is having them *here*, where you actually work, not buried in an HR portal you visit twice a year.
+2. **Log achievements as they happen** (`/career-advisor win` or `/career-advisor achievement`). Tag each one with the corporate goal it supports.
+3. **At review time, generate your self-review** (`/career-advisor review`) and copy the output back into your HR system. Quantified results, STAR stories, and gap analysis ready — while everyone else writes fiction from memory.
+
+```
+Corporate HR System (Workday, Lattice, etc.)
+    │
+    │  copy goals in ──→  growth.md (your working copy)
+    │                         │
+    │                         ├── achievements logged in real-time
+    │                         ├── gap analysis stays current
+    │                         └── self-review auto-generated
+    │
+    │  paste review back ←── /career-advisor review
+```
+
+**The rule:** Your career-advisor folder is the source of truth. The HR system is the delivery mechanism. Never write a self-review from scratch in a browser form.
+
+---
+
 ## Role Folder Structure
 
 ```
