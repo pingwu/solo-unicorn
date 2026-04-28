@@ -40,7 +40,7 @@ The project uses an "Office" metaphor. Each role maps to agent skills in `skills
 |--------|------|-------------------|
 | CEO | Root orchestrator | All skills as needed |
 | CFO | Financial / cost analysis | `aws-cli-architect`, `gcloud-expert`, `finance-accounting`, `fundraising`, `business-model`, `document-creation` |
-| CTO | Tech architecture & dev | `aws-cli-architect`, `gcloud-expert`, `multi-file-architecture`, `test-first-development`, `context-aware-debugging`, `frontend-ui-ux`, `git-expert`, `github-cli`, `github-actions`, `docker-expert`, `python-dependency-expert`, `mcp-builder`, `webapp-testing`, `skill-creator` |
+| CTO | Tech architecture & dev | `aws-cli-architect`, `gcloud-expert`, `multi-file-architecture`, `test-first-development`, `context-aware-debugging`, `frontend-ui-ux`, `git-expert`, `github-cli`, `github-actions`, `docker-expert`, `python-dependency-expert`, `mcp-builder`, `webapp-testing`, `skill-creator`, `openclaw-operations` |
 | CSO | Security | `context-aware-debugging`, `legal-compliance` |
 | CMO | Marketing & branding | `marketing-brand`, `go-to-market`, `growth-analytics`, `pm-design-thinking`, `generative-art`, `document-creation` |
 | CRO | Revenue & sales | `sales`, `go-to-market`, `business-model`, `growth-analytics`, `business-development`, `document-creation` |
