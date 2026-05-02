@@ -35,7 +35,7 @@ The `my_knowledge/` vault is designed around a daily practice: collect your thou
 
 Over time, these entries connect. An idea on Monday links to a company you researched on Wednesday, which connects to a person you met on Friday, which shapes a goal you set next quarter. The AI reads this graph and produces outputs grounded in *your* actual context — not generic advice.
 
-When a skill like `career-resume` runs, it doesn't generate a generic resume. It reads your accomplishments, your target companies, your goals — and produces something that reflects your real story. That's what context engineering looks like in practice: **the daily discipline of collecting and connecting your knowledge so AI can reason about your specific situation.**
+When a skill like `career-advisor` runs, it doesn't generate a generic resume. It reads your accomplishments, your target companies, your goals — and produces something that reflects your real story. That's what context engineering looks like in practice: **the daily discipline of collecting and connecting your knowledge so AI can reason about your specific situation.**
 
 ## Where This Practice Came From
 

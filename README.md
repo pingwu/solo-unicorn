@@ -28,9 +28,24 @@ The 36 skills are organized as an "Office" — each role is an AI-powered expert
 | **CMO** | Position, brand, reach your audience | `marketing-brand`, `go-to-market`, `growth-analytics`, `generative-art` |
 | **CRO** | Grow revenue, build partnerships | `sales`, `business-development`, `business-model` |
 | **CFO** | Manage costs, plan finances | `finance-accounting`, `fundraising`, `aws-cli-architect` |
-| **COO** | Run operations, build your career | `operations`, `career-resume`, `portfolio-strategy`, `document-creation` |
+| **COO** | Run operations, build your career | `operations`, `career-advisor`, `portfolio-strategy`, `document-creation` |
 
-You don't need to hire a team. You need to ask the right questions — and let AI handle the execution. [Full list of 36 skills →](docs/skills-reference.md)
+You don't need to hire a team. You need to ask the right questions — and let AI handle the execution. [Full list of skills →](docs/skills-reference.md)
+
+## Add-on Skills
+
+Beyond the core 36, the community has contributed specialized skills that extend the platform:
+
+| Skill | What it does |
+|-------|-------------|
+| `career-advisor` | Full-lifecycle career management — self-discovery, gap analysis, resume generation, interview prep, onboarding, achievement tracking, and self-reviews. Replaces the former `career-resume` skill. |
+| `startup-explorer` | Pre-validation startup idea explorer — bridges career strengths to market opportunities before you commit to building |
+| `notebooklm` | Query Google NotebookLM notebooks directly from your coding agent |
+| `youtube-knowledge-extractor` | Extract key ideas, summaries, and actionable insights from YouTube videos |
+| `oci-expert` | Oracle Cloud Infrastructure expertise — Always Free tier, A1 ARM64 instances, networking, and common errors |
+| `landing-page-service-discovery` | Synthesize professional accomplishments into high-converting landing page copy |
+
+Add-on skills work exactly like core skills — just describe what you need and the AI applies the right one. Want to contribute your own? [How to contribute →](docs/contributing.md)
 
 ## Why This Exists
 

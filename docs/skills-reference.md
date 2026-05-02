@@ -13,7 +13,7 @@ You don't need all of them. You need the right one for where you are right now.
 
 | Stage | Where you are | Skills that help |
 |-------|--------------|-----------------|
-| Job seeking / AI-native roles | "I want to work in AI but don't know how to prove it" | `career-resume`, `github-profile`, `portfolio-strategy` |
+| Job seeking / AI-native roles | "I want to work in AI but don't know how to prove it" | `career-advisor`, `github-profile`, `portfolio-strategy` |
 | Figuring out what to build | "I have an idea but I'm not sure" | `idea-validation`, `product`, `pm-design-thinking`, `business-model` |
 | Getting your first clients | "I'm reaching out but nothing sticks" | `go-to-market`, `sales`, `marketing-brand`, `business-development` |
 | Growing and keeping clients | "I have some clients but need more" | `growth-analytics`, `customer-success`, `business-development` |
@@ -28,7 +28,7 @@ You don't need all of them. You need the right one for where you are right now.
 
 | Category | Skills | What they do |
 |----------|--------|-------------|
-| **Career & Portfolio** | `career-resume`, `github-profile`, `portfolio-strategy` | Tailor resumes, build your GitHub presence, showcase your work |
+| **Career & Portfolio** | `career-advisor`, `github-profile`, `portfolio-strategy` | Full-lifecycle career management, build your GitHub presence, showcase your work |
 | **Idea & Product** | `idea-validation`, `product`, `pm-design-thinking`, `business-model` | Validate ideas, define products, choose business models |
 | **Go to Market** | `go-to-market`, `sales`, `marketing-brand`, `growth-analytics`, `customer-success`, `business-development` | Find clients, close deals, build partnerships, grow revenue |
 | **Business Operations** | `legal-compliance`, `finance-accounting`, `operations`, `fundraising` | Handle legal, finances, operations, and fundraising |
@@ -43,7 +43,7 @@ You don't need all of them. You need the right one for where you are right now.
 Each skill lives in `skills/` as a folder with a `SKILL.md` file. When you ask your AI agent for help with a task, it reads the relevant skill and applies that expertise to your situation.
 
 You don't need to memorize skill names. Just describe what you need:
-- "Help me write a resume for this job posting" → uses `career-resume`
+- "Help me write a resume for this job posting" → uses `career-advisor`
 - "Set up my GitHub profile README" → uses `github-profile`
 - "I have a Python dependency conflict with torch and numpy" → uses `python-dependency-expert`
 - "Help me contribute to an open-source project" → uses `open-source-contribution`

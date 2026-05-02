@@ -77,7 +77,7 @@ git checkout -b add-skill-your-skill-name
 Tell your AI agent:
 ```
 "Help me create a new skill called [your-skill-name] in the skills directory.
-Look at an existing skill like career-resume or sales as a template."
+Look at an existing skill like career-advisor or sales as a template."
 ```
 
 This is where the AI agent shines. Describe your domain expertise and the agent will help you structure it into a proper `SKILL.md` file.
