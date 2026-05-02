@@ -371,4 +371,4 @@ The agent becomes your profile strategist — turning a scattered GitHub presenc
 | Skill | When to use it |
 |-------|---------------|
 | `portfolio-strategy` | Decide which projects to showcase and what story they tell together |
-| `career-resume` | Full career lifecycle — job search, interviews, onboarding, performance reviews |
+| `career-advisor` | Full career lifecycle — self-discovery, gap analysis, job search, growth |

@@ -29,3 +29,7 @@ curriculum/
 .obsidian
 .smart-env
 my_knowledge/
+
+# Local memory (never commit — contains private context)
+MEMORY.md
+memory/

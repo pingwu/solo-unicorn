@@ -20,7 +20,7 @@ This is a major release with breaking changes. If you forked the previous versio
 - **Kiro CLI and OpenCode support:** Agent symlinks now cover 5 CLI tools instead of 2
 - **Starter project templates:** `template_projects/` ships with ready-to-copy projects so you're not starting from zero
 - **GitHub community files:** Issue templates (bug, feature, skill proposal), PR template, Code of Conduct, Contributing guide
-- **Expanded existing skills:** Significant updates to `frontend-ui-ux`, `marketing-brand`, `operations`, `technical-writing`, `career-resume`, and `obsidian-knowledge`
+- **Expanded existing skills:** Significant updates to `frontend-ui-ux`, `marketing-brand`, `operations`, `technical-writing`, `career-advisor`, and `obsidian-knowledge`
 
 ### Breaking Changes
 

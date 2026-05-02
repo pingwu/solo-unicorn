@@ -47,18 +47,18 @@ career/
 ### For Job Search
 1. Copy this folder to `my_knowledge/career/`
 2. Edit `Accomplishments-Tracker.md` with your career history
-3. Use `/career-resume research "Company"` to start researching
-4. Use `/career-resume new "Company" "Role"` to create applications
-5. Use `/career-resume generate APP-001` to create tailored resumes
+3. Use `/career-advisor research "Company"` to start researching
+4. Use `/career-advisor new "Company" "Role"` to create applications
+5. Use `/career-advisor generate APP-001` to create tailored resumes
 
 ### For Current Role (Post-Hire)
-1. Use `/career-resume accept APP-001` to create role folder
+1. Use `/career-advisor accept APP-001` to create role folder
 2. Track 30-60-90 onboarding in `onboarding.md`
-3. Log achievements as they happen with `/career-resume achievement`
-4. Analyze skill gaps with `/career-resume gaps ROLE-001`
-5. Create learning plans with `/career-resume learn ROLE-001 --skill "X"`
-6. Generate self-reviews with `/career-resume review ROLE-001 --period "H1"`
+3. Log achievements as they happen with `/career-advisor achievement`
+4. Analyze skill gaps with `/career-advisor gaps ROLE-001`
+5. Create learning plans with `/career-advisor learn ROLE-001 --skill "X"`
+6. Generate self-reviews with `/career-advisor review ROLE-001 --period "H1"`
 
 ## Related Skill
 
-See `skills/career-resume/SKILL.md` for full documentation and commands.
+See `skills/career-advisor/SKILL.md` for full documentation and commands.

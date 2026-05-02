@@ -1,11 +1,13 @@
 ---
 name: context-engineering
-description: How Solo Unicorn Builder practices context engineering — the daily writing discipline, personal knowledge graph, vendor independence, and the origin story behind the approach.
+description: How Solo Unicorn Builder evolved from context engineering to agent harness — the daily writing discipline, personal knowledge graph, vendor independence, and the real-world outcomes that prove the approach works.
 ---
 
-# Context Engineering in Practice
+# From Context Engineering to Agent Harness
 
 The industry calls it **context engineering** — the discipline of structuring information so AI produces better, more grounded outputs. This project has been practicing it from the start, before the term existed.
+
+But context engineering is only half the picture. Knowing what to feed the AI doesn't help if you don't have a system to make it *act*. Solo Unicorn Builder is an **agent harness** — it doesn't just structure your knowledge; it gives AI agents the skills, instructions, and domain expertise to operate as your team across every function you've never done before.
 
 ## Three Layers of Engineered Context
 
@@ -35,19 +37,43 @@ The `my_knowledge/` vault is designed around a daily practice: collect your thou
 
 Over time, these entries connect. An idea on Monday links to a company you researched on Wednesday, which connects to a person you met on Friday, which shapes a goal you set next quarter. The AI reads this graph and produces outputs grounded in *your* actual context — not generic advice.
 
-When a skill like `career-resume` runs, it doesn't generate a generic resume. It reads your accomplishments, your target companies, your goals — and produces something that reflects your real story. That's what context engineering looks like in practice: **the daily discipline of collecting and connecting your knowledge so AI can reason about your specific situation.**
+When a skill like `career-advisor` runs, it doesn't generate a generic resume. It reads your accomplishments, your target companies, your goals — and produces something that reflects your real story. That's what context engineering looks like in practice: **the daily discipline of collecting and connecting your knowledge so AI can reason about your specific situation.**
 
-## Where This Practice Came From
+## Proof It Works
+
+This isn't theory. The agent harness approach has shipped real outcomes.
+
+### *Just Ask* — A Business Novel
 
 This project's author used the same practice to write *[Just Ask](https://www.ping-ai.com)* — a business novel about a laid-off cloud engineer who discovers that the skill behind every AI breakthrough is the same skill behind every human breakthrough: the ability to ask the right question.
 
-The book itself was produced through daily writing and knowledge collection — the same `my_knowledge/` workflow this project gives you. Years of daily reflections, research notes, collected ideas, and external knowledge accumulated into a personal knowledge graph. When it came time to write, the AI didn't start from nothing. It drew from a rich, structured context that the author had been building one day at a time.
+The book was produced through daily writing and knowledge collection — the same `my_knowledge/` workflow this project gives you. Years of daily reflections, research notes, collected ideas, and external knowledge accumulated into a personal knowledge graph. When it came time to write, the AI didn't start from nothing. It drew from a rich, structured context that the author had been building one day at a time.
 
 In Chapter 2, "Lemon Juice," the protagonist discovers the core insight: **the technology is never the variable — the context is the variable.** The same AI tool that electrifies a room full of fifteen people at a family dinner produces flat, adequate answers the next morning in a quiet kitchen. The difference isn't the model. It's the context surrounding it — the energy, the audience, the frame, the accumulated knowledge that gives the AI something real to work with.
 
 The protagonist's morning writing practice — emptying thoughts onto a blank page with no audience, no optimization — becomes the foundation for everything that follows. Not because writing is magical, but because it builds the context that makes AI useful. Without that daily discipline, the AI has nothing personal to reason about. With it, every tool in the stack becomes grounded in *your* actual situation.
 
-That's the connection between this open-source project and the book. The `my_knowledge/` vault isn't a feature — it's the practice the entire framework was built on.
+The `my_knowledge/` vault isn't a feature — it's the practice the entire framework was built on.
+
+### AI Launchpad Cohort — A Production Landing Page
+
+The [AI Launchpad Cohort](https://cohort.solo-unicorn.app/) is a paid 3-week intensive that teaches the same agent harness methodology to knowledge workers. The landing page itself — from copy to deployment — was built and shipped using the same skills and workflows this project teaches.
+
+This is the agent harness in action: `landing-page-service-discovery` synthesized the author's professional accomplishments into positioning copy. `career-advisor` provided the career narrative. `frontend-ui-ux` handled responsive design. `go-to-market` shaped the offer structure. No separate design team, no copywriter, no web agency. One person, multiple AI agents, a real product in production.
+
+The landing page isn't a demo — it's a business generating revenue. That's the difference between context engineering (structuring information) and an agent harness (making AI act). The same framework you clone from this repo is the one that shipped a real product.
+
+### WRITITATION™ — Before the Karpathy Wiki Pattern
+
+In April 2026, Andrej Karpathy [posted a pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) that went viral — 16M+ views, 5,000+ GitHub stars in days: use Obsidian as the IDE, an LLM as the programmer, and a structured markdown wiki as the codebase. The community called it the "LLM Wiki Pattern."
+
+Solo Unicorn Builder has been doing this since 2025 — and we trademarked it.
+
+**WRITITATION™** (Writing + Meditation) is the methodology behind the `my_knowledge/` vault: a daily practice of collecting thoughts, capturing external knowledge, and organizing it into structured markdown that AI agents can reason over. The `obsidian-knowledge` skill connects your Obsidian vault directly to your coding agent. The three-layer architecture (skills, instructions, knowledge) predates Karpathy's three-layer architecture (raw, wiki, schema) by over a year.
+
+The difference: the Karpathy Wiki Pattern is about **building a knowledge base**. WRITITATION™ is about **building a practice** — the daily discipline that makes the knowledge base valuable. A wiki without a writing habit is an empty folder. WRITITATION™ is the 心法 (inner methodology) that fills it.
+
+If the Karpathy Wiki Pattern resonates with you, you're already looking at its evolution. Solo Unicorn Builder doesn't just store knowledge — it harnesses that knowledge through 40+ skills that turn your accumulated context into shipped products, tailored resumes, validated ideas, and real business outcomes.
 
 ## Why Your Context Shouldn't Live in a Vendor's Data Center
 
@@ -81,6 +107,6 @@ Each model reads the same `my_knowledge/`, the same `skills/`, the same project 
 
 This is the multi-model advantage that vendor lock-in makes impossible. When your thinking lives in ChatGPT threads, you can't hand it to Claude for a second look. When your thinking lives in files, every model is a fresh pair of eyes on the same foundation.
 
-## A Note on the Term
+## A Note on the Terms
 
-We didn't set out to build a "context engineering framework." We set out to help specialists ship end-to-end. The writing practice and knowledge structure are how we got there. The industry now has a name for it — and if that name helps people find this project, good. But the practice predates the buzzword.
+We didn't set out to build a "context engineering framework." We set out to help specialists ship end-to-end. The writing practice and knowledge structure are how we got there. The industry now has a name for the first half — context engineering. We've gone further: an agent harness that turns structured context into autonomous action across every business function. The practice predates both buzzwords.

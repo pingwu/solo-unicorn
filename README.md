@@ -28,9 +28,24 @@ The 36 skills are organized as an "Office" — each role is an AI-powered expert
 | **CMO** | Position, brand, reach your audience | `marketing-brand`, `go-to-market`, `growth-analytics`, `generative-art` |
 | **CRO** | Grow revenue, build partnerships | `sales`, `business-development`, `business-model` |
 | **CFO** | Manage costs, plan finances | `finance-accounting`, `fundraising`, `aws-cli-architect` |
-| **COO** | Run operations, build your career | `operations`, `career-resume`, `portfolio-strategy`, `document-creation` |
+| **COO** | Run operations, build your career | `operations`, `career-advisor`, `portfolio-strategy`, `document-creation` |
 
-You don't need to hire a team. You need to ask the right questions — and let AI handle the execution. [Full list of 36 skills →](docs/skills-reference.md)
+You don't need to hire a team. You need to ask the right questions — and let AI handle the execution. [Full list of skills →](docs/skills-reference.md)
+
+## Add-on Skills
+
+Beyond the core 36, the community has contributed specialized skills that extend the platform:
+
+| Skill | What it does |
+|-------|-------------|
+| `career-advisor` | Full-lifecycle career management — self-discovery, gap analysis, resume generation, interview prep, onboarding, achievement tracking, and self-reviews. Replaces the former `career-resume` skill. |
+| `startup-explorer` | Pre-validation startup idea explorer — bridges career strengths to market opportunities before you commit to building |
+| `notebooklm` | Query Google NotebookLM notebooks directly from your coding agent |
+| `youtube-knowledge-extractor` | Extract key ideas, summaries, and actionable insights from YouTube videos |
+| `oci-expert` | Oracle Cloud Infrastructure expertise — Always Free tier, A1 ARM64 instances, networking, and common errors |
+| `landing-page-service-discovery` | Synthesize professional accomplishments into high-converting landing page copy |
+
+Add-on skills work exactly like core skills — just describe what you need and the AI applies the right one. Want to contribute your own? [How to contribute →](docs/contributing.md)
 
 ## Why This Exists
 
@@ -91,23 +106,31 @@ Solo Unicorn Builder meets you where you are — and scales with you.
 | **Growing** | "I need to understand the business side" | Revenue models, partnerships, legal, finance, operations |
 | **Getting hired** | "I want to prove I can build end-to-end with AI" | Portfolio projects, resume tailoring, GitHub presence |
 
-## Context Engineering in Practice
+## From Context Engineering to Agent Harness
 
-The industry calls it **context engineering.** We've been doing it since before the term existed.
+The industry calls it **context engineering** — structuring information so AI produces better outputs. We've been doing it since before the term existed. But context engineering is only half the picture. Knowing what to feed the AI doesn't help if you don't have a system to make it *act*.
 
-When you use ChatGPT or Claude through their web apps, your thinking is scattered across chat threads locked in a vendor's data center. Switch providers, and you start from zero. Solo Unicorn Builder takes the opposite approach: **your context is your codebase.** Local markdown files, version-controlled, searchable, portable, and yours.
+Solo Unicorn Builder is an **agent harness** — the evolution from context engineering. It doesn't just structure your knowledge; it gives AI agents the skills, instructions, and domain expertise to operate as your team across every function you've never done before.
 
 Three layers make this work:
 
-- **Skills** (`skills/`) — 36 structured prompting patterns that give the AI domain expertise
-- **Instructions** (`CLAUDE.md` → `UNICORN_CONSTITUTION.md`) — cascading rules that shape agent behavior
+- **Skills** (`skills/`) — structured prompting patterns that give the AI domain expertise across engineering, product, marketing, sales, finance, legal, and operations
+- **Instructions** (`CLAUDE.md` → `UNICORN_CONSTITUTION.md`) — cascading rules that shape agent behavior, from mission down to individual skill
 - **Knowledge** (`my_knowledge/`) — your daily writing, research, ideas, and goals — the layer only you can build
 
 The knowledge layer is the foundation. A daily practice of collecting thoughts, capturing external knowledge, and organizing it into folders that form a personal knowledge graph. Over time, the AI doesn't just answer questions — it reasons about *your* specific situation, because your accumulated context is always available.
 
-Because your context is plain files — not locked inside any vendor — you can run the same knowledge, the same skills, and the same instructions through different models. Ask Claude Code to architect a feature, then ask Gemini CLI to review it, then ask Kiro CLI to deploy it. Each model brings different strengths and different blind spots. Same context, multiple perspectives. That's something you can't do when your history is trapped in a single provider's chat threads.
+Because your context is plain files — not locked inside any vendor — you can run the same knowledge, the same skills, and the same instructions through different models. Ask Claude Code to architect a feature, then ask Gemini CLI to review it, then ask Kiro CLI to deploy it. Same context, multiple perspectives. That's something you can't do when your history is trapped in a single provider's chat threads.
 
-This is the same practice the author used to write *[Just Ask](https://www.ping-ai.com)* — a business novel where the protagonist discovers that **the technology is never the variable; the context is.** [Read the full story →](docs/context-engineering.md)
+### Proof It Works
+
+This isn't theory. The agent harness approach has shipped real outcomes:
+
+- **[Just Ask](https://www.ping-ai.com)** — A business novel produced entirely through the daily writing and knowledge collection practice that became `my_knowledge/`. Years of daily reflections, research notes, and accumulated context gave the AI something real to work with. The protagonist discovers the core insight: **the technology is never the variable; the context is.**
+- **[AI Launchpad Cohort](https://cohort.solo-unicorn.app/)** — A production landing page for a paid 3-week intensive, built and shipped using the same skills and workflows this project teaches. From copy to deployment, every piece was created through the agent harness — proving the framework works for real business outcomes, not just side projects.
+- **WRITITATION™ — before the Karpathy Wiki Pattern** — In April 2026, Karpathy's [LLM Wiki Pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) went viral: structured markdown + Obsidian + LLM agents. Solo Unicorn Builder has been doing this since 2025 — with a trademarked methodology (WRITITATION™) and the `obsidian-knowledge` skill — over a year before the pattern had a name.
+
+[Read the full story →](docs/context-engineering.md)
 
 ## The Things AI Can't Do for You
 

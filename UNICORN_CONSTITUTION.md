@@ -46,7 +46,7 @@ The project uses an "Office" metaphor. Each role maps to agent skills in `skills
 | CRO | Revenue & sales | `sales`, `go-to-market`, `business-model`, `growth-analytics`, `business-development`, `document-creation` |
 | CPO | Product definition | `product`, `idea-validation`, `pm-design-thinking`, `test-first-development`, `frontend-ui-ux` |
 | CCO | Customer experience | `customer-success`, `pm-design-thinking`, `growth-analytics` |
-| COO | Operations & people | `operations`, `finance-accounting`, `obsidian-knowledge`, `career-resume`, `github-profile`, `portfolio-strategy`, `open-source-contribution`, `technical-writing`, `document-creation` |
+| COO | Operations & people | `operations`, `finance-accounting`, `obsidian-knowledge`, `career-advisor`, `github-profile`, `portfolio-strategy`, `open-source-contribution`, `technical-writing`, `document-creation` |
 | CLO | Legal & compliance | `legal-compliance` |
 
 **All 36 skills mapped.** Every skill in `skills/` has at least one Office owner.
