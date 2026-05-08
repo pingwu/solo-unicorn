@@ -1,6 +1,6 @@
 ---
 name: coding-agents
-description: Complete comparison guide for CLI coding agents — Claude Code, GitHub Copilot CLI, Gemini CLI, Kiro CLI, Codex CLI, OpenCode, and more. Solo Unicorn Builder prefers CLI agents for their ability to translate natural language into system commands.
+description: Complete comparison guide for CLI coding agents — Claude Code, GitHub Copilot CLI, Gemini CLI, Kiro CLI, Kilo.ai CLI agents, Docker AI Agent Gordon, Codex CLI, OpenCode, and more. Solo Unicorn Builder prefers CLI agents for their ability to translate natural language into system commands.
 ---
 
 # AI Coding Agents: Complete Comparison Guide
@@ -52,11 +52,11 @@ Think of an AI coding agent as a **smart assistant that helps you write, edit, a
 **Like:** Having an expert you can ask questions, but can't see your files
 
 ### Phase 3: Project-Aware CLI Agents (2024-2025)
-**Tools:** Claude Code, Gemini CLI, GitHub Copilot CLI, Atlassian Rovo Dev CLI, LangChain DeepAgents, Kiro CLI, Codex CLI, OpenCode
+**Tools:** Claude Code, Gemini CLI, GitHub Copilot CLI, Atlassian Rovo Dev CLI, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, Docker AI Agent Gordon, Codex CLI, OpenCode
 **Capability:** Understand your entire project, execute commands, modify multiple files
 **Like:** A senior developer who can both think and type — reading your codebase, running your tests, and shipping your code
 
-### Phase 4: Multi-Agent Systems (Emerging)
+### Phase 4: Multi-Agent Systems (2026 and Emerging)
 **Trend:** Using multiple AI agents for different tasks
 **Capability:** One agent plans, another codes, another reviews
 **Like:** A full development team, but AI
@@ -75,6 +75,8 @@ These agents run in your terminal and can **read, write, and execute** — the f
 | **Atlassian Rovo**     | Atlassian   | `npm install -g @atlassian/rovo-dev`                                              | `rovo`              | **Jira & Confluence integration.** Specialized subagents, MCP support, and "shadow mode" for safe code testing.                 |
 | **DeepAgents**         | LangChain   | `uv tool install 'deepagents-cli[anthropic]'`                                     | `deepagents`        | **Persistent memory & sandboxing.** Learns project conventions, supports remote sandboxes (Modal, Daytona), and MCP.             |
 | **Kiro CLI**           | AWS         | See [kiro.dev/cli](https://kiro.dev/cli/)                                         | `kiro-cli`          | **Spec-driven development.** Turns prompts into structured requirements, then code. Deep AWS integration and DevOps automation. |
+| **Kilo.ai CLI agents** | Kilo.ai     | See [kilo.ai](https://kilo.ai)                                                    | `kilo`              | **Agentic implementation workflows.** Useful for coordinating coding agents around tasks, code changes, and project execution. |
+| **Docker Gordon**      | Docker      | Docker Desktop / Docker AI                                                        | Docker Desktop / `docker ai` | **Container-native assistance.** Helps explain Dockerfiles, Compose files, images, containers, and local dev environments. |
 | **Codex CLI**          | OpenAI      | `npm install -g @openai/codex`                                                    | `codex`             | **OpenAI ecosystem.** Quick code generation, integrates with ChatGPT.                                                           |
 | **OpenCode**           | Open Source | `brew install opencode-ai/tap/opencode` or see [opencode.ai](https://opencode.ai) | `opencode`          | **75+ model support.** Works with Claude, OpenAI, Gemini, and local models. Go-based TUI, LSP integration, vim-like editor.     |
 | **Pi**                 | Open Source | `npm install -g @mariozechner/pi-coding-agent`                                    | `pi`                | **Minimal and yours.** Tree-structured sessions, 15+ providers, TypeScript extensions. Built for developers who want full control. |
@@ -100,9 +102,11 @@ These agents live inside your editor. Great for real-time autocomplete and inlin
 
 | Agent | Type | Installation | Key Strength |
 |---|---|---|---|
+| **VS Code** | Extensible IDE | Download from [code.visualstudio.com](https://code.visualstudio.com) | **Mainstream developer hub.** Works with Copilot, Continue, Cline/Roo-style agents, Docker, remote containers, and many AI extensions. |
 | **Cursor** | AI-powered IDE | Download from [cursor.com](https://cursor.com) | **Complete AI editor.** VS Code fork with chat, multi-file editing, Cmd+K inline edits. |
 | **GitHub Copilot** | IDE extension | VS Code / JetBrains extension | **Real-time autocomplete.** Best for day-to-day typing productivity. |
 | **Kiro IDE** | AI-powered IDE | Download from [kiro.dev](https://kiro.dev) | **Spec-first development.** Generates requirements and design docs before code. VS Code fork. |
+| **AntiGravity** | AI-powered IDE / agentic coding environment | See official AntiGravity docs/site | **Agentic IDE workflow.** Useful for builders who want an IDE-centered AI coding experience with deeper project context. |
 | **Tabnine** | IDE extension | IDE extension — [tabnine.com](https://www.tabnine.com) | **On-premise options.** Code stays private, enterprise compliance. |
 
 **Tip:** Use a CLI agent as your primary development partner and an IDE agent for real-time autocomplete. They complement each other.
@@ -274,6 +278,72 @@ cat error.log | deepagents -n "Explain and fix this error"
 
 ---
 
+### Kilo.ai CLI Agents - The Agent Coordinator
+
+**Official Site:** https://kilo.ai
+
+**What makes it special:**
+- **Agentic task execution** - coordinate AI agents around coding tasks and project changes
+- **Natural language workflow control** - describe what needs to happen and let agents work through the steps
+- **Project-aware assistance** - useful for navigating tasks, code changes, and multi-file implementation work
+- **Fits multi-agent systems** - aligns with Solo Unicorn Builder's command-center model
+
+**Best for:**
+- Builders experimenting with multi-agent coding workflows
+- Coordinating implementation tasks across a project
+- Teams comparing AI coding agents beyond the major cloud providers
+
+**Limitations:**
+- Newer ecosystem; confirm current install and command details from Kilo.ai docs
+- Capabilities may vary depending on configured models and integrations
+
+---
+
+### Docker AI Agent Gordon - The Container Specialist
+
+**Official Site:** https://www.docker.com/products/docker-ai/
+
+**What makes it special:**
+- **Docker-native context** - helps explain Dockerfiles, Compose files, images, volumes, and container networking
+- **Local development support** - useful when debugging why a service, image build, or Compose stack is failing
+- **Container workflow guidance** - pairs naturally with Solo Unicorn Builder's Docker-first setup
+- **Accessible through Docker tooling** - available through Docker's AI experience, including Docker Desktop integrations
+
+**Best for:**
+- Understanding and fixing Dockerfiles and `docker-compose.yml`
+- Debugging local containerized development environments
+- Explaining container logs, image build failures, and networking issues
+- Builders who want AI help inside the Docker workflow
+
+**Limitations:**
+- Docker-focused; pair with a general CLI coding agent for broad codebase changes
+- Availability and CLI access may depend on Docker Desktop version and account features
+
+---
+
+### Codex CLI - The OpenAI Terminal Agent
+
+**Official Docs:** https://github.com/openai/codex
+
+**What makes it special:**
+- **OpenAI ecosystem** - brings OpenAI models into terminal-based development workflows
+- **Project-aware coding help** - useful for editing files, generating code, explaining errors, and iterating from natural language
+- **ChatGPT-adjacent workflow** - familiar model behavior for users already working with OpenAI tools
+- **Fast experimentation** - good for quick implementation passes, scripts, tests, and explanations
+
+**Best for:**
+- Builders already using OpenAI or ChatGPT heavily
+- Quick code generation and explanation tasks
+- Comparing OpenAI model output against Claude, Gemini, or local-model agents
+- Natural-language terminal workflows in OpenAI-centered environments
+
+**Limitations:**
+- Requires OpenAI access/API configuration
+- Review generated code carefully, especially for production or security-sensitive changes
+- Capabilities and command behavior may change as the Codex CLI evolves
+
+---
+
 ### OpenCode - The Model-Agnostic Powerhouse
 
 **Official Docs:** https://opencode.ai
@@ -333,25 +403,29 @@ npm install -g @mariozechner/pi-coding-agent
    - Jira/Confluence integration, enterprise workflow → **Atlassian Rovo**
    - Persistent project memory & sandboxing → **LangChain DeepAgents**
    - AWS infrastructure and DevOps → **Kiro CLI**
+   - Multi-agent coding coordination → **Kilo.ai CLI agents**
+   - Docker/container troubleshooting → **Docker AI Agent Gordon**
    - Maximum model flexibility → **OpenCode**
    - Minimal, hackable, self-owned → **Pi**
    - Real-time autocomplete → **Copilot** or **Cursor** (IDE)
 
 2. **What's your budget?**
    - Pay per use → Claude Code, Gemini CLI, DeepAgents
-   - Monthly/Seat-based subscription → Atlassian Rovo, Kiro CLI, Copilot, Cursor
+   - Monthly/Seat-based subscription → Atlassian Rovo, Kiro CLI, Kilo.ai, Docker AI/Docker Desktop, Copilot, Cursor
    - Free/open source → OpenCode (but you pay for LLM API, or use local models)
 
 3. **What cloud/stack do you use?**
    - Atlassian Ecosystem → Atlassian Rovo
    - LangChain / Python Ecosystem → LangChain DeepAgents
    - AWS → Kiro CLI
+   - Docker/container-first → Docker AI Agent Gordon plus a general CLI coding agent
+   - Multi-agent workflow experimentation → Kilo.ai CLI agents
    - GCP → Gemini CLI
    - Any/none → Claude Code or OpenCode
 
 ### Recommended for Solo Unicorn Builder
 
-**Primary:** Pick one CLI agent — Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, or Kiro CLI
+**Primary:** Pick one CLI agent — Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, or Docker AI Agent Gordon for Docker-heavy work
 **Optional:** Add Cursor or Copilot for real-time autocomplete in your IDE
 
 All of Solo Unicorn Builder's skills work with any CLI agent. You describe what you need in natural language, the agent reads the relevant `SKILL.md`, and executes.
@@ -374,10 +448,13 @@ All of Solo Unicorn Builder's skills work with any CLI agent. You describe what 
 3. Claude Code: "Implement the feature according to the design"
    → High-quality code generation and multi-file changes
 
-4. Kiro CLI: "Deploy this to AWS with a staging environment"
+4. Docker Gordon: "Explain why this Compose stack is failing and how to fix the Dockerfile"
+   → Container-native debugging and local environment guidance
+
+5. Kiro CLI: "Deploy this to AWS with a staging environment"
    → Infrastructure setup, container registry, Cloud Run config
 
-5. Gemini CLI: "Generate comprehensive API documentation from the codebase"
+6. Gemini CLI: "Generate comprehensive API documentation from the codebase"
    → Large context window handles the full system
 ```
 
@@ -391,7 +468,7 @@ Each agent does what it does best. Your job is to ask the right questions.
 **A:** No. AI makes developers more productive, but humans still define requirements, make architectural decisions, review suggestions, and handle business logic.
 
 **Q: Which agent should I learn first?**
-**A:** Pick one CLI agent and start building. Skills transfer between agents. For Solo Unicorn Builder, Claude Code, Gemini CLI, Atlassian Rovo, or LangChain DeepAgents are the most common starting points.
+**A:** Pick one CLI agent and start building. Skills transfer between agents. For Solo Unicorn Builder, Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, or Docker Gordon are useful starting points depending on your workflow.
 
 **Q: What happened to Amazon CodeWhisperer?**
 **A:** AWS retired CodeWhisperer in April 2024 and merged its features into Amazon Q Developer. Kiro is AWS's newer, more ambitious offering — a spec-first AI development platform available as both an IDE and a CLI.
@@ -401,7 +478,7 @@ Each agent does what it does best. Your job is to ask the right questions.
 
 **Q: What about code privacy?**
 **A:** Varies by tool:
-- **Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI:** Code sent to cloud for processing
+- **Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai, Docker Gordon:** Code/context may be sent to cloud services for processing
 - **OpenCode:** Can use local LLMs for full privacy
 - Check each tool's privacy policy for your compliance needs
 
@@ -409,10 +486,10 @@ Each agent does what it does best. Your job is to ask the right questions.
 
 ## Getting Started with Solo Unicorn Builder
 
-Solo Unicorn Builder works with **any CLI coding agent**. The skills in `skills/` are agent-agnostic — they work with Claude Code, GitHub Copilot CLI, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Codex CLI, OpenCode, or any tool that reads markdown files.
+Solo Unicorn Builder works with **any CLI coding agent**. The skills in `skills/` are agent-agnostic — they work with Claude Code, GitHub Copilot CLI, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, Docker AI Agent Gordon, Codex CLI, OpenCode, or any tool that reads markdown files.
 
 **Setup:**
-1. Install at least one CLI agent (Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, or Kiro CLI)
+1. Install at least one CLI agent (Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, Docker Gordon, or OpenCode)
 2. Clone Solo Unicorn Builder and run the init setup
 3. Start describing what you want to build — the agent reads the relevant skills and executes
 
@@ -420,9 +497,9 @@ The AI-augmented knowledge worker doesn't need to master every tool. Pick one, s
 
 ---
 
-## Stay Updated
+## Official Resources
 
-AI coding tools evolve rapidly. Key resources:
+AI coding tools evolve rapidly. Start with the official resources:
 
 - **Claude Code:** https://docs.anthropic.com/en/docs/claude-code
 - **GitHub Copilot CLI:** https://gh.io/copilot-cli
@@ -430,6 +507,8 @@ AI coding tools evolve rapidly. Key resources:
 - **Atlassian Rovo:** https://support.atlassian.com/rovo/docs/use-rovo-dev-cli/
 - **LangChain DeepAgents:** https://docs.langchain.com/oss/python/deepagents/cli/overview
 - **Kiro CLI:** https://kiro.dev/docs/cli/
+- **Kilo.ai CLI agents:** https://kilo.ai
+- **Docker AI Agent Gordon:** https://www.docker.com/products/docker-ai/
 - **Codex CLI:** https://github.com/openai/codex
 - **OpenCode:** https://opencode.ai
 - **Pi:** https://pi.dev
