@@ -1,25 +1,27 @@
 ---
 name: solo-unicorn-builder
-description: Free, open-source AI command center for engineers who've never shipped end-to-end. 36 AI-powered skills spanning engineering, product, marketing, sales, finance, and operations — AI fills the gaps between your specialty and everything else it takes to go from requirement to production.
+description: Free, open-source AI command center for builders who've never shipped an impactful service end-to-end. 36 core AI-powered skills plus 7 add-on skills spanning engineering, product, marketing, sales, finance, and operations — AI fills the gaps between your specialty and everything else it takes to go from requirement to production.
 ---
 
 # Solo Unicorn Builder
 
-**You're great at your specialty. But you've never shipped an application end-to-end — because someone else always handled the parts outside your lane.**
+**You're great at your specialty. But you've never shipped an impactful service end-to-end — because someone else always handled the parts outside your lane.**
 
-Solo Unicorn Builder is a free, open-source command center that gives you 36 AI-powered skills — spanning engineering, product, marketing, sales, finance, legal, and operations. AI fills the gaps between your expertise and everything else it takes to go from requirement to production.
+Solo Unicorn Builder is a free, open-source command center that gives you 36 core AI-powered skills plus 7 add-on skills — 43 total — spanning engineering, product, marketing, sales, finance, legal, and operations. AI fills the gaps between your expertise and everything else it takes to go from requirement to production.
 
 ## Who This Is For
 
-**Engineers and technical specialists who can do their job — but have never carried an application from requirement to production on their own.** You're a frontend engineer who's never set up a CI/CD pipeline. A backend developer who's never written a PRD. A DevOps specialist who's never validated a product idea. A PM who's never deployed to the cloud.
+**Engineers, technical specialists, product managers, business process owners, entrepreneurs, and solution builders who can do their job — but have never carried an impactful service from requirement to production on their own.** You're a frontend engineer who's never set up a CI/CD pipeline. A backend developer who's never written a PRD. A DevOps specialist who's never validated a product idea. A product manager who's never deployed to the cloud. A business owner who's never turned a workflow into software.
 
 You're good at what you do. But the work outside your specialty — requirements gathering, design, testing, deployment, marketing, legal, finance — was always someone else's job. That gap is what keeps you from building something end-to-end.
 
 Solo Unicorn Builder fills that gap with AI. You bring the expertise in your domain. AI covers the rest — so you can finally ship the whole thing, not just your piece of it.
 
+Don't let the word "coding" scare you. In an AI-native workflow, your daily conversation language — natural language — is the new code.
+
 ## Your AI-Augmented Team
 
-The 36 skills are organized as an "Office" — each role is an AI-powered expert you can call on:
+The 36 core skills are organized as an "Office" — each role is an AI-powered expert you can call on:
 
 | Role | What it does for you | Example skills |
 |------|---------------------|----------------|
@@ -34,7 +36,7 @@ You don't need to hire a team. You need to ask the right questions — and let A
 
 ## Add-on Skills
 
-Beyond the core 36, the community has contributed specialized skills that extend the platform:
+Beyond the 36 core skills, 7 add-on skills extend the platform:
 
 | Skill | What it does |
 |-------|-------------|
@@ -44,6 +46,7 @@ Beyond the core 36, the community has contributed specialized skills that extend
 | `youtube-knowledge-extractor` | Extract key ideas, summaries, and actionable insights from YouTube videos |
 | `oci-expert` | Oracle Cloud Infrastructure expertise — Always Free tier, A1 ARM64 instances, networking, and common errors |
 | `landing-page-service-discovery` | Synthesize professional accomplishments into high-converting landing page copy |
+| `review` | Lightweight code review skill for bugs, security issues, performance, and readability; adapted from LangChain Deep Agents. |
 
 Add-on skills work exactly like core skills — just describe what you need and the AI applies the right one. Want to contribute your own? [How to contribute →](docs/contributing.md)
 
@@ -55,13 +58,13 @@ Here's the real problem:
 - **AI can fill the gaps — but only with structure.** A chatbot can answer questions. It can't guide you through a product launch, a deployment pipeline, or a fundraising round — unless it has a framework for each one.
 - **Your thinking is scattered.** A thread in ChatGPT, a conversation in Claude, notes in one app, code in another. Nothing connects.
 
-Solo Unicorn Builder gives you 36 structured skills, a knowledge vault, and a project workspace — so AI can operate as your team across every function you've never done before.
+Solo Unicorn Builder gives you 36 core structured skills, 7 add-on skills, a knowledge vault, and a project workspace — so AI can operate as your team across every function you've never done before.
 
 ## What You Get
 
 When you clone this project, you get:
 
-- **36 AI-powered skills** — Not just coding. Product development, sales, marketing, legal, finance, operations, and more. Just describe what you need and the AI applies the right expertise. [Full list →](docs/skills-reference.md)
+- **43 AI-powered skills** — 36 core skills plus 7 add-ons. Not just coding: product development, sales, marketing, legal, finance, operations, code review, and more. Just describe what you need in natural language and the AI applies the right expertise. [Full list →](docs/skills-reference.md)
 - **A private knowledge vault** — Your ideas, notes, goals, technical decisions, and learning in one place. Never checked into the public repo. Ships with `template_knowledge/` as a starter — copied to your private `my_knowledge/` on init.
 - **Starter projects you can build on** — `template_projects/` ships with example projects (like the landing page template) so you're not starting from zero. Your own work lives in `my_projects/` — build and ship real projects with AI-assisted workflows. A "project" can be anything: a blog post, a marketing research brief, a deployed web application, or an automated workflow.
 - **AI agent vendor-agnostic** — Works with any CLI coding agent: Claude Code, Gemini CLI, Kiro CLI, Codex CLI, OpenCode, or any tool that reads markdown. No vendor lock-in. [Compare agents →](docs/coding-agents.md)
