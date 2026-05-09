@@ -56,7 +56,12 @@ Think of an AI coding agent as a **smart assistant that helps you write, edit, a
 **Capability:** Understand your entire project, execute commands, modify multiple files
 **Like:** A senior developer who can both think and type — reading your codebase, running your tests, and shipping your code
 
-### Phase 4: Multi-Agent Systems (2026 and Emerging)
+### Phase 4: Agent Harnesses & Self-Hosted Frameworks (2025-2026)
+**Tools:** OpenClaw, Hermes Agent, NemoClaw, Solo Unicorn Builder
+**Capability:** Deploy your own agent infrastructure — persistent memory, skill libraries, multi-channel messaging (Slack, Discord, CLI), self-hosted on your own server or free-tier cloud
+**Like:** Building your own AI team rather than renting one — you own the runtime, the skills, and the data
+
+### Phase 5: Multi-Agent Systems (2026 and Emerging)
 **Trend:** Using multiple AI agents for different tasks
 **Capability:** One agent plans, another codes, another reviews
 **Like:** A full development team, but AI
@@ -401,6 +406,76 @@ npm install -g @mariozechner/pi-coding-agent
 
 ---
 
+## Agent Harnesses & Self-Hosted Frameworks
+
+CLI agents run on your machine and talk to cloud APIs. **Agent harnesses** go further — you deploy your own agent infrastructure that runs persistently, connects to your communication channels (Slack, Discord, CLI), and learns over time. You own the runtime. You own the data.
+
+| Framework | Provider | Approach | Deployment | Key Strength |
+|-----------|----------|----------|------------|--------------|
+| **OpenClaw** | Open-source | Gateway-first | OCI, $5 VPS, Docker | Channel routing, integrations, rapid deploy on cheap infra |
+| **Hermes Agent** | Nous Research | Agent-first | OCI, Docker, SSH, Modal | Self-improving skill library, 15+ messaging platforms, 200+ models |
+| **NemoClaw** | NVIDIA | Security-first | Enterprise / NVIDIA NIM | Deny-by-default egress, sandboxed config, policy guardrails |
+| **Solo Unicorn Builder** | Open-source | Agent harness | Local / any CLI agent | Skills-first orchestration: structured knowledge + agent execution across every business function |
+
+**Agent harness vs CLI agent:**
+
+| | CLI Agent | Agent Harness |
+|---|---|---|
+| Where it runs | Your local machine | Your server (always-on) |
+| State | Per-session | Persistent across sessions |
+| Channels | Terminal | Slack, Discord, CLI, WhatsApp, and more |
+| Learning | None | Skill library grows over time |
+| Ownership | Vendor-hosted API | Your infrastructure |
+
+### OpenClaw — The Gateway Framework
+
+**Official Docs:** https://github.com/openclaw-ai/openclaw
+
+**What makes it special:**
+- **Gateway-first architecture** — routes messages from any channel (Slack, Discord, CLI) to any LLM provider
+- **Cheap to run** — deploys on OCI Always Free (A1 ARM64, 4 OCPU / 24 GB) or a $5/month VPS
+- **Fast to deploy** — single Docker Compose stack, no ML infrastructure required
+- **Foundation for NemoClaw** — NemoClaw wraps OpenClaw with NVIDIA's security and policy layer
+- **Active open-source community** — channel integrations, provider plugins, and deployment guides
+
+**Best for:**
+- Deploying your own always-on agent on free or near-free cloud infrastructure
+- Teams who want a self-hosted Slack/Discord bot backed by frontier models
+- Builders experimenting with multi-channel AI agent deployments
+- Anyone who wants OpenClaw + Hermes Agent on the same OCI free-tier instance
+
+**Limitations:**
+- Not a coding agent in the CLI sense — it's a deployment layer, not a local dev tool
+- Requires server setup (Docker, SSH, OCI or VPS)
+- Pair with a CLI coding agent (Claude Code, Gemini CLI) for local development work
+
+**Install:**
+```bash
+# Deploy via Docker Compose on OCI, VPS, or local server
+# See official docs for the full runbook
+docker compose up -d
+```
+
+### Solo Unicorn Builder — The Agent Harness
+
+**What it is:**
+Solo Unicorn Builder is not a coding agent — it's an **agent harness**: a structured skill library and knowledge vault that turns any CLI agent into a full operating partner across every business function.
+
+**What makes it special:**
+- **Skills-first architecture** — 36+ structured `SKILL.md` files covering code, marketing, legal, finance, sales, and more
+- **Agent-agnostic** — works with Claude Code, Gemini CLI, Kiro CLI, DeepAgents, or any agent that reads markdown
+- **Knowledge vault** — personal context (career, projects, decisions) that the agent reads before acting
+- **Context engineering made operational** — not just structured prompts, but a system that makes AI act autonomously on your behalf
+
+**Best for:**
+- Knowledge workers who want AI to handle functions they've never done before (legal, marketing, finance)
+- Builders who want a consistent system across multiple CLI agents
+- Anyone running the AI Launchpad Cohort methodology
+
+**Official Docs:** https://github.com/pingwu/solo-unicorn
+
+---
+
 ## Choosing Your Agent(s)
 
 ### Decision Framework
@@ -416,12 +491,14 @@ npm install -g @mariozechner/pi-coding-agent
    - Docker/container troubleshooting → **Docker AI Agent Gordon**
    - Maximum model flexibility → **OpenCode**
    - Minimal, hackable, self-owned → **Pi**
+   - Self-hosted always-on agent (Slack/Discord/CLI gateway) → **OpenClaw**
+   - Skills-first agent harness across every business function → **Solo Unicorn Builder**
    - Real-time autocomplete → **Copilot** or **Cursor** (IDE)
 
 2. **What's your budget?**
    - Pay per use → Claude Code, Gemini CLI, DeepAgents
    - Monthly/Seat-based subscription → Atlassian Rovo, Kiro CLI, Kilo.ai, Docker AI/Docker Desktop, Copilot, Cursor
-   - Free/open source → OpenCode (but you pay for LLM API, or use local models)
+   - Free/open source → OpenCode, OpenClaw, Solo Unicorn Builder (but you pay for LLM API, or use local models)
 
 3. **What cloud/stack do you use?**
    - Atlassian Ecosystem → Atlassian Rovo
@@ -430,6 +507,7 @@ npm install -g @mariozechner/pi-coding-agent
    - Docker/container-first → Docker AI Agent Gordon plus a general CLI coding agent
    - Multi-agent workflow experimentation → Kilo.ai CLI agents
    - GCP → Gemini CLI
+   - Self-hosted / free-tier cloud (OCI, $5 VPS) → OpenClaw
    - Any/none → Claude Code or OpenCode
 
 ### Recommended for Solo Unicorn Builder
@@ -523,3 +601,6 @@ AI coding tools evolve rapidly. Start with the official resources:
 - **Pi:** https://pi.dev
 - **GitHub Copilot:** https://github.com/features/copilot
 - **Cursor:** https://cursor.com/docs
+- **OpenClaw:** https://github.com/openclaw-ai/openclaw
+- **Hermes Agent:** https://hermes-agent.nousresearch.com/
+- **Solo Unicorn Builder:** https://github.com/pingwu/solo-unicorn
