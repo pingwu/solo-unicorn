@@ -73,7 +73,7 @@ These agents run in your terminal and can **read, write, and execute** — the f
 | **GitHub Copilot CLI** | GitHub      | `npm install -g @github/copilot-cli`                                              | `gh copilot`        | **Natural language shell commands.** Translate English to CLI commands, explain code. Integrated with GitHub.                   |
 | **Gemini CLI**         | Google      | `npm install -g @google/gemini-cli`                                               | `gemini`            | **Largest context window (1M+ tokens).** Multimodal — understands images, diagrams, screenshots alongside code.                 |
 | **Atlassian Rovo**     | Atlassian   | `npm install -g @atlassian/rovo-dev`                                              | `rovo`              | **Jira & Confluence integration.** Specialized subagents, MCP support, and "shadow mode" for safe code testing.                 |
-| **DeepAgents**         | LangChain   | `uv tool install 'deepagents-cli[anthropic]'`                                     | `deepagents`        | **Persistent memory & sandboxing.** Learns project conventions, supports remote sandboxes (Modal, Daytona), and MCP.             |
+| **DeepAgents**         | LangChain   | `uv tool install deepagents-cli` (or `uv tool install 'deepagents-cli[openrouter]'` for OpenRouter)  | `deepagents`        | **Persistent memory & sandboxing.** Learns project conventions, supports remote sandboxes (Modal, Daytona), and MCP.             |
 | **Kiro CLI**           | AWS         | See [kiro.dev/cli](https://kiro.dev/cli/)                                         | `kiro-cli`          | **Spec-driven development.** Turns prompts into structured requirements, then code. Deep AWS integration and DevOps automation. |
 | **Kilo.ai CLI agents** | Kilo.ai     | See [kilo.ai](https://kilo.ai)                                                    | `kilo`              | **Agentic implementation workflows.** Useful for coordinating coding agents around tasks, code changes, and project execution. |
 | **Docker Gordon**      | Docker      | Docker Desktop / Docker AI                                                        | Docker Desktop / `docker ai` | **Container-native assistance.** Helps explain Dockerfiles, Compose files, images, containers, and local dev environments. |
@@ -246,8 +246,17 @@ rovo "Refactor this component to use React hooks and update Confluence docs"
 - Users who want to leverage the LangChain / Deep Agents ecosystem.
 
 **Limitations:**
-- Requires Python/`uv` environment for installation.
+- Requires `uv` for installation.
 - Newer ecosystem; documentation and community are growing.
+
+**Installation:**
+```bash
+# Default install
+uv tool install deepagents-cli
+
+# With OpenRouter support (enables OpenRouter API key usage)
+uv tool install 'deepagents-cli[openrouter]'
+```
 
 **Example usage:**
 ```bash
