@@ -9,8 +9,11 @@ tags:
   - development
 source: https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/refs/heads/main/CLAUDE.md
 related_files:
-  - "[[PINGAI_CONSTITUTION]]"
-  - "[[GENERAL_INSTRUCTIONS.md]]"
+  - "[[UNICORN_CONSTITUTION.md]]"
+  - "[[CLAUDE.md]]"
+  - "[[GEMINI.md]]"
+  - "[[AGENT.md]]"
+  - "[[AGENTS.md]]"
 ---
 
 # Development Standards & Coding Principles
