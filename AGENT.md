@@ -9,4 +9,5 @@ description: Quick reference entry point for agent-related documentation. Points
 
 For the comprehensive **Agent Constitution, behavioral rules, office structure, and development guidelines**, please refer to:
 
-[UNICORN_CONSTITUTION.md](UNICORN_CONSTITUTION.md)
+- [UNICORN_CONSTITUTION.md](UNICORN_CONSTITUTION.md)
+- [DEVELOPMENT-STANDARDS.md](DEVELOPMENT-STANDARDS.md) - coding principles: think before coding, simplicity-first, surgical changes, goal-driven execution
