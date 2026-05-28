@@ -89,7 +89,7 @@ cmd /c mklink /J "$unicornDir\.opencode\skills" "$unicornDir\skills"
 
 > **Note:** Windows symlinks (`mklink /D`) require Administrator privileges. Junctions (`mklink /J`) work without elevation.
 
-Verify: `dir .gemini\skills`, `dir .claude\skills`, `dir .agent\skills`, `dir .kiro\steering`
+Verify: `dir $unicornDir\.gemini\skills`, `dir $unicornDir\.claude\skills`, `dir $unicornDir\.agent\skills`, `dir $unicornDir\.kiro\steering`
 
 ## 2. Initialize Your Knowledge Vault
 
@@ -103,7 +103,12 @@ Copy the template knowledge into your private vault. See [UNICORN_CONSTITUTION.m
 **CLI Reference**:
 ```bash
 mkdir -p "$PROJECT_ROOT/my_knowledge"
-cp -R "$UNICORN_DIR/template_knowledge/"* "$PROJECT_ROOT/my_knowledge/"
+# Copy only if my_knowledge is empty, don't overwrite existing files
+if [ -z "$(ls -A "$PROJECT_ROOT/my_knowledge")" ]; then
+  cp -R "$UNICORN_DIR/template_knowledge/"* "$PROJECT_ROOT/my_knowledge/"
+else
+  echo "Knowledge vault already contains files. Skipping copy to avoid overwriting."
+fi
 ```
 
 ## 3. Create Your First Project
@@ -118,7 +123,12 @@ Copy a starter project from `template_projects/` into `my_projects/` — this is
 **CLI Reference**:
 ```bash
 mkdir -p "$PROJECT_ROOT/my_projects"
-cp -R "$UNICORN_DIR/template_projects/landing-page" "$PROJECT_ROOT/my_projects/landing-page"
+# Copy only if landing-page project doesn't exist, don't overwrite existing files
+if [ ! -d "$PROJECT_ROOT/my_projects/landing-page" ]; then
+  cp -R "$UNICORN_DIR/template_projects/landing-page" "$PROJECT_ROOT/my_projects/landing-page"
+else
+  echo "Landing-page project already exists. Skipping copy to avoid overwriting."
+fi
 ```
 
 ## 4. Start the Dev Container
