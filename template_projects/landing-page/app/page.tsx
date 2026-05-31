@@ -36,7 +36,7 @@ export default function Home() {
       <main id="main-content" className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans">
       {/* ============================================================ */}
       {/* NAVIGATION - Fixed header with logo and nav links            */}
-      {/* Prompt: "Update the logo text to [Your Name]"               */}
+      {/* Prompt: "Update the logo text to [Janna Thomas]"               */}
       {/* ============================================================ */}
       <nav aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16">
@@ -46,7 +46,7 @@ export default function Home() {
               JS
             </div>
             <span className="text-xl font-bold tracking-tight font-display text-slate-900 dark:text-white">
-              John Smith
+              Janna Thomas
             </span>
           </div>
 
@@ -72,8 +72,8 @@ export default function Home() {
       </nav>
 
       {/* ============================================================ */}
-      {/* HERO SECTION - Main headline and call to action              */}
-      {/* Prompt: "Update hero with name '[Name]' and title '[Title]'" */}
+      {/* HERO SECTION - Founder of Luverelle (Luxury E-commerce Brand)          */}
+      {/* Prompt: "Update hero with name '[Janna Thomas]' and title '[Marketing Consultant | E-commerce Entrepreneur |]'" */}
       {/* ============================================================ */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
         {/* Background gradient blurs */}
@@ -95,11 +95,11 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display tracking-tight text-slate-900 dark:text-white mb-6">
               Hi, I&apos;m{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                John Smith
+                Janna Thomas
               </span>
             </h1>
 
-            {/* Title/Specialty */}
+            {/* Marketing Consultant | E-commerce Entrepreneur | */}
             <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-4 font-medium">
               AI Orchestration Architect
             </p>
@@ -124,8 +124,8 @@ export default function Home() {
       </section>
 
       {/* ============================================================ */}
-      {/* ABOUT/AUTHORITY SECTION - Credentials and trust signals      */}
-      {/* Prompt: "Update credentials to [your experience/credentials]"*/}
+      {/* ABOUT/AUTHORITY SECTION - Branding Strategy, E-commerce Store Setup, Social Media Growth / Marketing Consulting      */}
+      {/* Prompt: "Update credentials to [Marketing Consultant, Luverelle Founder, E-commerce Experience, Teaching experience]"*/}
       {/* ============================================================ */}
       <section id="about" className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 md:px-6">
@@ -450,7 +450,7 @@ export default function Home() {
 
       {/* ============================================================ */}
       {/* CONTACT SECTION - How to reach you                           */}
-      {/* Prompt: "Update contact with email [email] and Calendly [url]"*/}
+      {/* Prompt: "Update contact with email [jannae1981@gmail.com] and Calendly [url]"*/}
       {/* ============================================================ */}
       <section id="contact" className="relative py-20 bg-white dark:bg-slate-900 overflow-hidden">
         {/* Background decoration */}
@@ -468,11 +468,11 @@ export default function Home() {
             {/* Contact options */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <a
-                href="mailto:john@email.com"
+                href="mailto: jannae1981@gmail.com"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-lg shadow-blue-500/25"
               >
                 <MailIcon className="w-5 h-5 mr-2" />
-                john@email.com
+                jannae1981@email.com
               </a>
               <a
                 href="/resume"
