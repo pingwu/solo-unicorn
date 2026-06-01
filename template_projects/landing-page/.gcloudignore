@@ -1,0 +1,11 @@
+AppData/
+**/AppData/**
+**/Local/Packages/**
+**/IsolatedStorage/**
+HPPrinterControl*
+LaunchDarkly*
+*.log
+node_modules
+.next
+.git
+.vscode
