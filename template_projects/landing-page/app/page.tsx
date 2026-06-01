@@ -5,23 +5,24 @@
 // Gemini CLI or Claude Code. See README.md for prompt library.
 // ============================================================
 
-import { MobileNav } from "@/components/MobileNav";
+
+
+
 import {
-  CheckIcon,
-  ArrowRightIcon,
-  TrendingUpIcon,
-  CalendarIcon,
-  MailIcon,
   BeakerIcon,
-  BriefcaseIcon,
-  SparklesIcon,
-  BookOpenIcon,
-  UsersIcon,
   BoltIcon,
-  LinkedInIcon,
+  BookOpenIcon,
+  BriefcaseIcon,
+  CheckIcon,
   GitHubIcon,
-  XTwitterIcon,
+  LinkedInIcon,
+  SparklesIcon,
+  TrendingUpIcon,
+  UsersIcon,
+  XTwitterIcon
 } from "@/components/Icons";
+import { ArrowRight, Mail, TrendingUp } from "lucide-react";
+
 
 export default function Home() {
   return (
@@ -67,7 +68,7 @@ export default function Home() {
           </div>
 
           {/* Mobile Navigation */}
-          <MobileNav />
+          
         </div>
       </nav>
 
@@ -113,7 +114,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40">
                 Book a Call
-                <ArrowRightIcon className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-5 h-5 ml-2" />
               </a>
               <a href="/resume" className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl transition-all">
                 View My Resume
@@ -350,7 +351,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Project Title</h3>
                   <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">Brief description of the challenge and solution.</p>
                   <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold">
-                    <TrendingUpIcon />
+                    <TrendingUp/>
                     Key Result / Metric
                   </div>
                 </div>
@@ -471,7 +472,7 @@ export default function Home() {
                 href="mailto: jannae1981@gmail.com"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-lg shadow-blue-500/25"
               >
-                <MailIcon className="w-5 h-5 mr-2" />
+                <Mail className="w-5 h-5 mr-2" />
                 jannae1981@email.com
               </a>
               <a
@@ -485,7 +486,7 @@ export default function Home() {
             {/* Social links */}
             <div className="flex justify-center gap-4">
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/jannathomas/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn profile"
@@ -494,7 +495,7 @@ export default function Home() {
                 <LinkedInIcon />
               </a>
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/jworld81"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub profile"

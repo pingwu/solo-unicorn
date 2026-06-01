@@ -1,5 +1,5 @@
 // ============================================================
-// DIGITAL RESUME - John Smith
+// DIGITAL RESUME - Janna Thomas
 // ============================================================
 
 import {
@@ -20,7 +20,7 @@ export default function ResumePage() {
                 JS
               </div>
               <span className="text-xl font-bold tracking-tight font-display text-slate-900 dark:text-white">
-                John Smith
+                Janna Thomas
               </span>
             </a>
           </div>
@@ -29,7 +29,7 @@ export default function ResumePage() {
             <a href="#experience" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">Experience</a>
             <a href="#skills" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">Skills</a>
             <a href="#education" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">Education</a>
-            <a href="mailto:john@email.com" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            <a href="mailto:jannae1981@gmail.com" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
               Contact Me
             </a>
           </div>
@@ -45,10 +45,12 @@ export default function ResumePage() {
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="flex-grow">
                 <h1 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-slate-900 dark:text-white mb-2">
-                  John Smith
+                  Janna Thomas
                 </h1>
                 <p className="text-xl md:text-2xl text-blue-600 dark:text-blue-400 font-medium mb-4">
-                  AI Orchestration Architect
+                  Marketing Consultant
+                  E-commerce Entrepreneur
+                  Founder of Luverelle
                 </p>
 
                 {/* Quick info */}
@@ -58,13 +60,13 @@ export default function ResumePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    Palo Alto, CA
+                    Sunnyvale, CA
                   </div>
                   <div className="flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    john@email.com
+                    jannae1981@gmail.com
                   </div>
                 </div>
 
@@ -105,7 +107,7 @@ export default function ResumePage() {
               <div className="relative pl-8 pb-8 border-l-2 border-blue-200 dark:border-blue-800">
                 <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-blue-600"></div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">AI Orchestration Platforms</h3>
-                <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">Lead Architect</p>
+                <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">Marketing Consultant</p>
                 <ul className="space-y-2 text-slate-600 dark:text-slate-400">
                   <li className="flex items-start gap-2">
                     <CheckIcon className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -180,8 +182,8 @@ export default function ResumePage() {
               <div className="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">M.S. in Computer Science</h3>
-                    <p className="text-blue-600 dark:text-blue-400">Stanford University</p>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">MBA in Marketing </h3>
+                    <p className="text-blue-600 dark:text-blue-400">Ashford University</p>
                   </div>
                 </div>
               </div>
@@ -189,8 +191,8 @@ export default function ResumePage() {
               <div className="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">B.S. in Computer Engineering</h3>
-                    <p className="text-blue-600 dark:text-blue-400">University of Michigan</p>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">BA in Marketing</h3>
+                    <p className="text-blue-600 dark:text-blue-400">Eastern University</p>
                   </div>
                 </div>
               </div>
@@ -203,7 +205,7 @@ export default function ResumePage() {
       <footer className="py-8 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center text-sm text-slate-600 dark:text-slate-400">
-            © {new Date().getFullYear()} John Smith. All rights reserved.
+            © {new Date().getFullYear()} Janna Thomas. All rights reserved.
           </div>
         </div>
       </footer>
