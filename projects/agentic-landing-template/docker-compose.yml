@@ -16,6 +16,21 @@ services:
       args:
         UID: ${UID:-1000}
         GID: ${GID:-1000}
+      # Workaround: Docker Desktop on Windows may fail to resolve hostnames via UDP DNS.
+      # These static host entries allow apk, pip, and curl to reach their CDNs during build.
+      extra_hosts:
+        - "dl-cdn.alpinelinux.org:151.101.202.132"
+        - "dl.google.com:142.251.35.78"
+        - "pypi.org:151.101.128.223"
+        - "files.pythonhosted.org:151.101.192.223"
+        - "registry.npmjs.org:104.16.6.34"
+    # Runtime extra_hosts for npm install and dev server calls
+    extra_hosts:
+      - "dl-cdn.alpinelinux.org:151.101.202.132"
+      - "dl.google.com:142.251.35.78"
+      - "pypi.org:151.101.128.223"
+      - "files.pythonhosted.org:151.101.192.223"
+      - "registry.npmjs.org:104.16.6.34"
     volumes:
       - .:/workspace:cached
     ports:

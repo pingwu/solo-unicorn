@@ -68,33 +68,33 @@ export function MobileNav() {
           >
             <nav className="flex flex-col p-6 space-y-4">
               <a
-                href="#services"
-                onClick={closeMenu}
-                ref={firstLinkRef}
-                className="text-base font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
-              >
-                Services
-              </a>
-              <a
                 href="#about"
                 onClick={closeMenu}
-                className="text-base font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+                ref={firstLinkRef}
+                className="text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors py-2"
               >
                 About
               </a>
               <a
-                href="#work"
+                href="#features"
                 onClick={closeMenu}
-                className="text-base font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+                className="text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors py-2"
               >
-                Work
+                Features
               </a>
               <a
-                href="#contact"
+                href="#how-it-works"
                 onClick={closeMenu}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg text-base font-medium transition-colors text-center mt-4"
+                className="text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors py-2"
               >
-                Contact
+                How It Works
+              </a>
+              <a
+                href="#waitlist"
+                onClick={closeMenu}
+                className="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-4 py-3 rounded-lg text-base font-semibold transition-colors text-center mt-4"
+              >
+                Join Waitlist
               </a>
             </nav>
           </div>
