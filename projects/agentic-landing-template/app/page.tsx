@@ -5,6 +5,8 @@
 // Built for students and career changers entering cybersecurity
 // ============================================================
 
+import QuestionBox from "@/components/QuestionBox";
+
 import Image from "next/image";
 import { MobileNav } from "@/components/MobileNav";
 import { WaitlistForm } from "@/components/WaitlistForm";
@@ -505,6 +507,8 @@ export default function Home() {
           </div>
         </section>
 
+        <QuestionBox />
+
         {/* ============================================================ */}
         {/* CONTACT SECTION                                               */}
         {/* ============================================================ */}
@@ -564,6 +568,7 @@ export default function Home() {
           </div>
         </footer>
 
+      
       </main>
     </>
   );
