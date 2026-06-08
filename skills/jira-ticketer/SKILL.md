@@ -238,7 +238,7 @@ Add to your `~/.claude.json` to enable the Jira MCP server:
     "jira": {
       "command": "uv",
       "args": ["run", "skills/jira-ticketer/scripts/jira_mcp_server.py"],
-      "cwd": "/path/to/your/solo-unicorn"
+      "cwd": "/Users/pwu/MASProjects/pingai"
     }
   }
 }

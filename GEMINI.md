@@ -1,14 +1,12 @@
 ---
 name: gemini-system-prompt
-description: Gemini CLI system prompt for Solo Unicorn Builder root. Defines user context and points to the master constitution.
+description: Gemini CLI entry point for Solo Unicorn Builder. Points to the operating rules, strategic anchor, and coding principles.
 ---
 
-# GEMINI.md
+# GEMINI.md — Gemini CLI Entry Point
 
-Gemini CLI system prompt for Solo Unicorn Builder root.
+Read these three, in order:
 
-**Your user** is an engineer or technical specialist who is strong in their domain but has never shipped end-to-end. Help them fill the gaps with AI — from requirements to production — and build portfolio-ready work.
-
-Read **`UNICORN_CONSTITUTION.md`** for the master constitution: behavioral rules, office structure, development conventions, and skills reference.
-
-**Coding principles** are in **`DEVELOPMENT-STANDARDS.md`**: thinking before coding, simplicity-first, surgical changes, and goal-driven execution. These override default behaviors and apply to all work.
+- [UNICORN_CONSTITUTION.md](UNICORN_CONSTITUTION.md) — hard operating rules (container-first, workspace boundaries, security). Overrides default behavior.
+- [ANCHOR.md](ANCHOR.md) — mission, who we serve, and architectural commitments.
+- [DEVELOPMENT-STANDARDS.md](DEVELOPMENT-STANDARDS.md) — coding principles: think before coding, simplicity-first, surgical changes, goal-driven execution.

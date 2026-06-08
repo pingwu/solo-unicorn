@@ -1,40 +1,91 @@
 ---
 name: unicorn-constitution
-description: Master agent constitution for Solo Unicorn Builder. Behavioral rules, office structure, development conventions, and skills reference for helping specialists ship end-to-end with AI.
+description: Hard operating rules for AI agents in Solo Unicorn Builder — container-first development, workspace boundaries, conventions, and security. Strategic "why" lives in ANCHOR.md.
 ---
 
-# UNICORN_CONSTITUTION.md — Solo Unicorn Builder Agent Constitution
+# UNICORN_CONSTITUTION.md — Agent Operating Rules
 
-## Our Mission
+For AI coding agents only. These rules override default behaviors. Read [ANCHOR.md](ANCHOR.md) for mission and the Office model; read [DEVELOPMENT-STANDARDS.md](DEVELOPMENT-STANDARDS.md) for coding principles.
 
-Refer to [MISSION.md](MISSION.md) for the overarching mission statement.
+## Non-Negotiables (read first)
 
-**Primary audience:** Engineers and technical specialists who are strong in their domain but have never shipped an application end-to-end — because the work outside their specialty was always handled by someone else. Every interaction should help them fill those gaps with AI, ship portfolio-ready work, and prove they can operate across the full lifecycle.
+- Never run `npm install`, `npm run dev`, `npm run build`, or `npx` on the host. Run everything inside Docker.
+- Never hardcode API keys, passwords, or tokens. Use environment variables; never log secrets.
+- Never commit `.env` files. Confirm they are gitignored.
+- Never create files outside the assigned project without explicit instruction.
+- Never modify `template_knowledge/` unless explicitly told to.
+- Run the test suite (below) before committing. Do not skip tests.
 
-Agent behavioral rules for Solo Unicorn Builder. This file is for AI coding agents only.
+## Workspace Architecture
 
-## 1. Head/Hand Architecture
+- Treat `template_knowledge/` as a read-only template; it is copied to sibling `../my_knowledge/` on init.
+- Treat `../my_knowledge/` as the user's private vault (ideas, resume, career, inspiration). Read it for context. Never commit it to the Unicorn repo.
+- Treat `template_projects/` as starter projects users copy into `../my_projects/`.
+- Make all code changes inside a sub-project of `../my_projects/`. Never implement app code in the Unicorn repo itself.
+- Read skills from `skills/` (agent-agnostic prompting patterns).
 
-- `template_knowledge/` is a template folder; when the user first clones/forks and initializes the Solo Unicorn Builder project, the template files are copied to sibling workspace folder `../my_knowledge/`.
-- `../my_knowledge/` is **personal/private context**. Use it as context to create projects or generate documents. This is the user's knowledge base — information collected from the Internet, LLMs, lectures, news, original ideas, inspiration, career materials, and resumes. It lives outside the Unicorn repo and should never be checked into the public repo. **Users should create a separate git repo inside this folder** (`cd ../my_knowledge && git init`) to track their own changes independently.
-- `template_projects/` ships with starter/example projects (e.g., `landing-page`). Users copy or reference these as starting points for their own work in `../my_projects/`.
-- `../my_projects/` is where **code changes happen**. All implementation work targets a sub-project here. Like `../my_knowledge/`, it lives outside the Unicorn repo. **Users should create a separate git repo inside each project** for version control of their own work.
-- `skills/` contains agent-agnostic prompting patterns (36 skills).
+### Key Paths
 
+| Path | Purpose |
+|------|---------|
+| `template_knowledge/` | Read-only template (copied to `../my_knowledge/` on init) |
+| `../my_knowledge/` | Personal vault — ideas, resume, career materials |
+| `template_projects/` | Starter/example projects |
+| `../my_projects/` | User's projects — all code changes happen here |
+| `skills/` | Canonical agent skill definitions |
 
-## 2. Software Creation Rules
+## Container-First Development (Mandatory)
 
-- **Test-first development**: Write tests before implementation — use BDD (Gherkin) for cross-functional alignment or TDD for solo/small dev speed.
-- **MVP**: Build the simplest version that proves the concept. No speculative features.
-- **Specification-driven**: Define features and behavior upfront before coding.
+Development MUST mirror production. All code execution, dependency installs, builds, and tests happen inside Docker — from day one.
 
-### Agent Mindset: Chief of Staff
+- Permit on the host only: Docker Desktop, Git, AI coding agents, editors/IDEs.
+- Add any new dev tool to `Dockerfile.dev` — never install it on the host.
+- Start containers detached (`-d`); never run them in the foreground.
+- Install packages in the container, never on the host.
 
-Your primary user is a job seeker or career transitioner building AI-native skills. Your objective is to keep them focused on a Minimum Viable Product (MVP) for each session — something they can ship, show, and learn from. If their ideas become scattered, gently guide them back to a single, achievable goal and leverage the appropriate "Office" skill to execute the task. Act as an orchestrator — providing expert guidance, executing technical tasks, and ensuring every session produces portfolio-ready work.
+```bash
+# Container execution (never run npm install/dev/build on the host)
+npm run docker:dev                                           # dev server
+npm run docker:shell                                         # interactive shell
+docker compose run --rm --no-deps dev sh -c "npm run build"  # one-off command
+docker compose run --rm --no-deps dev sh -c "npm install -D <package>"
+```
 
-## 3. Office Structure — Role-to-Skill Mapping
+## Development Workflow
 
-The project uses an "Office" metaphor. Each role maps to agent skills in `skills/`.
+### Container Commands
+
+| Natural Language | CLI Command | Purpose |
+|-----------------|-------------|---------|
+| "Start the dev server" | `npm run docker:dev` | Dev server (port 3000) |
+| "Open a shell in the container" | `npm run docker:shell` | Shell into container |
+| "Stop the containers" | `npm run docker:down` | Stop containers |
+| "Start a production preview" | `npm run docker:prod` | Prod preview (port 3001) |
+| "Show the container logs" | `npm run docker:logs` | View logs |
+| "Check container status" | `npm run docker:status` | Check status |
+| "Clean up containers and volumes" | `npm run docker:clean` | Remove containers + volumes |
+
+### Quality Commands (run inside container)
+
+| Natural Language | CLI Command |
+|-----------------|-------------|
+| "Run all tests" | `docker compose exec dev npm run test:run` |
+| "Lint the code" | `docker compose exec dev npm run lint` |
+| "Type-check the project" | `docker compose exec dev npm run typecheck` |
+
+- Run `docker compose exec dev npm run test:run` before every commit. This is the one canonical test command — do not run vitest on the host.
+
+### One-Off Commands (container not running)
+
+```bash
+docker compose run --rm --no-deps dev sh -c "npm run test:run"
+docker compose run --rm --no-deps dev sh -c "npm install -D <package>"
+docker compose run --rm --no-deps dev sh -c "gh pr list"
+```
+
+## Office Model — Role → Skill Reference
+
+Pick skills by role (the "why" is in [ANCHOR.md](ANCHOR.md)). Every skill in `skills/` has at least one Office owner.
 
 | Office | Role | Associated Skills |
 |--------|------|-------------------|
@@ -49,137 +100,49 @@ The project uses an "Office" metaphor. Each role maps to agent skills in `skills
 | COO | Operations & people | `operations`, `finance-accounting`, `obsidian-knowledge`, `career-advisor`, `github-profile`, `portfolio-strategy`, `open-source-contribution`, `technical-writing`, `document-creation` |
 | CLO | Legal & compliance | `legal-compliance` |
 
-**All 36 skills mapped.** Every skill in `skills/` has at least one Office owner.
+## Software Creation Rules
 
-## 4. First-Time Setup
+- Write tests before implementation — BDD (Gherkin) for cross-functional alignment, TDD for solo speed.
+- Build the simplest version that proves the concept. Add no speculative features.
+- Define features and behavior upfront before coding (specification-driven).
 
-See **[INIT_UNICORN.md](INIT_UNICORN.md)** for post-clone setup (symlinks, dev container, personal knowledge).
+## Coding Conventions
 
+- Add YAML front matter to every `.md` file in this repo: `name` (kebab-case) and `description` (one line).
+- Use TypeScript strict mode, ES2022, explicit types. Map path alias `@/*` to project root.
+- Default to React/Next.js Server Components. Add `'use client'` only when necessary. Preserve accessibility.
+- Use Tailwind CSS 4 utility classes; keep dark-mode compatibility.
+- Use `uv` for Python package and lockfile management (see [agents/UV_POLICY.md](agents/UV_POLICY.md)); avoid ad-hoc `pip install`.
 
-## 5. Development Workflow
+## First-Time Setup
 
-### Container Commands
+- Follow [INIT_UNICORN.md](INIT_UNICORN.md) for post-clone setup (skill symlinks, dev container, knowledge vault, private-repo init).
 
-| Natural Language | CLI Command | Purpose |
-|-----------------|-------------|---------|
-| "Start the dev server" | `npm run docker:dev` | Start dev server (port 3000) |
-| "Open a shell in the container" | `npm run docker:shell` | Shell into running container |
-| "Stop the containers" | `npm run docker:down` | Stop containers |
-| "Start a production preview" | `npm run docker:prod` | Production preview (port 3001) |
-| "Show the container logs" | `npm run docker:logs` | View logs |
-| "Check container status" | `npm run docker:status` | Check container status |
-| "Clean up containers and volumes" | `npm run docker:clean` | Remove containers and volumes |
+## Troubleshooting
 
-### Quality Commands (run inside container)
+- Build failures: check error messages, verify the container's Node version, check dependencies.
+- `next build` fails with "Cannot find module 'typescript'": the builder stage needs ALL deps (`npm ci`), not just production deps.
+- Dockerfile `COPY` fails on a missing directory: use a glob (e.g., `publi[c]`) to make the copy optional.
+- Cloud Run / App Runner rejects the image: build for `linux/amd64` (`docker build --platform linux/amd64`) on Apple Silicon.
+- Test `npm run docker:prod` locally before pushing to any cloud registry.
+- AI changes broke something: `git diff` to review, `git stash` or `git checkout -- <file>` to revert.
 
-| Natural Language | CLI Command |
-|-----------------|-------------|
-| "Run all tests" | `docker compose exec dev npm run test:run` |
-| "Lint the code" | `docker compose exec dev npm run lint` |
-| "Type-check the project" | `docker compose exec dev npm run typecheck` |
-
-### One-Off Container Commands (when container is not running)
-
-```bash
-docker compose run --rm --no-deps dev sh -c "npm run test:run"
-docker compose run --rm --no-deps dev sh -c "npm install -D <package>"
-docker compose run --rm --no-deps dev sh -c "gh pr list"
-```
-
-## 6. Coding Conventions
-
-- **Markdown front matter (mandatory):** Every `.md` file in the Solo Unicorn Builder project must include YAML front matter with `name` and `description` fields. This makes files discoverable by AI agents and compatible with the skill system.
-  ```yaml
-  ---
-  name: kebab-case-name
-  description: One-line description of what this file does or contains.
-  ---
-  ```
-- **TypeScript**: Strict mode, ES2022, explicit types. Path alias `@/*` maps to project root.
-- **React/Next.js**: Server Components by default. `'use client'` only when necessary. Preserve accessibility.
-- **Tailwind CSS 4**: Utility classes, dark mode compatible.
-- **Docker**: Always detached mode (`-d`) for container startup.
-- **Container-first installs**: Never install npm packages on the host. Use `docker compose run --rm --no-deps dev sh -c "npm install -D <package>"`.
-
-## 7. Key Paths
-
-| Path | Purpose |
-|------|---------|
-| `template_knowledge/` | Read-only template (copied to `../my_knowledge/` on init) |
-| `../my_knowledge/` | Personal vault — ideas, resume, career materials |
-| `template_projects/` | Starter/example projects shipped with Solo Unicorn |
-| `../my_projects/` | User's own projects — all code changes happen here |
-| `skills/` | Canonical agent skill definitions (36 skills) |
-
-## 8. Troubleshooting
-
-- **Build failures**: Check error messages, verify Node.js version in container, check dependencies.
-- **`next build` fails with "Cannot find module 'typescript'"**: The builder stage needs ALL dependencies (`npm ci`), not just production deps. `next.config.ts` requires TypeScript at build time.
-- **Dockerfile COPY fails on missing directory**: Docker `COPY` fails hard if the source doesn't exist. Use a glob pattern (e.g., `publi[c]`) to make the copy optional.
-- **Cloud Run / App Runner rejects image**: Cloud services require `linux/amd64`. On Apple Silicon (M1/M2/M3), build with `docker build --platform linux/amd64`.
-- **Always test `npm run docker:prod` locally** before pushing to any cloud registry. This catches build and runtime errors before they cost time in the deployment pipeline.
-- **Deployment issues**: Verify Docker image compatibility, cloud service configs, IAM permissions.
-- **AI changes broke something**: `git diff` to review, `git stash` or `git checkout -- <file>` to revert.
-
-## 9. Container-First Development (Mandatory)
-
-Development MUST mirror the production environment from day one. All code execution, dependency installation, builds, and tests happen inside Docker containers.
-
-**Permitted on the host**: Docker Desktop, Git, AI coding agents (Claude Code, Gemini CLI, etc.), and text editors/IDEs.
-
-**Prohibited on the host**: `npm install`, `npm run dev`, `npm run build`, `npx`, or any Node.js execution. If you need a new tool to develop the application, add it to `Dockerfile.dev` — never install it on the host. If you need to run a command, run it inside the container:
-
-```bash
-# WRONG — host execution
-npm install
-npm run dev
-npm run build
-
-# RIGHT — container execution
-npm run docker:dev                                           # dev server
-npm run docker:shell                                         # interactive shell
-docker compose run --rm --no-deps dev sh -c "npm run build"  # one-off command
-docker compose run --rm --no-deps dev sh -c "npm install -D <package>"
-```
-
-This constraint ensures every developer, from day one, works in the same environment that runs in production. No "works on my machine" surprises.
-
-## 10. Additional Constraints
-
-- Do not modify files in `template_knowledge/` unless explicitly instructed.
-- Do not run containers in foreground mode; always use `-d`.
-- Do not skip tests. Run `npx vitest run` (inside the container) before committing changes.
-- Do not create files outside the project structure without explicit instruction.
-
-## 11. Personal Development and Knowledge Management
-
-The sibling `../my_knowledge/` directory is designated for your individual growth and learning. It lives outside the public Unicorn repo and provides a space for:
-
-- **Personal Goals and Objectives**: Track your aspirations and progress.
-- **Resumes and Professional Documents**: Store and refine your career-related materials.
-- **Ideas and Lessons Learned**: Maintain a personal knowledge base, managed via tools like Obsidian, to foster continuous improvement and discover your 'superpower'.
-
-This content is for your personal use and development and will not be checked into the git repository.
-
-## 12. Security Rules
+## Security (hard lines)
 
 ### Secrets and Credentials
-- **Never** hardcode API keys, passwords, or tokens in source files.
-- Use environment variables for all sensitive configuration.
-- Ensure `.env` files are listed in `.gitignore` — never commit them.
-- Never log secrets or include them in error messages.
+- Never hardcode API keys, passwords, or tokens. Use environment variables.
+- Keep `.env` files in `.gitignore`; never commit them. Never log secrets or put them in error messages.
 
 ### Command Execution
-- Shell command arguments (e.g., `<package>` in `npm install -D <package>`) must use exact, validated values — never interpolate unsanitized user input.
-- Use the predefined npm scripts (e.g., `npm run docker:dev`) rather than constructing shell commands dynamically.
-- Before running any command that modifies files or installs packages, verify the source is trusted.
+- Use exact, validated values for shell arguments. Never interpolate unsanitized user input.
+- Use predefined npm scripts (e.g., `npm run docker:dev`) instead of constructing shell commands dynamically.
+- Verify a source is trusted before running any command that modifies files or installs packages.
 
 ### Input Validation
-- Natural language to CLI mappings must use exact, predefined commands only.
-- Do not dynamically construct shell commands from user-provided strings.
-- Validate package names against npm registry before installation.
+- Map natural language to exact, predefined commands only. Never build shell commands from user strings.
+- Validate package names against the npm registry before installation.
 
 ### File Access
-- Agents should only modify files within the project directory they're assigned to.
+- Modify files only within the assigned project directory.
 - Verify symlink targets exist and contain expected content before following them.
-- Do not access files outside the repository root without explicit user instruction, except the designated sibling workspace folders `../my_knowledge/` and `../my_projects/` during setup or user project work.
+- Stay inside the repo root except for the designated siblings `../my_knowledge/` and `../my_projects/` during setup or user project work.

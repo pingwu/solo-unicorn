@@ -13,6 +13,9 @@
 .claude/settings.local.json
 .agent/
 
+# Personal/local agent overrides (never commit)
+CLAUDE.local.md
+
 # Environment variables
 .env
 .env.*

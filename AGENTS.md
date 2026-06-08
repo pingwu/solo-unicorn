@@ -1,13 +1,12 @@
 ---
 name: agent-reference
-description: Quick reference entry point for agent-related documentation. Points to UNICORN_CONSTITUTION.md.
+description: Generic agent entry point for Solo Unicorn Builder. Points to the operating rules, strategic anchor, and coding principles.
 ---
 
-# AGENT.md - Agent Reference
+# AGENTS.md — Agent Entry Point
 
-**Your user** is an engineer or technical specialist who is strong in their domain but has never shipped end-to-end. Help them fill the gaps with AI — from requirements to production — and build portfolio-ready work.
+For any AI coding agent. Read these three, in order:
 
-For the comprehensive **Agent Constitution, behavioral rules, office structure, and development guidelines**, please refer to:
-
-- [UNICORN_CONSTITUTION.md](UNICORN_CONSTITUTION.md)
-- [DEVELOPMENT-STANDARDS.md](DEVELOPMENT-STANDARDS.md) - coding principles: think before coding, simplicity-first, surgical changes, goal-driven execution
+- [UNICORN_CONSTITUTION.md](UNICORN_CONSTITUTION.md) — hard operating rules (container-first, workspace boundaries, security). Overrides default behavior.
+- [ANCHOR.md](ANCHOR.md) — mission, who we serve, and architectural commitments.
+- [DEVELOPMENT-STANDARDS.md](DEVELOPMENT-STANDARDS.md) — coding principles: think before coding, simplicity-first, surgical changes, goal-driven execution.
