@@ -1,6 +1,6 @@
 ---
 name: coding-agents
-description: Complete comparison guide for CLI coding agents — Claude Code, GitHub Copilot CLI, Gemini CLI, Kiro CLI, Kilo.ai CLI agents, Docker AI Agent Gordon, Codex CLI, OpenCode, and more. Solo Unicorn Builder prefers CLI agents for their ability to translate natural language into system commands.
+description: Complete comparison guide for AI coding agents — CLI agents (Claude Code, GitHub Copilot CLI, Antigravity CLI, Kiro CLI, Kilo.ai CLI agents, Docker AI Agent Gordon, Codex CLI, OpenCode), desktop agent apps (Claude Code Desktop, Codex Desktop, Hermes Desktop), and agent harnesses (OpenClaw, Hermes Agent). Solo Unicorn Builder prefers CLI agents for their ability to translate natural language into system commands.
 ---
 
 # AI Coding Agents: Complete Comparison Guide
@@ -52,7 +52,7 @@ Think of an AI coding agent as a **smart assistant that helps you write, edit, a
 **Like:** Having an expert you can ask questions, but can't see your files
 
 ### Phase 3: Project-Aware CLI Agents (2024-2025)
-**Tools:** Claude Code, Gemini CLI, GitHub Copilot CLI, Atlassian Rovo Dev CLI, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, Docker AI Agent Gordon, Codex CLI, OpenCode
+**Tools:** Claude Code, Gemini CLI (now Antigravity CLI), GitHub Copilot CLI, Atlassian Rovo Dev CLI, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, Docker AI Agent Gordon, Codex CLI, OpenCode
 **Capability:** Understand your entire project, execute commands, modify multiple files
 **Like:** A senior developer who can both think and type — reading your codebase, running your tests, and shipping your code
 
@@ -61,7 +61,12 @@ Think of an AI coding agent as a **smart assistant that helps you write, edit, a
 **Capability:** Deploy your own agent infrastructure — persistent memory, skill libraries, multi-channel messaging (Slack, Discord, CLI), self-hosted on your own server or free-tier cloud
 **Like:** Building your own AI team rather than renting one — you own the runtime, the skills, and the data
 
-### Phase 5: Multi-Agent Systems (2026 and Emerging)
+### Phase 5: Desktop Agent Apps (2026)
+**Tools:** Claude Code Desktop, Codex Desktop, Hermes Desktop, OpenClaw Windows Hub, Antigravity 2.0
+**Capability:** Native GUI command centers for agents — run multiple agents in parallel, manage worktrees, computer use, no terminal required
+**Like:** The CLI agent grew a cockpit — same engine, visual mission control
+
+### Phase 6: Multi-Agent Systems (2026 and Emerging)
 **Trend:** Using multiple AI agents for different tasks
 **Capability:** One agent plans, another codes, another reviews
 **Like:** A full development team, but AI
@@ -76,7 +81,7 @@ These agents run in your terminal and can **read, write, and execute** — the f
 | ---------------------- | ----------- | --------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **Claude Code**        | Anthropic   | `npm install -g @anthropic-ai/claude-code`                                        | `claude`            | **Best reasoning and code quality.** Deep project understanding, multi-file refactoring, architecture decisions.                |
 | **GitHub Copilot CLI** | GitHub      | `npm install -g @github/copilot-cli`                                              | `gh copilot`        | **Natural language shell commands.** Translate English to CLI commands, explain code. Integrated with GitHub.                   |
-| **Gemini CLI**         | Google      | `npm install -g @google/gemini-cli`                                               | `gemini`            | **Largest context window (1M+ tokens).** Multimodal — understands images, diagrams, screenshots alongside code.                 |
+| **Antigravity CLI**    | Google      | `curl -fsSL https://antigravity.google/cli/install.sh \| bash`                    | `agy`               | **Replaces Gemini CLI (June 2026).** Go-based, async multi-agent orchestration, shares its harness with the Antigravity 2.0 desktop app. |
 | **Atlassian Rovo**     | Atlassian   | `npm install -g @atlassian/rovo-dev`                                              | `rovo`              | **Jira & Confluence integration.** Specialized subagents, MCP support, and "shadow mode" for safe code testing.                 |
 | **DeepAgents**         | LangChain   | `uv tool install deepagents-cli` (or `uv tool install 'deepagents-cli[openrouter]'` for OpenRouter)  | `deepagents`        | **Persistent memory & sandboxing.** Learns project conventions, supports remote sandboxes (Modal, Daytona), and MCP.             |
 | **Kiro CLI**           | AWS         | See [kiro.dev/cli](https://kiro.dev/cli/)                                         | `kiro-cli`          | **Spec-driven development.** Turns prompts into structured requirements, then code. Deep AWS integration and DevOps automation. |
@@ -111,10 +116,53 @@ These agents live inside your editor. Great for real-time autocomplete and inlin
 | **Cursor** | AI-powered IDE | Download from [cursor.com](https://cursor.com) | **Complete AI editor.** VS Code fork with chat, multi-file editing, Cmd+K inline edits. |
 | **GitHub Copilot** | IDE extension | VS Code / JetBrains extension | **Real-time autocomplete.** Best for day-to-day typing productivity. |
 | **Kiro IDE** | AI-powered IDE | Download from [kiro.dev](https://kiro.dev) | **Spec-first development.** Generates requirements and design docs before code. VS Code fork. |
-| **AntiGravity** | AI-powered IDE / agentic coding environment | See official AntiGravity docs/site | **Agentic IDE workflow.** Useful for builders who want an IDE-centered AI coding experience with deeper project context. |
+| **Antigravity 2.0** | AI-powered IDE / agentic coding environment | [antigravity.google](https://antigravity.google) | **Google's agentic IDE.** Shares its agent harness with Antigravity CLI — settings, skills, and plugins sync between desktop and terminal. |
 | **Tabnine** | IDE extension | IDE extension — [tabnine.com](https://www.tabnine.com) | **On-premise options.** Code stays private, enterprise compliance. |
 
 **Tip:** Use a CLI agent as your primary development partner and an IDE agent for real-time autocomplete. They complement each other.
+
+---
+
+## Desktop Agent Apps (New in 2026)
+
+The newest category. The major CLI agents now ship **native desktop apps** — same agent engine, but with a GUI built for running multiple agents in parallel, managing worktrees, and (increasingly) letting the agent operate your computer. The terminal is no longer a prerequisite for agentic development.
+
+| App | Provider | Platforms | Relationship to CLI | Key Strength |
+|---|---|---|---|---|
+| **Claude Code Desktop** | Anthropic | macOS, Windows | Same Claude Code engine as the CLI | **Parallel sessions & worktrees.** Run multiple Claude Code sessions side by side without terminal juggling. Also available on web and IDE extensions. |
+| **Codex Desktop** | OpenAI | macOS, Windows (since March 2026) | Companion to Codex CLI | **Agent command center with computer use.** Agents organized by project threads, built-in worktrees, in-app browser, and background computer use — agents see, click, and type. |
+| **Hermes Desktop** | Nous Research | macOS, Windows, Linux | Same agent core as Hermes CLI — shared memory, skills, sessions | **Self-improving agent, no terminal required.** Sessions resume across desktop, CLI, and messaging gateway. Open source. |
+| **OpenClaw Windows Hub** | OpenClaw + Microsoft | Windows 10/11 (x64, ARM64) | Companion to the OpenClaw gateway | **Native Windows agent node.** Announced at Microsoft Build 2026; runs contained via Microsoft Execution Containers (MXC) — tray status, chat, notifications, screen and speech capabilities. |
+| **Antigravity 2.0** | Google | macOS, Windows, Linux | Shares agent harness with Antigravity CLI | **IDE-style desktop agent.** Bidirectional settings sync with the `agy` CLI. |
+
+**Why this matters for Solo Unicorn Builder:** desktop apps lower the barrier for non-terminal specialists — the same skills-first workflow now works for builders who never open a shell. But the CLI remains the power tool: scriptable, SSH-able, and composable with your container-first stack.
+
+### Codex Desktop — The Agent Command Center
+
+**Official Docs:** https://developers.openai.com/codex/app
+
+- **Multi-agent threads** — agents run in separate threads organized by project, with built-in worktree support so multiple agents work the same repo without conflicts
+- **Computer use** — agents operate desktop apps with their own cursor (background on macOS, foreground on Windows)
+- **In-app browser and PR review** — deeper developer workflows beyond code generation
+- **Windows availability** — shipped March 4, 2026, including via the Microsoft Store
+
+### Hermes Desktop — The Growing Agent, Now With a Face
+
+**Official Docs:** https://hermes-agent.nousresearch.com/
+
+- **One agent core, three surfaces** — desktop GUI, CLI, and messaging gateway share configuration, API keys, sessions, skills, and memory
+- **Built-in learning loop** — creates skills from experience, searches its own past conversations, builds a model of you across sessions
+- **Cross-platform** — native builds for macOS, Windows, and Linux (public preview, June 2026)
+- **Open source** — fastest-growing open-source agent framework of 2026 (180k+ GitHub stars in four months)
+
+### OpenClaw Windows Hub — The Agent Node for Windows
+
+**Official Docs:** https://docs.openclaw.ai/platforms/windows
+
+- **Native WinUI companion app** for Windows 10 20H2+ and Windows 11 — setup, tray status, chat, and Command Center diagnostics
+- **Microsoft partnership** — demonstrated at Build 2026; runs contained via Microsoft Execution Containers (MXC), a policy-driven layer that declares what the agent can access
+- **Windows node capabilities** — agent-controlled canvas, screen, camera, notifications, text-to-speech, speech-to-text, and controlled `system.run`
+- **No admin required** — signed x64 and ARM64 installers, installs without administrator privileges
 
 ---
 
@@ -131,6 +179,7 @@ These agents live inside your editor. Great for real-time autocomplete and inlin
 - **Ctrl+G feature** - write long prompts in your text editor
 - **Strong at code review** - catches subtle bugs and architecture issues
 - **Executes commands** - runs tests, manages Git, deploys containers
+- **Every surface** - CLI, desktop app (macOS/Windows), web (claude.ai/code), and IDE extensions — same engine everywhere
 
 **Best for:**
 - Complex refactoring across multiple files
@@ -180,26 +229,28 @@ gh copilot explain "grep -r 'TODO' . | grep -v node_modules"
 
 ---
 
-### Gemini CLI - The Multimodal Expert
+### Antigravity CLI - The Multi-Agent Orchestrator (formerly Gemini CLI)
 
-**Official Docs:** https://github.com/google-gemini/gemini-cli
+**Official Site:** https://antigravity.google
 
 **What makes it special:**
-- **Largest context window** (1M+ tokens)
-- **Multimodal** - understands images, diagrams, screenshots
-- **Long-form analysis** - can analyze entire large codebases
-- **Google integration** - works with Google Cloud Platform
+- **Replaces Gemini CLI** — Google retired Gemini CLI for consumer use on June 18, 2026; Antigravity CLI is its successor
+- **Built in Go** — faster startup and lower memory than the Node.js-based Gemini CLI
+- **Asynchronous workflows** — orchestrates multiple agents in the background; run large refactors without locking your terminal
+- **Unified architecture** — shares the same agent harness as the Antigravity 2.0 desktop app, with bidirectional settings sync
+- **Carries forward Gemini CLI features** — Agent Skills, Hooks, Subagents, and Extensions (now Antigravity plugins; migrate with `agy plugin import gemini`)
+- **Multimodal Gemini models** — understands images, diagrams, screenshots alongside code, with large context windows
 
 **Best for:**
 - Analyzing large, complex codebases
-- Converting UI screenshots to code
-- Understanding system architecture diagrams
-- Projects with extensive documentation
+- Parallel background agents for refactors and research
+- Builders also using the Antigravity 2.0 desktop IDE
+- GCP-centered workflows
 
 **Limitations:**
-- Newer tool, smaller community
+- Brand new (announced at Google I/O, May 2026) — ecosystem still settling after the Gemini CLI transition
 - Requires Google account
-- Less specialized for code than Claude Code
+- Enterprise Gemini Code Assist licensees keep Gemini CLI; everyone else must migrate
 
 ---
 
@@ -412,8 +463,8 @@ CLI agents run on your machine and talk to cloud APIs. **Agent harnesses** go fu
 
 | Framework | Provider | Approach | Deployment | Key Strength |
 |-----------|----------|----------|------------|--------------|
-| **OpenClaw** | Open-source | Gateway-first | OCI, $5 VPS, Docker | Channel routing, integrations, rapid deploy on cheap infra |
-| **Hermes Agent** | Nous Research | Agent-first | OCI, Docker, SSH, Modal | Self-improving skill library, 15+ messaging platforms, 200+ models |
+| **OpenClaw** | Open-source | Gateway-first | OCI, $5 VPS, Docker, native Windows (Windows Hub) | Channel routing, integrations, rapid deploy on cheap infra |
+| **Hermes Agent** | Nous Research | Agent-first | OCI, Docker, SSH, Modal, desktop app (Mac/Win/Linux) | Self-improving skill library, 15+ messaging platforms, 200+ models |
 | **NemoClaw** | NVIDIA | Security-first | Enterprise / NVIDIA NIM | Deny-by-default egress, sandboxed config, policy guardrails |
 | **Solo Unicorn Builder** | Open-source | Agent harness | Local / any CLI agent | Skills-first orchestration: structured knowledge + agent execution across every business function |
 
@@ -436,6 +487,7 @@ CLI agents run on your machine and talk to cloud APIs. **Agent harnesses** go fu
 - **Cheap to run** — deploys on OCI Always Free (A1 ARM64, 4 OCPU / 24 GB) or a $5/month VPS
 - **Fast to deploy** — single Docker Compose stack, no ML infrastructure required
 - **Foundation for NemoClaw** — NemoClaw wraps OpenClaw with NVIDIA's security and policy layer
+- **Native Windows app** — Windows Hub (announced at Microsoft Build 2026) brings OpenClaw to the Windows desktop, contained via Microsoft Execution Containers (see Desktop Agent Apps above)
 - **Active open-source community** — channel integrations, provider plugins, and deployment guides
 
 **Best for:**
@@ -446,8 +498,8 @@ CLI agents run on your machine and talk to cloud APIs. **Agent harnesses** go fu
 
 **Limitations:**
 - Not a coding agent in the CLI sense — it's a deployment layer, not a local dev tool
-- Requires server setup (Docker, SSH, OCI or VPS)
-- Pair with a CLI coding agent (Claude Code, Gemini CLI) for local development work
+- Requires server setup (Docker, SSH, OCI or VPS) — or use the Windows Hub desktop app
+- Pair with a CLI coding agent (Claude Code, Antigravity CLI) for local development work
 
 **Install:**
 ```bash
@@ -463,7 +515,7 @@ Solo Unicorn Builder is not a coding agent — it's an **agent harness**: a stru
 
 **What makes it special:**
 - **Skills-first architecture** — 36+ structured `SKILL.md` files covering code, marketing, legal, finance, sales, and more
-- **Agent-agnostic** — works with Claude Code, Gemini CLI, Kiro CLI, DeepAgents, or any agent that reads markdown
+- **Agent-agnostic** — works with Claude Code, Antigravity CLI, Kiro CLI, DeepAgents, or any agent that reads markdown
 - **Knowledge vault** — personal context (career, projects, decisions) that the agent reads before acting
 - **Context engineering made operational** — not just structured prompts, but a system that makes AI act autonomously on your behalf
 
@@ -483,7 +535,7 @@ Solo Unicorn Builder is not a coding agent — it's an **agent harness**: a stru
 1. **What's your primary use case?**
    - Complex architecture and refactoring → **Claude Code**
    - Shell commands and CLI operations → **GitHub Copilot CLI**
-   - Large codebases, multimodal → **Gemini CLI**
+   - Large codebases, async multi-agent orchestration → **Antigravity CLI**
    - Jira/Confluence integration, enterprise workflow → **Atlassian Rovo**
    - Persistent project memory & sandboxing → **LangChain DeepAgents**
    - AWS infrastructure and DevOps → **Kiro CLI**
@@ -493,12 +545,14 @@ Solo Unicorn Builder is not a coding agent — it's an **agent harness**: a stru
    - Minimal, hackable, self-owned → **Pi**
    - Self-hosted always-on agent (Slack/Discord/CLI gateway) → **OpenClaw**
    - Skills-first agent harness across every business function → **Solo Unicorn Builder**
+   - GUI command center, no terminal → **Claude Code Desktop**, **Codex Desktop**, or **Hermes Desktop**
+   - Agent on the Windows desktop → **OpenClaw Windows Hub** or **Codex Desktop**
    - Real-time autocomplete → **Copilot** or **Cursor** (IDE)
 
 2. **What's your budget?**
-   - Pay per use → Claude Code, Gemini CLI, DeepAgents
+   - Pay per use → Claude Code, Antigravity CLI, DeepAgents
    - Monthly/Seat-based subscription → Atlassian Rovo, Kiro CLI, Kilo.ai, Docker AI/Docker Desktop, Copilot, Cursor
-   - Free/open source → OpenCode, OpenClaw, Solo Unicorn Builder (but you pay for LLM API, or use local models)
+   - Free/open source → OpenCode, Pi, OpenClaw, Hermes Agent/Desktop, Solo Unicorn Builder (but you pay for LLM API, or use local models)
 
 3. **What cloud/stack do you use?**
    - Atlassian Ecosystem → Atlassian Rovo
@@ -506,14 +560,14 @@ Solo Unicorn Builder is not a coding agent — it's an **agent harness**: a stru
    - AWS → Kiro CLI
    - Docker/container-first → Docker AI Agent Gordon plus a general CLI coding agent
    - Multi-agent workflow experimentation → Kilo.ai CLI agents
-   - GCP → Gemini CLI
+   - GCP → Antigravity CLI
    - Self-hosted / free-tier cloud (OCI, $5 VPS) → OpenClaw
    - Any/none → Claude Code or OpenCode
 
 ### Recommended for Solo Unicorn Builder
 
-**Primary:** Pick one CLI agent — Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, or Docker AI Agent Gordon for Docker-heavy work
-**Optional:** Add Cursor or Copilot for real-time autocomplete in your IDE
+**Primary:** Pick one CLI agent — Claude Code, Antigravity CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, or Docker AI Agent Gordon for Docker-heavy work
+**Optional:** Add the matching desktop app (Claude Code Desktop, Codex Desktop, Hermes Desktop) for parallel-agent sessions, and Cursor or Copilot for real-time autocomplete in your IDE
 
 All of Solo Unicorn Builder's skills work with any CLI agent. You describe what you need in natural language, the agent reads the relevant `SKILL.md`, and executes.
 
@@ -541,8 +595,8 @@ All of Solo Unicorn Builder's skills work with any CLI agent. You describe what 
 5. Kiro CLI: "Deploy this to AWS with a staging environment"
    → Infrastructure setup, container registry, Cloud Run config
 
-6. Gemini CLI: "Generate comprehensive API documentation from the codebase"
-   → Large context window handles the full system
+6. Antigravity CLI: "Generate comprehensive API documentation from the codebase"
+   → Async background agents and large context handle the full system
 ```
 
 Each agent does what it does best. Your job is to ask the right questions.
@@ -555,7 +609,13 @@ Each agent does what it does best. Your job is to ask the right questions.
 **A:** No. AI makes developers more productive, but humans still define requirements, make architectural decisions, review suggestions, and handle business logic.
 
 **Q: Which agent should I learn first?**
-**A:** Pick one CLI agent and start building. Skills transfer between agents. For Solo Unicorn Builder, Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, or Docker Gordon are useful starting points depending on your workflow.
+**A:** Pick one CLI agent and start building. Skills transfer between agents. For Solo Unicorn Builder, Claude Code, Antigravity CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, or Docker Gordon are useful starting points depending on your workflow.
+
+**Q: What happened to Gemini CLI?**
+**A:** Google announced at I/O 2026 (May 19) that Antigravity CLI replaces Gemini CLI. Consumer and free-tier requests stopped being served on June 18, 2026; only enterprise Gemini Code Assist licensees keep Gemini CLI access. Antigravity CLI (`agy`) is Go-based, carries over Skills, Hooks, and Subagents, and shares its harness with the Antigravity 2.0 desktop app. Migrate extensions with `agy plugin import gemini`.
+
+**Q: Do I still need a terminal to use these agents?**
+**A:** Not anymore. Claude Code Desktop, Codex Desktop, and Hermes Desktop run the same agent engines in native GUI apps, and OpenClaw has a native Windows Hub app. The CLI is still the power tool — scriptable and composable — but desktop apps make agentic development accessible without shell skills.
 
 **Q: What happened to Amazon CodeWhisperer?**
 **A:** AWS retired CodeWhisperer in April 2024 and merged its features into Amazon Q Developer. Kiro is AWS's newer, more ambitious offering — a spec-first AI development platform available as both an IDE and a CLI.
@@ -565,18 +625,19 @@ Each agent does what it does best. Your job is to ask the right questions.
 
 **Q: What about code privacy?**
 **A:** Varies by tool:
-- **Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai, Docker Gordon:** Code/context may be sent to cloud services for processing
-- **OpenCode:** Can use local LLMs for full privacy
+- **Claude Code, Antigravity CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai, Docker Gordon, Codex (CLI and Desktop):** Code/context may be sent to cloud services for processing
+- **OpenCode, Hermes Agent:** Can use local LLMs for full privacy
+- **Desktop apps with computer use (Codex Desktop):** The agent can see and operate your screen — review what access you grant
 - Check each tool's privacy policy for your compliance needs
 
 ---
 
 ## Getting Started with Solo Unicorn Builder
 
-Solo Unicorn Builder works with **any CLI coding agent**. The skills in `skills/` are agent-agnostic — they work with Claude Code, GitHub Copilot CLI, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, Docker AI Agent Gordon, Codex CLI, OpenCode, or any tool that reads markdown files.
+Solo Unicorn Builder works with **any CLI coding agent**. The skills in `skills/` are agent-agnostic — they work with Claude Code, GitHub Copilot CLI, Antigravity CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, Docker AI Agent Gordon, Codex CLI, OpenCode, or any tool that reads markdown files. Desktop apps (Claude Code Desktop, Codex Desktop, Hermes Desktop) read the same skills.
 
 **Setup:**
-1. Install at least one CLI agent (Claude Code, Gemini CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, Docker Gordon, or OpenCode)
+1. Install at least one CLI agent (Claude Code, Antigravity CLI, Atlassian Rovo, LangChain DeepAgents, Kiro CLI, Kilo.ai CLI agents, Docker Gordon, or OpenCode)
 2. Clone Solo Unicorn Builder and run the init setup
 3. Start describing what you want to build — the agent reads the relevant skills and executes
 
@@ -588,19 +649,21 @@ The AI-augmented knowledge worker doesn't need to master every tool. Pick one, s
 
 AI coding tools evolve rapidly. Start with the official resources:
 
-- **Claude Code:** https://docs.anthropic.com/en/docs/claude-code
+- **Claude Code (CLI, desktop, web, IDE):** https://docs.anthropic.com/en/docs/claude-code
 - **GitHub Copilot CLI:** https://gh.io/copilot-cli
-- **Gemini CLI:** https://github.com/google-gemini/gemini-cli
+- **Antigravity CLI & Antigravity 2.0:** https://antigravity.google
 - **Atlassian Rovo:** https://support.atlassian.com/rovo/docs/use-rovo-dev-cli/
 - **LangChain DeepAgents:** https://docs.langchain.com/oss/python/deepagents/cli/overview
 - **Kiro CLI:** https://kiro.dev/docs/cli/
 - **Kilo.ai CLI agents:** https://kilo.ai
 - **Docker AI Agent Gordon:** https://www.docker.com/products/docker-ai/
 - **Codex CLI:** https://github.com/openai/codex
+- **Codex Desktop:** https://developers.openai.com/codex/app
 - **OpenCode:** https://opencode.ai
 - **Pi:** https://pi.dev
 - **GitHub Copilot:** https://github.com/features/copilot
 - **Cursor:** https://cursor.com/docs
 - **OpenClaw:** https://github.com/openclaw-ai/openclaw
-- **Hermes Agent:** https://hermes-agent.nousresearch.com/
+- **OpenClaw Windows Hub:** https://docs.openclaw.ai/platforms/windows
+- **Hermes Agent & Hermes Desktop:** https://hermes-agent.nousresearch.com/
 - **Solo Unicorn Builder:** https://github.com/pingwu/solo-unicorn
